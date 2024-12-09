@@ -20,8 +20,7 @@
 
       <div class="top-screen__top">
         <div class="top-screen__description">
-          <?= get_field('hp_description') ? the_field('hp_description') : 'Streamline SOC 2, PCI DSS, ISO 27001, 
-          and more with TrustNet’s Advisory, Automation, and Audit services, all under one roof.' ?>
+          <?= get_field('hp_description') ? the_field('hp_description') : 'Stelio' ?>
         </div>
         <div class="top-screen__shield">
           <img 

@@ -205,76 +205,73 @@ tabLinks.forEach(link => {
 
 const menuItemsWithTabs = document.querySelectorAll('.navigation__link .tab');
 menuItemsWithTabs[0].classList.add('active');
-      
-      
-
 
 
 // From Divi
 
-    jQuery(function($) {
-        $(document).ready(function() {
-           function toggleMenu(menu) {
-              $(menu).append('<a href="#" class="mobile-toggle"></a>');
-              $(menu + " .mobile-toggle").click(function(event) {
+jQuery(function($) {
+    $(document).ready(function() {
+        function toggleMenu(menu) {
+            $(menu).append('<a href="#" class="mobile-toggle"></a>');
+            $(menu + ' .mobile-toggle').click(function(event) {
                 event.preventDefault();
                 $(this).parent('li').toggleClass('dt-open');
-				$(this).parent('li').find('ul').first().toggleClass('visible'); 
-				$(this).parent('li').find('ul').first().slideToggle();
+                $(this).parent('li').find('ul').first().toggleClass('visible'); 
+                $(this).parent('li').find('ul').first().slideToggle();
 				  
 				  if ($('.sub-menu').find('.dt-open')) {
 					  $('.sub-menu').find('.dt-open').toggleClass('visible');
 				  }
-              });
-            }
+            });
+        }
 
-            toggleMenu('ul.et_mobile_menu li.menu-item-has-children')
-			toggleMenu('ul.et_mobile_menu li.sub-menu')
-        });
+        toggleMenu('ul.et_mobile_menu li.menu-item-has-children');
+        toggleMenu('ul.et_mobile_menu li.sub-menu');
+    });
 		
-		const $menu = $('nav > ul.nav')
-		const top_level_link = '.menu-item-has-children > a';
-function setup_collapsible_submenus() {
-  $menu.find(top_level_link).each(function() {
-    $(this).attr('href', '#');
-    $(this).next('.sub-menu').addClass('hide');
+    const $menu = $('nav > ul.nav');
+    const top_level_link = '.menu-item-has-children > a';
+    function setup_collapsible_submenus() {
+        $menu.find(top_level_link).each(function() {
+            $(this).attr('href', '#');
+            $(this).next('.sub-menu').addClass('hide');
 
-    $(this).on('click', function(event) {
-      event.stopPropagation();
-      $(this).next('.sub-menu').toggleClass('visible');
+            $(this).on('click', function(event) {
+                event.stopPropagation();
+                $(this).next('.sub-menu').toggleClass('visible');
 	  $menu.find('.sub-menu').first().find('.menu-item-has-children').first().addClass('active');
 	  $menu.find('.second-level-sub-menu').first().addClass('visible');
-      return false;
-    });
-  });
+                return false;
+            });
+        });
 
-  $('.sub-menu a').each(function() {
-    $(this).on('click', function(event) {
-      event.stopPropagation();
-		$('.second-level-sub-menu').removeClass('visible');
-		$('.sub-menu li').removeClass('active');
-		$(this).parent().toggleClass('active');
-      $(this).siblings('.second-level-sub-menu').toggleClass('visible');
-      return false;
-    });
-  });
+        $('.sub-menu a').each(function() {
+            $(this).on('click', function(event) {
+                event.stopPropagation();
+                $('.second-level-sub-menu').removeClass('visible');
+                $('.sub-menu li').removeClass('active');
+                $(this).parent().toggleClass('active');
+                $(this).siblings('.second-level-sub-menu').toggleClass('visible');
+                return false;
+            });
+        });
 
-  $(window).click(function(event) {
-    if (!($(event.target).parents('.sub-menu').length)) {
-      $('.sub-menu').removeClass('visible');
-      $('.second-level-sub-menu').removeClass('visible');
+        $(window).click(function(event) {
+            if (!($(event.target).parents('.sub-menu').length)) {
+                $('.sub-menu').removeClass('visible');
+                $('.second-level-sub-menu').removeClass('visible');
+            }
+        });
     }
-  });
-}
 
-$(window).on('load', function() {
-	if ($(window).width() > 1150) {
-  setTimeout(function() {
-    setup_collapsible_submenus();
-  }, 700);
-	}
-});
+    $(window).on('load', function() {
+        if ($(window).width() > 1150) {
+            setTimeout(function() {
+                setup_collapsible_submenus();
+            }, 700);
+        }
+    });
 		
-    }); 
+}); 
 	
 	

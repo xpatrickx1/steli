@@ -1,5 +1,5 @@
-const localDomain = 'http://localhost/trustnet/';
-const pathToTheme = '/wp-content/themes/trust/';
+const localDomain = 'http://localhost/steli/';
+const pathToTheme = '/wp-content/themes/steli/';
 
 //NPM-MODULES
 const gulp = require('gulp');

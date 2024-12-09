@@ -58,7 +58,7 @@
               href="#"
               rel="nofollow" id="headerCalculateButtonMob"
               class="button--second">
-              Book a consultation
+              Заказать звонок
             </a>
           </div>
 
