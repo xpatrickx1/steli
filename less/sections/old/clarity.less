@@ -1,19 +1,19 @@
-.book {
+.clarity {
   position: relative;
-  background: linear-gradient(134.04deg, #0091E2 30.5%, #007FF4 83.61%);
+  background: linear-gradient(278.72deg, #0091E2 18.14%, #007FF4 81.29%);
+  padding: clamp(60px, 13vw, 132px) 0 clamp(60px, 13vw, 210px);
 
   &--left {
     max-width: 558px;
     margin: clamp(30px, 7vw, 80px) 0 clamp(30px, 7vw, 95px) clamp(20px, 10vw, 134px);
-
-    @media ( max-width: @sizes[ maxLG ] ) {
-      margin: clamp(30px, 7vw, 80px) 16px clamp(30px, 7vw, 95px);
-     }
   }
 
   &__wrap {
     display: flex;
     justify-content: space-between;
+    gap: clamp(60px, 13vw, 122px);
+    max-width: 1317px;
+    margin: 0 auto;
 
     @media ( max-width: @sizes[ maxLG ] ) {
      flex-wrap: wrap;
@@ -22,15 +22,17 @@
   }
 
   h3 {
-    .fontInter(400);
+    .fontNunito(400);
     .fontSize(clamp(20px, 5vw, 48px), clamp(25px, 5vw, 58px));
     color: @color[white];
     margin: 14px 0 clamp(20px, 5vw, 48px);
+    max-width: 490px;
   }
 
   &--right {
     position: relative;
-    max-width: 770px;
+    max-width: 647px;
+    width: 100%;
   }
 
   &__list {
@@ -47,7 +49,7 @@
       position: relative;
       color: #0473B1;
       padding-left: 36px;
-      .fontInter(400);
+      .fontNunito(400);
       .fontSize(21px, 25px);
 
       &:before {
@@ -68,7 +70,7 @@
   .button--second {
     justify-content: space-between;
     color: #48BEFF;
-    .fontInter(500);
+    .fontNunito(500);
     .fontSize(21px, 26px);
     padding: 21px 20px;
     box-shadow: 0px 0px 3px 0px #00000073;
@@ -89,43 +91,62 @@
     }
   }
 
-  &__resources {
-    color: @color[white];
-    .fontInter(400);
-    .fontSize(18px, 29px);
-    margin: clamp(20px, 5vw, 40px) 0 0;
-    max-width: 470px;
+  .quiz {
+    padding: 40px;
+    border-radius: @border[buttonRadius];
 
-    span {
-      color: @color[white];
-      .fontInter(600);
+    &__wrap {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: @border[buttonRadius];
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, .6);
+      z-index: 1;
     }
 
-    a {
-      color: #9BE7FF;
-      text-decoration: underline;
+    &__text {
+      color: @color[black];
+      .fontNunito(400);
+      .fontSize(28px, 42px);
+      max-width: 443px;
+      margin: 0 0 clamp(20px, 5vw, 48px);
     }
-  }
 
-  img {
-    margin: 0 0 -6px;
-  }
+    // &__start {
+      
+    // }
 
-  &__author {
-    position: absolute;
-    color: @color[white];
-    .fontInter(400);
-    .fontSize(24px, 34px);
-    text-align: right;
-    right: 16px;
-    bottom: clamp(50px, 7vw, 90px);
+    .button--second {
+      background: @color[white];
+      justify-content: center;
+      color: @color[black];
+      max-width: 335px;
+      border-radius: 7.5px;
+      margin: 10px 0 0;
+     
 
-    @media ( min-width: @sizes[ minLG ] ) {
-      right: calc((100vw - 1583px) / 2);
-     }
+      &:after {
+        display: none;
+      }
+    }
 
-    &--name {
-      .fontInter(700);
+    &__arrows {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin: 20px 0 0;
+    }
+
+    .arrow--main {
+      position: static;
+      z-index: 0;
+      width: 52px;
+      height: 52px;
     }
   }
   

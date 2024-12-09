@@ -14,13 +14,26 @@
 
 <header class="header">
     <div class="container">
+      <div class="header--top">
+        <div class='header__schedule'>
+          Пн - Сб: c 9:00 до 19:00
+        </div>
+
+        <div class='header__phone'>
+          +38 063 654 63 85
+        </div>
+
+        <div class='header__autonom'>
+          Рабоаем автономно
+        </div>
+      </div>
       <div class="header--bottom">
           <a href="/"
             class="header__logo" aria-label="Header logo"
           >
             <div class="logo__desktop">
                 <img src="<?= bloginfo('template_url') . '/images/loader.gif' ?>"
-                  data-src="<?= bloginfo('template_url') . '/images/icons/header-logo.png' ?>" class="lazy"
+                  data-src="<?= bloginfo('template_url') . '/images/icons/header-logo.svg' ?>" class="lazy"
                   alt="Back to homepage logo link"
                   width="200px"
                   height="41px"
@@ -57,7 +70,7 @@
             <a 
               href="#"
               rel="nofollow" id="headerCalculateButtonMob"
-              class="button--second">
+              class="button--main">
               Заказать звонок
             </a>
           </div>
