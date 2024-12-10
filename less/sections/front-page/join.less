@@ -1,9 +1,14 @@
-.materials {
+.join {
   position: relative;
   padding: 66px 0 clamp(40px, 7vw, 80px);
 
   &__top {
-    max-width: 492px;
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: @sizes[minSM]) {
+      flex-direction: row;
+    }
   }
 
   &__photo {

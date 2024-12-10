@@ -1,31 +1,76 @@
-<section class="recommendation">
-  <div class="container recommendation__wrap">
+<?php
 
-    <h5>
-      <?= get_field('recommendation_title') ? the_field('recommendation_title') : 'Наш подход ценят заказчики и партнёры' ?>
-    </h5>
+  $materials = [
+    [
+      'title' => 'Тканевые потолки',
+      'text' => 'Тканевый натяжной потолок из полиэстера с акриловой пропиткой. Экологичный и гипоаллергенный материал с оригинальной фактурой. Устанавливаются без нагревания.',
+      'link' => '#',
+    ],
+    [
+      'title' => 'Матовый потолок',
+      'text' => 'Внешний вид матовой фактуры натяжного потолка похож на оштукатуренную поверхность или потолок из гипсокартона. Универсальное решение для стильных интерьеров, без блика и отражений.',
+      'link' => '#',
+    ]
+  ];
 
-    <div class="recommendation__center">
-      <div class="recommendation__description">
-        <?= get_field('recommendation_description') ? the_field('recommendation_description') : 'Принцип компании — детальная проработка проекта до старта работ. Проектирование позволяет быстро и качественно устанавливать натяжные потолки и освещение любой сложности.' ?>
+?>
+
+<section class="materials">
+  <div class="container materials__wrap">
+
+    <div class="materials__top">
+      <h2>
+        <?= get_field('materials_title') ? the_field('materials_title') : 'Современные полотна для натяжного потолка' ?>
+      </h2>
+
+      <div class="materials__description">
+        <?= get_field('materials_description') ? the_field('materials_description') : 'Нейтральные и матовые материалы без искусственного глянца. Полная идентичность оштукатуренной поверхности.' ?>
       </div>
-      <a 
-        href="#"
-        rel="nofollow" id="headerCalculateButtonMob"
-        class="button--main">
-        Бесплатный замер
-      </a>
     </div>
 
-    <div class="recommendation__reviews">
-      <div class="recommendation__reviews--title">Stelio рекомендуют</div>
-      <div class="recommendation__reviews--top">
-        <div class="recommendation__reviews--center">
-          <span class="recommendation__reviews--rating"><strong>4.7</strong>/5</span>
-          <span class="recommendation__reviews--text">27 отывов</span>
-        </div>
-      </div>
-      <a class="recommendation__reviews--maps" href="<?= get_field('recommendation_href') ? the_field('recommendation_href') : '#' ?>"><?= get_field('recommendation_link_text') ? the_field('recommendation_link_text') : 'google maps рейтинг' ?></a>
+    <div class="materials__center">
+      <ul class="materials__list">
+        <?php if (have_rows('materials_list')) :
+          while ( have_rows('materials_list')) : the_row(); ?>
+            <li class="item">
+            <a href="<?= get_sub_field('item_link') ?>">
+              <div class="item__img">
+                <?php if(get_sub_field('item_img')['url']) : ?>
+                  <img 
+                    src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
+                    data-src="<?= get_sub_field('item_img')['url'] ?>"
+                    class="lazy"
+                    width="1px"
+                    height="1px"
+                  />
+                <?php endif; ?>
+              </div>
+              <div class="item__title"><?= get_sub_field('item_title') ?></div>
+              <div class="item__text"><?= get_sub_field('item_text') ?></div>
+              </a>
+            </li>
+          <?php endwhile; ?>
+        <?php else : ?>
+          <?php foreach ( $materials as $key => $item ) : ?>
+            <li class="item">
+            <a href="<?= $item['link'] ?>">
+              <div class="item__img">
+                <img 
+                  src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
+                  data-src="<?= bloginfo('template_url') . '/images/page-front/materials' . ($key + 1) . '.png' ?>"
+                  class="lazy"
+                  width="1px"
+                  height="1px"
+                />
+              </div>
+              <div class="item__title"><?= $item['title'] ?></div>
+              <div class="item__text"><?= $item['text'] ?></div>
+              </a>
+            </li>
+          <?php endforeach; ?>
+
+        <?php endif; ?>
+      </ul>
     </div>
 
   </div>
