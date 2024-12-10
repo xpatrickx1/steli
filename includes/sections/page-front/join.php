@@ -23,56 +23,56 @@
         <?= get_field('join_title') ? the_field('join_title') : 'Виды примыкания натяжного потолка к стене' ?>
       </h2>
 
-      <div class="join__description">
-        <?= get_field('join_description') ? the_field('join_description') : 'Современный натяжной потолок это конструкция без декоративного плинтуса-заглушки по периметру стен. 
-Новые профильные системы для монтажа натяжного потолка создают эстетичное теневое или бесщелевое примыкание.' ?>
+      <div class="join__description-wrp">
+        <div class="join__description">
+          <?= get_field('join_description') ? the_field('join_description') : 'Современный натяжной потолок это конструкция без декоративного плинтуса-заглушки по периметру стен. 
+  Новые профильные системы для монтажа натяжного потолка создают эстетичное теневое или бесщелевое примыкание.' ?>
+        </div>
       </div>
     </div>
 
-    <div class="join__center">
-      <ul class="join__list">
-        <?php if (have_rows('join_list')) :
-          while ( have_rows('join_list')) : the_row(); ?>
-            <li class="item">
-              <a href="<?= get_sub_field('item_link') ?>">
-                <div class="item__img">
-                  <?php if(get_sub_field('item_img')['url']) : ?>
-                    <img 
-                      src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-                      data-src="<?= get_sub_field('item_img')['url'] ?>"
-                      class="lazy"
-                      width="1px"
-                      height="1px"
-                    />
-                  <?php endif; ?>
-                </div>
-                <div class="item__title"><?= get_sub_field('item_title') ?></div>
-                <div class="item__text"><?= get_sub_field('item_text') ?></div>
-              </a>
-            </li>
-          <?php endwhile; ?>
-        <?php else : ?>
-          <?php foreach ( $join as $key => $item ) : ?>
-            <li class="item">
-            <a href="<?= $item['link'] ?>">
+    <ul class="join__list">
+      <?php if (have_rows('join_list')) :
+        while ( have_rows('join_list')) : the_row(); ?>
+          <li class="item">
+            <a href="<?= get_sub_field('item_link') ?>">
               <div class="item__img">
-                <img 
-                  src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-                  data-src="<?= bloginfo('template_url') . '/images/page-front/join' . ($key + 1) . '.png' ?>"
-                  class="lazy"
-                  width="1px"
-                  height="1px"
-                />
+                <?php if(get_sub_field('item_img')['url']) : ?>
+                  <img 
+                    src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
+                    data-src="<?= get_sub_field('item_img')['url'] ?>"
+                    class="lazy"
+                    width="1px"
+                    height="1px"
+                  />
+                <?php endif; ?>
               </div>
-              <div class="item__title"><?= $item['title'] ?></div>
-              <div class="item__text"><?= $item['text'] ?></div>
-              </a>
-            </li>
-          <?php endforeach; ?>
+              <div class="item__title"><?= get_sub_field('item_title') ?></div>
+              <div class="item__text"><?= get_sub_field('item_text') ?></div>
+            </a>
+          </li>
+        <?php endwhile; ?>
+      <?php else : ?>
+        <?php foreach ( $join as $key => $item ) : ?>
+          <li class="item">
+          <a href="<?= $item['link'] ?>">
+            <div class="item__img">
+              <img 
+                src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
+                data-src="<?= bloginfo('template_url') . '/images/page-front/join' . ($key + 1) . '.png' ?>"
+                class="lazy"
+                width="1px"
+                height="1px"
+              />
+            </div>
+            <div class="item__title"><?= $item['title'] ?></div>
+            <div class="item__text"><?= $item['text'] ?></div>
+            </a>
+          </li>
+        <?php endforeach; ?>
 
-        <?php endif; ?>
-      </ul>
-    </div>
+      <?php endif; ?>
+    </ul>
 
   </div>
 </section>

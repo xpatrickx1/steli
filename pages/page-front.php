@@ -11,7 +11,8 @@ get_header();
 <?php get_template_part('includes/sections/page-front/recommendation')?>
  <?php get_template_part('includes/sections/page-front/materials')?>
 <?php get_template_part('includes/sections/page-front/join')?>
-<?php get_template_part('inc\ludes/sections/page-front/services')?>
+<?php get_template_part('includes/sections/page-front/call')?>
+
 <?php get_template_part('includes/sections/page-front/frameworks')?>
 <?php get_template_part('includes/sections/page-front/book')?>
 <?php get_template_part('includes/sections/page-front/phrase')?>
