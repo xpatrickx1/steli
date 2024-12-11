@@ -23,7 +23,7 @@
         <?= get_field('materials_title') ? the_field('materials_title') : 'Современные полотна для натяжного потолка' ?>
       </h2>
 
-      <div class="materials__description">
+      <div class="materials__description section-description">
         <?= get_field('materials_description') ? the_field('materials_description') : 'Нейтральные и матовые материалы без искусственного глянца. Полная идентичность оштукатуренной поверхности.' ?>
       </div>
     </div>

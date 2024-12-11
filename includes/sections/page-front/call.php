@@ -22,7 +22,7 @@
         <?= get_field('call_title') ? the_field('call_title') : 'Запишитесь на бесплатный замер потолков' ?>
       </h2>
 
-      <div class="call__description">
+      <div class="call__description section-description">
         <?= get_field('call_description') ? the_field('call_description') : 'Технолог приедет в удобное для вас время. Замерит помещения, продемонстрирует материалы, подберёт подходящие конструкции.' ?>
       </div>
     
