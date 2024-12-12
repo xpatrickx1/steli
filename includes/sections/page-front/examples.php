@@ -120,6 +120,11 @@
         <?php else : ?>
           <?php foreach ( $examples as $key => $item ) : ?>
             <li class="item">
+              <div class="item__price">
+                <div class="item__subtitle">
+                <div>Всё включено</div> <div class="item__value"><?= $item['price'] ?></div>
+                </div>
+              </div>
               <div class="item__img">
                 <img 
                   src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
@@ -129,8 +134,31 @@
                   height="1px"
                 />
               </div>
-              <div class="item__title"><?= $item['title'] ?></div>
-              <div class="item__text"><?= $item['text'] ?></div>
+              <div class="item__main">
+                <div class="item__title"><?= $item['title'] ?></div>
+                <div class="item__text"><?= $item['text'] ?></div>
+              </div>
+              <div class="item__bottom">
+                
+                <div class="item__info item__square">
+                  <span>площадь:</span> <span><?= $item['square'] ?></span>
+                </div>
+                <div class="item__info item__pserimeter">
+                  <span>периметр:</span> <span><?= $item['pserimeter'] ?></span>
+                </div>
+                <div class="item__info item__canvas">
+                  <span>канва:</span> <span><?= $item['canvas'] ?></span>
+                </div>
+                <div class="item__info item__rod">
+                  <span>рольга:</span> <span><?= $item['rod'] ?></span>
+                </div>
+                <div class="item__info item__angle">
+                  <span>уголки:</span> <span><?= $item['angle'] ?></span>
+                </div>
+                <div class="item__info item__lightingPoints">
+                  <span>точки освещения:</span> <span><?= $item['lightingPoints'] ?></span>
+                </div>
+              </div>
             </li>
           <?php endforeach; ?>
 
