@@ -141,22 +141,22 @@
               <div class="item__bottom">
                 
                 <div class="item__info item__square">
-                  <span>площадь:</span> <span><?= $item['square'] ?></span>
+                  <span class="item__info--left">площадь:</span> <span class="item__info--right"><?= $item['square'] ?></span>
                 </div>
                 <div class="item__info item__pserimeter">
-                  <span>периметр:</span> <span><?= $item['pserimeter'] ?></span>
+                  <span class="item__info--left">периметр:</span> <span class="item__info--right"><?= $item['pserimeter'] ?></span>
                 </div>
                 <div class="item__info item__canvas">
-                  <span>канва:</span> <span><?= $item['canvas'] ?></span>
+                  <span class="item__info--left">канва:</span> <span class="item__info--right"><?= $item['canvas'] ?></span>
                 </div>
                 <div class="item__info item__rod">
-                  <span>рольга:</span> <span><?= $item['rod'] ?></span>
+                  <span class="item__info--left">рольга:</span> <span class="item__info--right"><?= $item['rod'] ?></span>
                 </div>
                 <div class="item__info item__angle">
-                  <span>уголки:</span> <span><?= $item['angle'] ?></span>
+                  <span class="item__info--left">уголки:</span> <span class="item__info--right"><?= $item['angle'] ?></span>
                 </div>
                 <div class="item__info item__lightingPoints">
-                  <span>точки освещения:</span> <span><?= $item['lightingPoints'] ?></span>
+                  <span class="item__info--left">точки освещения:</span> <span class="item__info--right"><?= $item['lightingPoints'] ?></span>
                 </div>
               </div>
             </li>

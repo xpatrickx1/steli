@@ -19,6 +19,8 @@ get_header();
 <?php get_template_part('includes/sections/page-front/numbers')?>
 <?php get_template_part('includes/sections/page-front/benefits')?>
 <?php get_template_part('includes/sections/page-front/examples')?>
+<?php get_template_part('includes/sections/page-front/calculator')?>
+<?php get_template_part('includes/sections/page-front/advertising')?>
 
 <?php get_template_part('includes/sections/page-front/phrase')?>
 <?php get_template_part('includes/sections/page-front/about')?>
