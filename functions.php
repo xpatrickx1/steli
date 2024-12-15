@@ -202,6 +202,12 @@ register_nav_menus(array(
     'header_menu' => 'Header Menu',
     'footer_menu_terms' => 'Footer Terms Menu',
     'footer_menu_post' => 'Footer Post Menu',
+    'footer_menu_catalog' => 'Footer Menu Catalog',
+    'footer_menu_lighting' => 'Footer Menu Lighting',
+    'footer_menu_price' => 'Footer Menu Price',
+    'footer_menu_works' => 'Footer Menu Works',
+    'footer_menu_customers' => 'Footer Menu Customers',
+    'footer_menu_contacts' => 'Footer Menu Contacts',
 ));
 
 //custom classes for menu items

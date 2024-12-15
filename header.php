@@ -70,7 +70,7 @@
             <a 
               href="#"
               rel="nofollow" id="headerCalculateButtonMob"
-              class="button--main">
+              class="button--second">
               Заказать звонок
             </a>
           </div>

@@ -1,19 +1,9 @@
-$('.faq .faq__accordion').not(':first').hide();
-
-$('.faq .tabs__item').click(function() {
-    $('.faq .tabs__item').removeClass('active').eq($(this).index()).addClass('active');
-    $('.faq .faq__accordion').hide().removeClass('active').eq($(this).index()).fadeIn().addClass('active');
-    $(window).scroll();
-}).eq(0).addClass('active');
-
 
 // --close all accordion items --
-$('.faq .faq__accordion').each(function () {
-    $('.faq__item').each(function (index) {
-        if(index!==0) {
-            $('.faq__description').slideUp();
-        }
-    });
+$('.faq__item').each(function (index) {
+    if(index!==0) {
+        $('.faq__description').slideUp();
+    }
 });
 
 
@@ -57,38 +47,5 @@ $('.faq__item').on('click', function(el){
         openAccordionItem($(this));
     }
 });
-
-const faqTabs = function () {
-    $('.faq__tabs')
-
-        .slick({
-            infinite: false,
-            speed: 300,
-            centerMode: false,
-            slidesToShow: 2,
-            slidesToScroll: 1,
-            prevArrow: false,
-            nextArrow: false,
-            variableWidth: true,
-        })
-
-        .on('afterChange', e => {
-            $(window).scroll();
-        });
-};
-
-
-function mediaSiz() {
-
-    if (window.matchMedia('(max-width: 1023px)').matches) {
-        faqTabs();
-    }
-
-};
-
-
-mediaSiz();
-
-$( window ).on('resize', mediaSiz);
 
 

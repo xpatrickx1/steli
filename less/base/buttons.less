@@ -37,7 +37,7 @@
 .buttonSecond( @width: 220px ) {
   position: relative;
   outline: none;
-  .font(500);
+  .font(600);
   .fontSize(16px, 21px);
   display: flex;
   justify-content: center;
@@ -48,23 +48,22 @@
   transition: @transition;
   border-radius: @border[ buttonRadius ];
   background: @backgroundButton[secondButton];
-  border: 1.4px solid @backgroundButton[ mainButton ];
+  border: 1px solid @backgroundButton[ mainButton ];
   color: @colorButton[ secondButton ];
   box-shadow: none;
   cursor: pointer;
 
   &:hover {
     @media ( min-width: @sizes[ minLG ] ) {
-      background: @backgroundButton[ secondButtonHover ];
-      border: 2px solid @backgroundButton[ secondButtonHover ];
-      color: @colorButton[ secondButtonHover ];
-      box-shadow: @shadow[ secondButtonHover ];
+      background: @backgroundButton[ mainButton ];
+      border: 1px solid @backgroundButton[ mainButton ];
+      color: @colorButton[ mainButton ];
     }
   }
 
   &:active {
-    background: @backgroundButton[ secondButtonActive ];
-    color: @colorButton[ secondButtonActive ];
+    background: @backgroundButton[ mainButton ];
+    color: @colorButton[ mainButton ];
     box-shadow: none;
   }
 }

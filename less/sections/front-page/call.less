@@ -13,11 +13,17 @@
     background-repeat: no-repeat;
     background-position: right 0;
     background-image: url('../images/page-front/call-bg-min.png');
+
+    @media (max-width: @sizes[maxSM]) {
+      bottom: -557px;
+    }
   }
 
   &__wrap {
+    position: relative;
     display: flex;
     flex-direction: column;
+    z-index: 2;
 
     @media (min-width: @sizes[minSM]) {
       flex-direction: row;
@@ -28,15 +34,28 @@
   &__top {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 100%;
+    max-width: 600px;
+
+    @media (min-width: @sizes[minSM]) {
+      width: 50%;
+    }
   }
 
   &__bottom {
-    width: 50%;
+    width: 100%;
+    border: 1px solid #D9D9D9;
+    padding: clamp(10px, 3vw, 36px) clamp(10px, 3vw, 38px);
+    max-width: 550px;
+
+    @media (min-width: @sizes[minSM]) {
+      width: 50%;
+    }
   }
 
   h2 {
     max-width: 530px;
+    margin-bottom: 28px;
   }
 
   &__description {
@@ -62,13 +81,14 @@
       position: relative;
       display: flex;
       align-items: center;
-
-      .fontSize(18px, 25px);
+      .fontNunito(700);
+      .fontSize(clamp(16px, 2vw, 18px), 25px);
 
       &::before {
         content: '';
         display: inline-block;
         width: 23px;
+        min-width: 23px;
         height: 23px;
         margin-right: 13px;
         background-repeat: no-repeat;
@@ -77,6 +97,35 @@
       }
     }
 
+  }
+
+  form {
+    padding: clamp(20px, 5vw, 40px) clamp(20px, 5vw, 48px);
+    background: @background[white];
+    width: fit-content;
+    border-radius: 2px;
+
+    label {
+      .fontNunito(400);
+      .fontSize(14px, 25px);
+      color: #ABABAB;
+      margin-bottom: 2px;
+    }
+
+    input {
+      background: #FBFBFB;
+      border: 1px solid #DEDEDE;
+      border-radius: 2px;
+      padding: 14px;
+      max-width: 282px;
+    }
+
+    input[type="submit"] {
+      .buttonMain( 282px );
+      margin-top: 36px;
+      padding: 0;
+      max-height: 48px;
+    }
   }
   
 }

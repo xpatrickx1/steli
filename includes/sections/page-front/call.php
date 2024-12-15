@@ -36,7 +36,6 @@
           <?php foreach ( $call as $key => $item ) : ?>
             <li class="item"><?= $item['title'] ?></li>
           <?php endforeach; ?>
-
         <?php endif; ?>
       </ul>
     </div>

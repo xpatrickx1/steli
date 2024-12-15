@@ -13,15 +13,22 @@
       </div>
     </div>
 
-    <div class="top-screen__img">
+    <figure class="top-screen__imgs">
       <img 
         src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-        data-src="<?= bloginfo('template_url') . '/images/first-screen/top-screen-img.png' ?>"
+        data-src="<?= bloginfo('template_url') . '/images/first-screen/natyzhnoy-potolok-s-podsvetkoy.jpg' ?>"
         class="lazy"
         width="1px"
         height="1px"
       />
-    </div>
+      <img 
+        src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
+        data-src="<?= bloginfo('template_url') . '/images/first-screen/natyzhnoy-potolok-s-trekami.jpg' ?>"
+        class="lazy"
+        width="1px"
+        height="1px"
+      />
+    </figure>
 
 
   </div>

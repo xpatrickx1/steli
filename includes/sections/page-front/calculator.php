@@ -33,7 +33,7 @@
       <div class="result">
         <div class="calc__wrong wrong">
           <div class="wrong__title">Недостоверный расчёт по интернету</div>
-          <div class="wrong__price">~17000 ₴</div>  
+          <div class="wrong__price">~<span id="wrongPrice"></span> ₴</div>  
           <div class="wrong__desc">Пример заниженного расчёта стоимости на других онлайн-калькуляторах. Такая низкая итоговая сумма означает:</div>  
           <div class="wrong__cause">Цена за материал и работу, но без профиля по периметру. Или эконом плёнка и пластиковый багет.</div>  
           <div class="wrong__cause">Или эконом плёнка и пластиковый багет.</div>  

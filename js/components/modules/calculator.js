@@ -1,14 +1,15 @@
 const parametersContainer = document.getElementById('parameters');
 const resultPrice = document.getElementById('result-price');
+const wrongPrice = document.getElementById('wrongPrice');
 const resultDetails = document.getElementById('result-details');
 
 // Масив з параметрами та їхніми початковими значеннями
 const parameters = [
-    { name: 'Площа', unit: 'м2', value: 17 },
-    { name: 'Количество углов', value: 4 },
-    { name: 'Светильники', value: 0 },
-    { name: 'Люстры', value: 0 },
-    { name: 'Трубы', value: 0 },
+    { name: 'square', unit: 'м2', value: 17 },
+    { name: 'angles', value: 4 },
+    { name: 'lightingPoints', value: 0 },
+    { name: 'chandeliers', value: 0 },
+    { name: 'rod', value: 0 },
 ];
 
 // Функція для створення елементів управління для параметра
@@ -28,12 +29,14 @@ function createParameterElement(parameter) {
     const decrementButton = div.querySelector('.decrement');
     decrementButton.addEventListener('click', () => {
         parameter.value = Math.max(0, parameter.value - 1);
+        document.getElementById(parameter.name).value = parameter.value;
         updateResult();
     });
 
     const incrementButton = div.querySelector('.increment');
     incrementButton.addEventListener('click', () => {
         parameter.value++;
+        document.getElementById(parameter.name).value = parameter.value;
         updateResult();
     });
 
@@ -44,18 +47,32 @@ function createParameterElement(parameter) {
 function updateResult() {
     // Розрахунок вартості на основі значень параметрів
     const totalPrice = calculatePrice(parameters);
+    console.log(totalPrice);
+    wrongPrice.textContent = totalPrice / 100 * 70;
     resultPrice.textContent = totalPrice;
 
     // Оновлення списку деталей
-    resultDetails.innerHTML = '';
+    // resultDetails.innerHTML = '';
     // ... тут логіка для формування списку деталей
 }
 
-// Функція для розрахунку ціни (замініть на вашу логіку розрахунку)
+function getValueByName(name) {
+    for (let i = 0; i < parameters.length; i++) {
+        if (parameters[i].name === name) {
+            return parameters[i].value;
+        }
+    }
+    return null; 
+}
+
 function calculatePrice(parameters) {
-    // Ваш алгоритм розрахунку ціни на основі введених даних
-    // ...
-    return 0; // Повернути розраховану ціну
+    const basePrice = 1000;
+    const areaPrice = getValueByName('square') * 50;
+    const cornersPrice = getValueByName('angles') * 20;
+    const lightingPointsPrice = getValueByName('lightingPoints') * 20;
+    const chandeliersPrice = getValueByName('chandeliers') * 20;
+    const rodPrice = getValueByName('rod') * 20;
+    return basePrice + areaPrice + cornersPrice + lightingPointsPrice + chandeliersPrice + rodPrice; // Повернути розраховану ціну
 }
 
 // Створення елементів управління для кожного параметра

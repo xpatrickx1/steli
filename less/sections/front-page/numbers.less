@@ -1,6 +1,7 @@
 .numbers {
   position: relative;
   padding: clamp(60px, 12vw, 95px) 0 clamp(60px, 7vw, 95px);
+  background: @background[white];
    
   &::after {
     content: '';
@@ -18,6 +19,11 @@
   h2 {
     text-align: center;
     position: relative;
+  }
+
+  &__wrap {
+    position: relative;
+    z-index: 1;
   }
 
   &__list {

@@ -7,6 +7,10 @@
   background: @background[dark];
   max-height: 120px;
 
+  @media ( max-width: @sizes[ maxSM ] ) {
+    max-height: 100%;
+  }
+
    
   &::before {
     content: '';
@@ -31,12 +35,23 @@
 
   &__wrap {
     display: flex;
+    flex-wrap: wrap;
+     
+  @media ( max-width: @sizes[ maxSM ] ) {
+    flex-direction: column;
+  }
+
   }
 
   &__right {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: clamp(40px, 12vw ,78px);
+
+    @media ( max-width: @sizes[ maxSM ] ) {
+      flex-direction: column;
+    }
   }
 
   &__text {

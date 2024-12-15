@@ -57,25 +57,17 @@
 
   &__accordion {
     flex: 1 0 auto;
+    background: linear-gradient(0deg, #FFFFFF -3.01%, #F8F8F8 100%);
+    max-width: 986px;
+    margin: 0 auto;
   }
 
   &__item {
     position: relative;
     transition: @transition;
-    padding: 30px 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-
-    &:first-child {
-      padding: 0 0 40px;
-    }
-
-    @media ( max-width: @sizes[ maxSM ] ) {
-      padding: 20px 0;
-
-      &:first-child {
-        padding: 0 0 20px;
-      }
-    }
+    padding: clamp(16px, 3vw, 36px);
+    background: linear-gradient(0deg, #FFFFFF -3.01%, #F8F8F8 100%);
+    border-top: 1px solid #DFDFDF;
   }
 
   &__title-wrap {
@@ -87,10 +79,9 @@
     display: flex;
     align-items: center;
     position: relative;
-    .font(500);
-    .fontSize( 22px, 29px );
+    .fontNunito(700);
+    .fontSize( 18px, 25px );
     width: 90%;
-    color: @color[ title ];
     margin: 0;
     transition: @transition;
     height: fit-content;
@@ -99,7 +90,7 @@
     @media ( max-width: @sizes[ maxSM ] ) {
       .fontSize( 16px, 21px );
       width: 75%;
-      letter-spacing: -1px;
+      letter-spacing: 1px;
       height: initial;
     }
 
@@ -140,11 +131,11 @@
     &::after {
       content: '';
       display: block;
-      width: 22px;
-      height: 3px;
+      width: 20px;
+      height: 1.64px;
       position: absolute;
-      top: calc(50% - 1.5px);
-      background: linear-gradient(0deg, #FFFFFF -3.01%, #F8F8F8 100%);
+      top: calc(50% - .8px);
+      background: #000000;
       transition: @transition;
       transform-origin: center;
       border-radius: @border[mainRadius];
@@ -166,10 +157,13 @@
     }
   }
 
-  &__description.item-description {
-    padding: 10px 0;
+  &__description {
+    padding: 18px 0;
     color: @color[text];
     max-width: 800px;
+    letter-spacing: 1px;
+    .fontNunito(400);
+    .fontSize( 18px, 25px );
 
     @media ( max-width: @sizes[ maxSM ] ) {
       width: 100%;
