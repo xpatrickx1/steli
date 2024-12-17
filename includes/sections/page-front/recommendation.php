@@ -18,11 +18,11 @@
     </div>
 
     <div class="recommendation__reviews">
-      <div class="recommendation__reviews--title">Stelio рекомендуют</div>
+      <div class="recommendation__reviews--title"><?= get_field('recommendation_rating_title') ? the_field('recommendation_rating_title') : 'Stelio рекомендуют' ?></div>
       <div class="recommendation__reviews--top">
         <div class="recommendation__reviews--center">
           <span class="recommendation__reviews--rating"><strong>4.7</strong>/5</span>
-          <span class="recommendation__reviews--text">27 отывов</span>
+          <span class="recommendation__reviews--text"><?= get_field('recommendation_reviews') ? the_field('recommendation_reviews') : '27 отывов' ?></span>
         </div>
       </div>
       <a class="recommendation__reviews--maps" href="<?= get_field('recommendation_href') ? the_field('recommendation_href') : '#' ?>"><?= get_field('recommendation_link_text') ? the_field('recommendation_link_text') : 'google maps рейтинг' ?></a>

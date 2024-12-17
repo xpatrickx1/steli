@@ -9,7 +9,8 @@
 
     <div class="top-screen--right">
       <div class="top-screen__description">
-        <?= get_field('hp_description') ? the_field('hp_description') : 'Stelio' ?>
+        <?= get_field('top_screen_description') ? the_field('top_screen_description') : 'Компания «Стелио» профессионально занимается установкой натяжных потолков в Киеве.
+Современные решения для наших интерьеров позволяют реализовывать нестандартные и сложные проекты с безупречной проработкой.' ?>
       </div>
     </div>
 

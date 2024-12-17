@@ -104,6 +104,7 @@ add_action('wp_enqueue_scripts', 'ox_adding_scripts');
 $css_files = array(
     'front',
     'main',
+    'inner',
 );
 
 add_action('wp_enqueue_scripts', 'ox_adding_critical_css');
@@ -133,6 +134,7 @@ function ox_adding_critical_css()
 
     $pageTemplates = array(
         "front-page" => "front",
+        "page-inner" => "inner",
     );
     $currentPageTemplate = get_page_template_slug();
     $currentPageTemplateName = str_replace(['pages/', '.php'], '', $currentPageTemplate);
