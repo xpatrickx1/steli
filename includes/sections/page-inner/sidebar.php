@@ -1,4 +1,4 @@
-<aside>
+<aside class="container">
   <ul class="inner__sidebar">
     <?php if (has_nav_menu('inner_sidebar')) :
       $nav_args = array(

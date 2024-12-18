@@ -33,14 +33,14 @@
       <div class="result">
         <div class="calc__wrong wrong">
           <div class="wrong__title">Недостоверный расчёт по интернету</div>
-          <div class="wrong__price">~<span id="wrongPrice"></span> ₴</div>  
+          <div class="wrong__price">~ <span id="wrongPrice"></span> ₴</div>  
           <div class="wrong__desc">Пример заниженного расчёта стоимости на других онлайн-калькуляторах. Такая низкая итоговая сумма означает:</div>  
           <div class="wrong__cause">Цена за материал и работу, но без профиля по периметру. Или эконом плёнка и пластиковый багет.</div>  
           <div class="wrong__cause">Или эконом плёнка и пластиковый багет.</div>  
         </div>
         <div class="calc__correct correct">
           <div class="correct__title">Наша предварительная цена</div>
-          <div class="correct__price" >~ <span id="result-price"></span> грн</div>  
+          <div class="correct__price" ><span id="resultPriceFrom"></span> - <span id="resultPriceTo"></span> ₴</div>  
           <div class="correct__desc">Стоимость включает установку и материалы</div>  
           <ul class="correct__list">
             <li>Алюминиевый профиль</li>

@@ -1,170 +1,50 @@
-<?php
-
-  $price = [
-  
-    [
-      'price' => '25 000 грн. ',
-      'title' => 'Натяжной потолок для кухни 10 м2',
-      'text' => 'Качественная установка, недорогая цена',
-      'square' => '10м2',
-      'pserimeter' => '14м2',
-      'canvas' => 'MSD Evolution',
-      'rod' => '2 м.п.',
-      'angle' => '2 шт.',
-      'lightingPoints' => '2 шт.',
-    ],
-    [
-      'price' => '35 000 грн. ',
-      'title' => 'Натяжной потолок для кухни 10 м2',
-      'text' => 'Быстрая установка, доступная цена',
-      'square' => '10м2',
-      'pserimeter' => '14м2',
-      'canvas' => 'MSD Evolution',
-      'rod' => '2 м.п.',
-      'angle' => '2 шт.',
-      'lightingPoints' => '2 шт.',
-    ],
-    [
-      'price' => '17 000 грн. ',
-      'title' => 'Потолок для детской 10 м2',
-      'text' => 'Классический белый матовый потолок с люстрой',
-      'square' => '10м2',
-      'pserimeter' => '14м2',
-      'canvas' => 'MSD Evolution',
-      'rod' => '2 м.п.',
-      'angle' => '2 шт.',
-      'lightingPoints' => '2 шт.',
-    ],
-    [
-      'price' => '25 000 грн. ',
-      'title' => 'Натяжной потолок для кухни 10 м2',
-      'text' => 'Качественная установка, недорогая цена',
-      'square' => '10м2',
-      'pserimeter' => '14м2',
-      'canvas' => 'MSD Evolution',
-      'rod' => '2 м.п.',
-      'angle' => '2 шт.',
-      'lightingPoints' => '2 шт.',
-    ],
-    [
-      'price' => '35 000 грн. ',
-      'title' => 'Натяжной потолок для кухни 10 м2',
-      'text' => 'Быстрая установка, доступная цена',
-      'square' => '10м2',
-      'pserimeter' => '14м2',
-      'canvas' => 'MSD Evolution',
-      'rod' => '2 м.п.',
-      'angle' => '2 шт.',
-      'lightingPoints' => '2 шт.',
-    ],
-    [
-      'price' => '17 000 грн. ',
-      'title' => 'Потолок для детской 10 м2',
-      'text' => 'Классический белый матовый потолок с люстрой',
-      'square' => '10м2',
-      'pserimeter' => '14м2',
-      'canvas' => 'MSD Evolution',
-      'rod' => '2 м.п.',
-      'angle' => '2 шт.',
-      'lightingPoints' => '2 шт.',
-    ],
-  ];
-
-?>
+<?php include 'price-data.php' ?>
 
 <section class="price">
   <div class="container price__wrap">
 
     <div class="price__top">
       <h2>
-        <?= get_field('price_title') ? the_field('price_title') : 'Примеры установленных натяжных потолков' ?>
+        <?= get_field('price_title') ? the_field('price_title') : 'Стоимость материалов и установки теневого потолока' ?>
       </h2>
 
       <div class="price__description section-description">
-        <?= get_field('price_description') ? the_field('price_description') : 'Примеры установленных натяжных потолков в Киеве и области с учётом всех работ, материалов и комплектующих. Цена зависит от материала полотна, профильной системы примыкания к стене и светотехнического оборудования.' ?>
+        <?= get_field('price_description') ? the_field('price_description') : 'У нас вы найдете все необходимое для вашего проекта: комплектующие, карнизы и освещение. С нашей комплектацией вы сэкономите время на доставке, будете уверены в их совместимости и сможете легко уложиться в свой бюджет.' ?>
       </div>
     </div>
 
-    <div class="price__center">
-      <ul class="price__list">
-        <?php if (have_rows('price_list')) :
-          while ( have_rows('price_list')) : the_row(); ?>
-            <li class="item">
-            <a href="<?= get_sub_field('item_link') ?>">
-              <div class="item__price">
-                <?= get_sub_field('item_price') ?>
-              </div>
-              <div class="item__img">
-                <?php if(get_sub_field('item_img')['url']) : ?>
-                  <img 
-                    src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-                    data-src="<?= get_sub_field('item_img')['url'] ?>"
-                    class="lazy"
-                    width="1px"
-                    height="1px"
-                  />
-                <?php endif; ?>
-              </div>
-              <div class="item__center">
-                <div class="item__title"><?= get_sub_field('item_title') ?></div>
-                <div class="item__text"><?= get_sub_field('item_text') ?></div>
-              </div>
-              <div class="item__info">
-                <div class="item__price">
-                  <?= get_sub_field('item_price') ?>
+    <ul class="price__list">
+      <?php if (have_rows('price_list')) :
+        while ( have_rows('price_list')) : the_row(); ?>
+          <li class="item">
+            <div class="item__title"><?= get_sub_field('item_title') ?> <span>₴</span></div>
+            <div class="item__main">
+              <?php foreach ( $item['items'] as $key => $i ) : ?>
+                <div class="item__param">
+                  <span><?= get_sub_field('item_param') ?></span>
+                  <span><?= get_sub_field('item_val') ?></span>
                 </div>
-              </div>
-              </a>
-            </li>
-          <?php endwhile; ?>
-        <?php else : ?>
-          <?php foreach ( $price as $key => $item ) : ?>
-            <li class="item">
-              <div class="item__price">
-                <div class="item__subtitle">
-                <div>Всё включено</div> <div class="item__value"><?= $item['price'] ?></div>
+              <?php endforeach; ?>
+            </div>
+          </li>  
+        <?php endwhile; ?>
+      <?php else : ?>
+        <?php foreach ( $price as $key => $item ) : ?>
+          <li class="item">
+            <div class="item__title"><?= $item['title'] ?> <span>₴</span></div>
+            <div class="item__main">
+              <?php foreach ( $item['items'] as $key => $i ) : ?>
+                <div class="item__param">
+                  <span><?= $i['param'] ?></span>
+                  <span><?= $i['val'] ?></span>
                 </div>
-              </div>
-              <div class="item__img">
-                <img 
-                  src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-                  data-src="<?= bloginfo('template_url') . '/images/page-front/price' . ($key + 1) . '.png' ?>"
-                  class="lazy"
-                  width="1px"
-                  height="1px"
-                />
-              </div>
-              <div class="item__main">
-                <div class="item__title"><?= $item['title'] ?></div>
-                <div class="item__text"><?= $item['text'] ?></div>
-              </div>
-              <div class="item__bottom">
-                
-                <div class="item__info item__square">
-                  <span class="item__info--left">площадь:</span> <span class="item__info--right"><?= $item['square'] ?></span>
-                </div>
-                <div class="item__info item__pserimeter">
-                  <span class="item__info--left">периметр:</span> <span class="item__info--right"><?= $item['pserimeter'] ?></span>
-                </div>
-                <div class="item__info item__canvas">
-                  <span class="item__info--left">канва:</span> <span class="item__info--right"><?= $item['canvas'] ?></span>
-                </div>
-                <div class="item__info item__rod">
-                  <span class="item__info--left">рольга:</span> <span class="item__info--right"><?= $item['rod'] ?></span>
-                </div>
-                <div class="item__info item__angle">
-                  <span class="item__info--left">уголки:</span> <span class="item__info--right"><?= $item['angle'] ?></span>
-                </div>
-                <div class="item__info item__lightingPoints">
-                  <span class="item__info--left">точки освещения:</span> <span class="item__info--right"><?= $item['lightingPoints'] ?></span>
-                </div>
-              </div>
-            </li>
-          <?php endforeach; ?>
+              <?php endforeach; ?>
+            </div>
+          </li>
+        <?php endforeach; ?>
 
-        <?php endif; ?>
-      </ul>
-    </div>
+      <?php endif; ?>
+    </ul>
 
   </div>
 </section>

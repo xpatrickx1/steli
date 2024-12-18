@@ -1,5 +1,6 @@
 const parametersContainer = document.getElementById('parameters');
-const resultPrice = document.getElementById('result-price');
+const resultPriceFrom = document.getElementById('resultPriceFrom');
+const resultPriceTo = document.getElementById('resultPriceTo');
 const wrongPrice = document.getElementById('wrongPrice');
 const resultDetails = document.getElementById('result-details');
 
@@ -49,7 +50,8 @@ function updateResult() {
     const totalPrice = calculatePrice(parameters);
     console.log(totalPrice);
     wrongPrice.textContent = totalPrice / 100 * 70;
-    resultPrice.textContent = totalPrice;
+    resultPriceFrom.textContent = totalPrice;
+    resultPriceTo.textContent = totalPrice / 100 * 120;
 
     // Оновлення списку деталей
     // resultDetails.innerHTML = '';
