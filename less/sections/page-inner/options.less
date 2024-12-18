@@ -1,10 +1,11 @@
-.design {
+.options {
   position: relative;
   padding: 66px 0 20px;
   background: @background[white];
 
   &__wrap {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
 
     @media ( max-width: @sizes[ maxLG ] ) {
@@ -20,18 +21,19 @@
 
   &__description {
     .fontNunito(400);
-    .fontSize(14px, 19px);
+    .fontSize(18px, 25px);
   }
 
   &__top {
-    max-width: 245px;
+    max-width: 795px;
+    margin-bottom: 35px;
   }
 
   &__list {
     display: flex;
-    align-items: flex-start;
-    gap: 24px;
-    max-width: 985px;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 1048px;
 
     @media (max-width: @sizes[maxSM]) {
       flex-direction: column;
@@ -39,17 +41,33 @@
     }
 
     .item {
+      display: flex;
+      justify-content: space-between;
       width: 100%;
-      
-      @media (min-width: @sizes[minSM]) {
-        width: 48%;
-      }
+      gap: clamp(20px, 5vw, 48px);
+      background: #FAFAFA;
+      border-radius: 2px;
+      padding: clamp(20px, 5vw, 48px);
+      border: 1px solid #E7E7E7;
+    }
+
+    .item__left {
+      max-width: 300px
     }
 
     .item__title {
+      .font( 700 );
+      .fontSize( 18px, 30px );
+      margin: 12px 0 0;
+    }
+    .item__text {
       .font( 400 );
       .fontSize( 14px, 19px );
       margin: 12px 0 0;
+
+      p {
+        margin: 0 0 6px;
+      }
     }
   }
   

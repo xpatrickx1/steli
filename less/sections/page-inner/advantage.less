@@ -1,6 +1,7 @@
 .advantage {
   position: relative;
   padding: 66px 0 20px;
+  background: @background[white];
 
   &__wrap {
     display: flex;
@@ -15,30 +16,15 @@
     max-width: 245px;
   }
 
-  &__photo {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    border: 1px solid @color[accent];
-    width: 124px;
-    height: 124px;
+  h3 {
+    .fontNunito(700);
+    .fontSize(24px, 25px);
+    margin: 0 0 12px;
+  }
 
-    &::before {
-      content: '';
-      position: absolute;
-      width: 107px;
-      height: 107px;
-      border: 1px solid @color[white];
-      border-radius: 50%;
-    }
-
-    img {
-      border-radius: 50%;
-      width: 100px;
-      height: auto;
-    }
+  &__description {
+    .fontNunito(400);
+    .fontSize(14px, 19px);
   }
 
   &__info {
@@ -54,10 +40,10 @@
     display: flex;
     align-items: flex-start;
     gap: 24px;
-    margin-top: clamp(20px, 5vw, 48px);
 
     @media (max-width: @sizes[maxSM]) {
       flex-direction: column;
+      margin-top: clamp(20px, 5vw, 48px);
     }
 
     .item {

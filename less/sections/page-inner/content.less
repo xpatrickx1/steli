@@ -1,0 +1,15 @@
+.content {
+  position: relative;
+  padding: 66px 0 20px;
+  background: @background[white];
+
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    gap: clamp(20px, 5vw, 60px);
+
+    @media ( max-width: @sizes[ maxLG ] ) {
+      flex-wrap: wrap;
+    }
+  }
+}

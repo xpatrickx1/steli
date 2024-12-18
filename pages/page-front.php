@@ -11,7 +11,7 @@ get_header();
 <?php get_template_part('includes/sections/page-front/recommendation')?>
  <?php get_template_part('includes/sections/page-front/materials')?>
 <?php get_template_part('includes/sections/page-front/join')?>
-<?php get_template_part('includes/sections/page-front/call')?>
+<?php get_template_part('includes/modules/call')?>
 <?php get_template_part('includes/sections/page-front/lighting')?>
 <?php get_template_part('includes/sections/page-front/design')?>
 <?php get_template_part('includes/sections/page-front/banner')?>

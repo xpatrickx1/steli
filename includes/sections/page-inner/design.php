@@ -1,22 +1,12 @@
 <?php
 
   $design = [
-  
     [
-      'title' => 'Двухуровнивые потолки',
-      'text' => 'Зонируют помещение, основа для многих дизайнерских решений. Крепятся на специальную конструкцию из ...',
-      'link' => '#',
+      'title' => 'Гарпун фиксируется в посадочном месте. Её кромка находится на расстоянии 7 мм от стены и обеспечивает теневой зазор.',
     ],
     [
-      'title' => 'С фотопечатью',
-      'text' => 'Качественная UV фотопечать на натяжном потолке шириной до 5,5 метров. Нанести изображения можно на ...',
-      'link' => '#',
-    ],
-    [
-      'title' => 'Многоуровнивые',
-      'text' => 'Потолки с переходом уровней из металлических конструкций. Для сметы требуется выезд технолога.',
-      'link' => '#',
-    ],
+      'title' => 'Профиль и гарпун выполняют в чёрном цвете — это даёт эффект глубокой тени и скрывает детали крепежа.',
+    ]
   ];
 
 ?>
@@ -25,55 +15,51 @@
   <div class="container design__wrap">
 
     <div class="design__top">
-      <h2>
-        <?= get_field('design_title') ? the_field('design_title') : 'Конструкции и оригинальный дизайн' ?>
-      </h2>
+      <h3>
+        <?= get_field('design_title') ? the_field('design_title') : 'Конструкция системы' ?>
+      </h3>
+
+      <div class="design__description">
+        <?= get_field('design_description') ? the_field('design_description') : '<p>Теневой зазор по периметру потолка получается благодаря особой геометрии профиля. </p><p>Его кромка наклонена относительно плоскости примыкания, и полотно огибает её под острым углом. </p><p>Это подчёркивает чёткие контуры потолка. </p><p>Крепление к стене поднято вверх относительно края полотна, что позволяет скрыть детали крепежа и контур припайки гарпуна к полотну.</p>' ?>
+      </div>
     </div>
 
-    <div class="design__center">
-      <ul class="design__list">
-        <?php if (have_rows('design_list')) :
-          while ( have_rows('design_list')) : the_row(); ?>
-            <li class="item">
-            <a href="<?= get_sub_field('item_link') ?>">
-              <div class="item__img">
-                <?php if(get_sub_field('item_img')['url']) : ?>
-                  <img 
-                    src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-                    data-src="<?= get_sub_field('item_img')['url'] ?>"
-                    class="lazy"
-                    width="1px"
-                    height="1px"
-                  />
-                <?php endif; ?>
-              </div>
-              <div class="item__title"><?= get_sub_field('item_title') ?></div>
-              <div class="item__text"><?= get_sub_field('item_text') ?></div>
-              </a>
-            </li>
-          <?php endwhile; ?>
-        <?php else : ?>
-          <?php foreach ( $design as $key => $item ) : ?>
-            <li class="item">
-            <a href="<?= $item['link'] ?>">
-              <div class="item__img">
+    <ul class="design__list">
+      <?php if (have_rows('design_list')) :
+        while ( have_rows('design_list')) : the_row(); ?>
+          <li class="item">
+            <div class="item__img">
+              <?php if(get_sub_field('item_img')['url']) : ?>
                 <img 
                   src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-                  data-src="<?= bloginfo('template_url') . '/images/page-front/design' . ($key + 1) . '.png' ?>"
+                  data-src="<?= get_sub_field('item_img')['url'] ?>"
                   class="lazy"
                   width="1px"
                   height="1px"
                 />
-              </div>
-              <div class="item__title"><?= $item['title'] ?></div>
-              <div class="item__text"><?= $item['text'] ?></div>
-              </a>
-            </li>
-          <?php endforeach; ?>
+              <?php endif; ?>
+            </div>
+            <div class="item__title"><?= get_sub_field('item_title') ?></div>
+          </li>
+        <?php endwhile; ?>
+      <?php else : ?>
+        <?php foreach ( $design as $key => $item ) : ?>
+          <li class="item">
+            <div class="item__img">
+              <img 
+                src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
+                data-src="<?= bloginfo('template_url') . '/images/page-inner/innerDesign' . ($key + 1) . '.png' ?>"
+                class="lazy"
+                width="1px"
+                height="1px"
+              />
+            </div>
+            <div class="item__title"><?= $item['title'] ?></div>
+          </li>
+        <?php endforeach; ?>
 
-        <?php endif; ?>
-      </ul>
-    </div>
+      <?php endif; ?>
+    </ul>
 
   </div>
 </section>

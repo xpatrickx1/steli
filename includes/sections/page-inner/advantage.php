@@ -19,7 +19,7 @@
         <?= get_field('advantage_title') ? the_field('advantage_title') : 'Преимущество технологии' ?>
       </h3>
 
-      <div class="advantage__description section-description">
+      <div class="advantage__description ">
         <?= get_field('advantage_description') ? the_field('advantage_description') : 'Натяжные потолки с теневым примыканием, визуально не отличается от потолка из гипсокартона.' ?>
       </div>
     </div>

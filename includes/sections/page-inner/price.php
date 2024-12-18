@@ -1,6 +1,6 @@
 <?php
 
-  $examples = [
+  $price = [
   
     [
       'price' => '25 000 грн. ',
@@ -72,23 +72,23 @@
 
 ?>
 
-<section class="examples">
-  <div class="container examples__wrap">
+<section class="price">
+  <div class="container price__wrap">
 
-    <div class="examples__top">
+    <div class="price__top">
       <h2>
-        <?= get_field('examples_title') ? the_field('examples_title') : 'Примеры установленных натяжных потолков' ?>
+        <?= get_field('price_title') ? the_field('price_title') : 'Примеры установленных натяжных потолков' ?>
       </h2>
 
-      <div class="examples__description section-description">
-        <?= get_field('examples_description') ? the_field('examples_description') : 'Примеры установленных натяжных потолков в Киеве и области с учётом всех работ, материалов и комплектующих. Цена зависит от материала полотна, профильной системы примыкания к стене и светотехнического оборудования.' ?>
+      <div class="price__description section-description">
+        <?= get_field('price_description') ? the_field('price_description') : 'Примеры установленных натяжных потолков в Киеве и области с учётом всех работ, материалов и комплектующих. Цена зависит от материала полотна, профильной системы примыкания к стене и светотехнического оборудования.' ?>
       </div>
     </div>
 
-    <div class="examples__center">
-      <ul class="examples__list">
-        <?php if (have_rows('examples_list')) :
-          while ( have_rows('examples_list')) : the_row(); ?>
+    <div class="price__center">
+      <ul class="price__list">
+        <?php if (have_rows('price_list')) :
+          while ( have_rows('price_list')) : the_row(); ?>
             <li class="item">
             <a href="<?= get_sub_field('item_link') ?>">
               <div class="item__price">
@@ -118,7 +118,7 @@
             </li>
           <?php endwhile; ?>
         <?php else : ?>
-          <?php foreach ( $examples as $key => $item ) : ?>
+          <?php foreach ( $price as $key => $item ) : ?>
             <li class="item">
               <div class="item__price">
                 <div class="item__subtitle">
@@ -128,7 +128,7 @@
               <div class="item__img">
                 <img 
                   src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-                  data-src="<?= bloginfo('template_url') . '/images/page-front/examples' . ($key + 1) . '.png' ?>"
+                  data-src="<?= bloginfo('template_url') . '/images/page-front/price' . ($key + 1) . '.png' ?>"
                   class="lazy"
                   width="1px"
                   height="1px"
