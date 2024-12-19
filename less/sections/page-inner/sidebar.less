@@ -7,11 +7,27 @@ aside {
   max-width: 208px;
   width: 100%;
   z-index: 6;
+
+  @media (max-width: @sizes[maxSM]) {
+    display: flex;
+    max-width: 100%;
+    overflow: auto;
+    gap: 12px;
+  }
 }
+
+ 
+
 
 .inner__sidebar {
   width: 100%;
   max-width: 208px;
+
+  li.active {
+    a {
+      border: 1px solid #000000;
+    }
+  }
   
   a {
     display: block;
@@ -26,7 +42,7 @@ aside {
     transition: @transition;
 
     @media ( min-width: @sizes[ minMD ] ) {
-      &:hover {
+      &:active {
         border: 1px solid #000000;
       }
     }

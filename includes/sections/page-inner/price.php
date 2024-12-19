@@ -1,6 +1,6 @@
 <?php include 'price-data.php' ?>
 
-<section class="price">
+<section id="prices" class="price">
   <div class="container price__wrap">
 
     <div class="price__top">

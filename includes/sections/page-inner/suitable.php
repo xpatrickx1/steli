@@ -17,7 +17,7 @@
 
 ?>
 
-<section class="suitable">
+<section id="suitable" class="suitable">
   <div class="container suitable__wrap">
 
     <div class="suitable__top">

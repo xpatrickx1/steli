@@ -1,0 +1,134 @@
+.top-screen {
+  position: relative;
+  padding: clamp(100px, 14vw, 130px) 0 clamp(60px, 7vw, 90px);
+  background: @background[main];
+
+  @media ( max-width: @sizes[ maxLG ] ) {
+    padding: 120px 0 60px;
+  }
+
+  @media ( max-width: @sizes[ maxSM ] ) {
+    padding: 90px 0 60px;
+  }
+
+  h1 {
+    max-width: 780px;
+  }
+
+  &__wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: clamp(15px, 2vw, 23px);
+  }
+
+  &__top, &__bottom {
+    display: flex;
+    align-items: stretch;
+    gap: 24px;
+
+    @media ( max-width: @sizes[ maxLG ] ) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &--left {
+    max-width: 779px;
+  }
+
+  &__bottom {
+    margin-top: clamp(30px, 4vw, 48px);
+    justify-content: space-between;
+  }
+
+  h2 {
+    width: 100%;
+    max-width: 380px;
+    .fontSize(clamp(25px, 3vw, 36px), clamp(30px, 3vw, 39px));
+    .fontNunito(700);
+  }
+  
+
+  &__description {
+    .fontSize(clamp(14px, 2vw, 18px), clamp(18px, 3vw, 25px));
+    font-weight: 400;
+    max-width: 429px;
+  }
+
+  .button--main {
+    margin: 35px auto 0;
+    max-width: 252px;
+    max-height: 48px;
+  }
+  
+  &--left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 800px;
+    width: 100%;
+
+    @media ( max-width: @sizes[ maxLG ] ) {
+      max-width: 100%;
+    }
+  }
+
+  &--right {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(15px, 2vw, 23px);
+    flex: 1 0 auto;
+
+    @media ( max-width: @sizes[ maxLG ] ) {
+      max-width: 100%;
+    }
+  }
+
+  &__imgs {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: 0;
+
+    img {
+      width: 100%;
+      height: auto;
+      min-height: 65vh;
+      object-fit: cover;
+      animation: imageAnimation 5s linear infinite;
+    }
+
+    img:last-child {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      animation-delay: 2.5s;
+    }
+  }
+
+  @keyframes imageAnimation {
+    0% {
+      opacity: 1;
+  }
+  22% {
+      opacity: 1;
+  }
+  27% {
+      opacity: 0;
+  }
+  72% {
+      opacity: 0;
+  }
+  77% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 1;
+  }
+  }
+
+}

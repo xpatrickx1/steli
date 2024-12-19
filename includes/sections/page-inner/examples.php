@@ -50,7 +50,7 @@
 
 ?>
 
-<section class="examples">
+<section id="examples" class="examples">
   <div class="container examples__wrap">
 
     <div class="examples__top">

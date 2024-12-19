@@ -1,12 +1,17 @@
 .content {
   position: relative;
-  padding: 66px 0 0;
+  padding: 66px 0 clamp(60px, 16vw, 200px);
   background: @background[white];
 
   .container:not(aside)  {
     max-width: 1045px;
     margin-left: auto;
-    margin-right: calc((100% - 1316px) / 2);
+    
+
+    @media (min-width: @sizes[minLG]) {
+      margin-right: calc((100% - 1316px) / 2);
+    }
+
   }
 
   .calculator {

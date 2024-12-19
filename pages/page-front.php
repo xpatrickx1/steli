@@ -21,7 +21,7 @@ get_header();
 <?php get_template_part('includes/sections/page-front/examples')?>
 <?php get_template_part('includes/modules/calculator')?>
 <?php get_template_part('includes/sections/page-front/advertising')?>
-<?php get_template_part('includes/sections/page-front/reviews')?>
+<?php get_template_part('includes/modules/reviews')?>
 <?php get_template_part('includes/sections/page-front/faq')?>
 
 <?php get_footer(); ?>

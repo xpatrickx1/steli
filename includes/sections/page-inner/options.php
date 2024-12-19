@@ -21,7 +21,7 @@
 
 ?>
 
-<section class="options">
+<section id="options" class="options">
   <div class="container options__wrap">
 
     <div class="options__top">

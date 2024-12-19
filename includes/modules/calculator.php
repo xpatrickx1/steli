@@ -15,7 +15,7 @@
 
 ?>
 
-<section class="calculator">
+<section id="calculator" class="calculator">
   <div class="container calculator__wrap">
 
     <div class="calculator__top">
