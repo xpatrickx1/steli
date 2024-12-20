@@ -1,36 +1,70 @@
+<?php
+
+  $order = [
+    [
+      'title' => 'Калькулятор позволяет быстро приценится по стоимости потолка на классической конструкции.',
+      'text' => 'Рассчитайте стоимость установки натяжного потолка «под ключ» в Киеве: c учётом монтажных работ, материалов и комплектующих.',
+    ],
+    [
+      'title' => 'Производится расчёт полотна, углов, точек освещения и труб уходящих в потолок.',
+      'text' => 'Расчёт нестандартных примыканий и конструкций — теневые, бесщелевые, многоуровневые, производится только после обсуждения проекта с менеджером компании. Отправьте запрос и мы посчитаем нестандартные потолки с освещением и вышлем вам предложение.',
+    ],
+  ];
+
+?>
+
 <section class="top-screen">
+  <div class="container">
+    <div class="top-screen__breadcrumbs">
+      <span><a href="<?= home_url(); ?>">Home</a></span>
+      <span> > </span>
+      <span><?= get_field('breadcrumb') ? the_field('breadcrumb') : 'Inner' ?></span>
+    </div>
+  </div>
+  
   <div class="container top-screen__wrap">
 
     <div class="top-screen--left">
       <h2>
         <?= get_field( 'page_title' ) ? the_field( 'page_title' ) : get_the_title() ?>
       </h2>
+    
+
+      <ul class="top-screen__list">
+        <?php if (have_rows('top_list')) :
+          while ( have_rows('top_list')) : the_row(); ?>
+            <li class="item">
+              <div class="item__title item-title18">
+                <?= get_sub_field('item_title') ?>
+              </div>  
+              <div class="item__text">
+                <?= get_sub_field('item_text') ?>
+              </div>  
+            </li>
+          <?php endwhile; ?>
+        <?php else : ?>
+          <?php foreach ( $order as $key => $item ) : ?>
+            <li class="item">
+              <div class="item__title item-title18">
+                <?= $item['title'] ?>
+              </div>  
+              <div class="item__text">
+                <?= $item['text'] ?> 
+              </div>  
+            </li>
+          <?php endforeach; ?>
+        <?php endif; ?>
+      </ul>
     </div>
 
     <div class="top-screen--right">
-      <div class="top-screen__description">
-        <?= get_field('top_screen_description') ? the_field('top_screen_description') : 'Компания «Стелио» профессионально занимается установкой натяжных потолков в Киеве.
-Современные решения для наших интерьеров позволяют реализовывать нестандартные и сложные проекты с безупречной проработкой.' ?>
-      </div>
+      <img 
+        src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
+        data-src="<?= bloginfo('template_url') . '/images/page-calculator/calcbg.png' ?>"
+        class="lazy"
+        width="1px"
+        height="1px"
+      />
     </div>
-
-    <figure class="top-screen__imgs">
-      <img 
-        src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-        data-src="<?= bloginfo('template_url') . '/images/first-screen/natyzhnoy-potolok-s-podsvetkoy.jpg' ?>"
-        class="lazy"
-        width="1px"
-        height="1px"
-      />
-      <img 
-        src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-        data-src="<?= bloginfo('template_url') . '/images/first-screen/natyzhnoy-potolok-s-trekami.jpg' ?>"
-        class="lazy"
-        width="1px"
-        height="1px"
-      />
-    </figure>
-
-
   </div>
 </section>

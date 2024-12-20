@@ -1,0 +1,50 @@
+aside {
+  position: sticky;
+  align-self: flex-start;
+  top: 100px;
+  flex: 1 0 auto;
+  height: 0;
+  max-width: 208px;
+  width: 100%;
+  z-index: 6;
+
+  @media (max-width: @sizes[maxSM]) {
+    display: flex;
+    max-width: 100%;
+    overflow: auto;
+    gap: 12px;
+  }
+}
+
+ 
+
+
+.inner__sidebar {
+  width: 100%;
+  max-width: 208px;
+
+  li.active {
+    a {
+      border: 1px solid #000000;
+    }
+  }
+  
+  a {
+    display: block;
+    border-radius: 6px;
+    background: #F9F9F9;
+    border: 1px solid #F9F9F9;
+    .fontNunito(400);
+    .fontSize(16px, 22px);
+    color: rgba(0, 0, 0, .5);
+    padding: 18px 10px 18px 24px;
+    margin-bottom: 6px;
+    transition: @transition;
+
+    @media ( min-width: @sizes[ minMD ] ) {
+      &:active {
+        border: 1px solid #000000;
+      }
+    }
+  }
+}

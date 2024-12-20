@@ -116,6 +116,12 @@
       .fontSize(14px, 25px);
       color: #ABABAB;
       margin-bottom: 2px;
+
+      @media (max-width: @sizes[maxSM]) {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+      }
     }
 
     input, textarea {
