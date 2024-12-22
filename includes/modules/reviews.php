@@ -91,8 +91,8 @@
         
       </ul>
 
-      <div id="reviewsShowmore" class="reviews__showmore"><?= get_field('reviews_showmore') ? the_field('reviews_showmore') : 'Загрузить еще' ?></div>
     </div>
+    <div id="reviewsShowmore" class="reviews__showmore"><?= get_field('reviews_showmore') ? the_field('reviews_showmore') : 'Загрузить еще' ?></div>
 
   </div>
 </section>

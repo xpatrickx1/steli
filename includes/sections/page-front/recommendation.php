@@ -9,11 +9,13 @@
       <div class="recommendation__description">
         <?= get_field('recommendation_description') ? the_field('recommendation_description') : 'Принцип компании — детальная проработка проекта до старта работ. Проектирование позволяет быстро и качественно устанавливать натяжные потолки и освещение любой сложности.' ?>
       </div>
+
       <a 
         href="#"
-        rel="nofollow" id="headerCalculateButtonMob"
+        data-hover="<?= get_field('recommendation_btn') ? the_field('recommendation_btn') : 'Бесплатный замер' ?>"
+        rel="nofollow" id="headerOrderBtn"
         class="button--main">
-        Бесплатный замер
+        <span><?= get_field('recommendation_btn') ? the_field('recommendation_btn') : 'Бесплатный замер' ?></span>
       </a>
     </div>
 

@@ -11,18 +11,48 @@
   max-height: 45px;
   width: 100%;
   padding: 20px 33px;
-  transition: @transition;
   border-radius: @border[ buttonRadius ];
-  background: @backgroundButton[ mainButton ];
+  background: linear-gradient(95.62deg, #000000 40.55%, #000000 102.32%);
   color: @colorButton[ mainButton ];
   box-shadow: none;
   cursor: pointer;
+  overflow: hidden;
+  transition: background .9s ease-in-out;
+
+  span {
+    transition: all .3s ease-in-out;
+    transform: translate(0,0);
+    color: #fff;
+  }
+
+  &:before{
+    content: attr(data-hover);
+    position: absolute;
+    top: 0; 
+    left: 0;
+    text-align: center;
+    width: 100%;
+    .font(700);
+    .fontSize(16px, 44px);
+    opacity: 0;
+    transform: translate(0,-100%);
+    transition: all .3s ease-in-out;
+  }
 
   &:hover {
     @media ( min-width: @sizes[ minLG ] ) {
-      background: @backgroundButton[ mainButtonHover ];
-      color: @colorButton[ mainButtonHover ];
-      box-shadow: @shadow[ mainButtonHover ];
+      background: linear-gradient(95.62deg, #000000 40.55%, #454545 102.32%);
+
+      span {
+        // opacity: 0; 
+        transform: translate(0,100%);
+      }
+
+      &:before {
+        color: #fff;
+        opacity: 1;
+        transform: translate(0,0);
+      }
     }
   }
 
@@ -44,19 +74,40 @@
   max-width: @width;
   width: 100%;
   padding: 13px 20px;
-  transition: @transition;
+  transition: color 0.3s 0.1s ease-out;
   border-radius: @border[ buttonRadius ];
   background: @backgroundButton[secondButton];
   border: 1px solid @backgroundButton[ mainButton ];
   color: @colorButton[ secondButton ];
   box-shadow: none;
   cursor: pointer;
+  overflow: hidden;
+  z-index: 1;
+
+  &::before{
+    content:'';
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    width: @width*2;
+    height: @width*2;
+    line-height: @width*2;
+    top: 0;
+    left: -@width/2;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    transition: box-shadow 0.5s ease-out;
+    z-index: -1;
+  }
 
   &:hover {
     @media ( min-width: @sizes[ minLG ] ) {
-      background: @backgroundButton[ mainButton ];
-      border: 1px solid @backgroundButton[ mainButton ];
-      color: @colorButton[ mainButton ];
+      color: #fff;
+
+      &::before {
+        box-shadow:inset 0 0 0 @width #000;
+      }
     }
   }
 

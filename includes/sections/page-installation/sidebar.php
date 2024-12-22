@@ -1,8 +1,8 @@
 <aside class="container">
   <ul class="inner__sidebar">
-    <?php if (has_nav_menu('inner_sidebar')) :
+    <?php if (has_nav_menu('installation_sidebar')) :
       $nav_args = array(
-        'theme_location' => 'inner_sidebar',
+        'theme_location' => 'installation_sidebar',
         'container' => '',
         'items_wrap' => '%3$s',
       );

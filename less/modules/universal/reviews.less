@@ -8,6 +8,24 @@
     margin-bottom: 36px;
   }
 
+  &__center {
+    overflow: hidden;
+    height: 310px;
+    
+    @media (max-width: @sizes[maxSM]) {
+      height: 350px;
+    }
+
+    @media (max-width: @sizes[maxXS]) {
+      height: 390px;
+    }
+
+    &.active {
+      height: 100%;
+      overflow: visible
+    }
+  }
+
   &__list {
     display: flex;
     flex-wrap: wrap;
@@ -26,6 +44,10 @@
       padding: 36px 37px;
       border-radius: 6px;
       max-width: 420px;
+
+      @media (max-width: @sizes[maxSM]) {
+        flex-direction: column;
+      }
     }
     
     .item__title {
@@ -83,6 +105,11 @@
     max-width: 207px;
     max-height: 48px;
     margin: 36px auto 0;
+    cursor: pointer;
+
+    &.hide {
+      display: none;
+    }
   }
   
 }

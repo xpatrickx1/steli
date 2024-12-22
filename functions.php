@@ -211,6 +211,7 @@ register_nav_menus(array(
     'footer_menu_customers' => 'Footer Menu Customers',
     'footer_menu_contacts' => 'Footer Menu Contacts',
     'inner_sidebar' => 'Inner Sidebar Menu',
+    'installation_sidebar' => 'Installation Sidebar Menu',
 ));
 
 //custom classes for menu items

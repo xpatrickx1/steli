@@ -5,8 +5,6 @@ get_header();
 ?>
 
 <?php get_template_part('includes/sections/page-installation/top-screen')?>
-<?php get_template_part('includes/sections/page-installation/advantage')?>
-<?php get_template_part('includes/sections/page-installation/design')?>
 <?php get_template_part('includes/sections/page-installation/content')?>
 
 

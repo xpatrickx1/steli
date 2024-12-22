@@ -15,10 +15,10 @@
 
 <section class="top-screen">
   <div class="container">
-    <div class="top-screen__breadcrumbs">
-      <span><a href="<?= home_url(); ?>">Home</a></span>
-      <span> > </span>
-      <span><?= get_field('breadcrumb') ? the_field('breadcrumb') : 'Inner' ?></span>
+    <div class="breadcrumbs">
+      <span><a href="<?= home_url(); ?>">Натяжные потолки в Киеве</a></span>
+      <span class="breadcrumbs__slash"> / </span>
+      <span><?= get_field('breadcrumb') ? the_field('breadcrumb') : 'Каталог потолков' ?></span>
     </div>
   </div>
   

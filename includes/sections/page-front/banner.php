@@ -13,9 +13,10 @@
       <div class="banner__right">
         <a 
           href="#"
+          data-hover="<?= get_field('banner_btn') ? the_field('recommendation_btn') : 'Оформить оплату частями' ?>"
           rel="nofollow" id="orderBanner"
           class="button--main">
-          Оформить оплату частями
+          <span><?= get_field('banner_btn') ? the_field('banner_btn') : 'Оформить оплату частями' ?></span> 
         </a>
 
         <div class="banner__text">
