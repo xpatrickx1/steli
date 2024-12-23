@@ -19,7 +19,7 @@
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    gap: clamp(15px, 2vw, 23px);
+    gap: clamp(15px, 2vw, 10px);
 
     @media ( max-width: @sizes[ maxLG ] ) {
       flex-wrap: wrap;
@@ -34,6 +34,7 @@
     .fontSize(clamp(14px, 2vw, 16px), clamp(18px, 3vw, 26px));
     font-weight: 400;
     max-width: 476px;
+    margin-top: 15px;
   }
   
   &--left {

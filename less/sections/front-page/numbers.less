@@ -31,15 +31,16 @@
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
+    justify-content: center;
     gap: 24px;
     margin-top: clamp(20px, 5vw, 48px);
     z-index: 2;
 
     .item {
-      width: 46%;
+      width: 40%;
       transition: @transition;
       
-      @media (min-width: @sizes[minSM]) {
+      @media (min-width: @sizes[minMD]) {
         width: 23%;
       }
 

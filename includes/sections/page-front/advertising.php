@@ -73,7 +73,7 @@
           <div class="empty__line"></div>
           <div class="empty__line"></div>
         </li>
-        <li class="item empty">
+        <li class="item empty mobhidden">
           <div class="item__top">реклама</div>
           <div class="empty__title empty__line"></div>
           <div class="empty__line"></div>

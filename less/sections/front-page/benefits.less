@@ -3,12 +3,13 @@
   padding: 66px 0 clamp(40px, 7vw, 80px);
   background: @background[white];
 
-  &__wrap {
+  &__wrap.container {
     display: flex;
     justify-content: space-between;
 
-    @media (max-width: @sizes[maxLG]) {
+    @media (max-width: @sizes[maxMD]) {
       flex-direction: column;
+      width: fit-content;
     }
   }
 

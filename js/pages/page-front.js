@@ -6,6 +6,6 @@ $(document).ready(() => {
 
     $('#reviewsShowmore').click(() => {
         $('.reviews__center').addClass('active');
-        $(this).addClass('hide');
+        $('#reviewsShowmore').addClass('hide');
     });
 });

@@ -33,7 +33,7 @@
     gap: 12px 24px;
     margin-top: clamp(20px, 5vw, 48px);
 
-    @media (max-width: @sizes[maxSM]) {
+    @media (max-width: @sizes[maxXS]) {
       flex-direction: column;
     }
 
@@ -44,11 +44,41 @@
       background: #ffffff;
       padding: 26px 34px;
       border-radius: 12px;
-      max-width: 646px;
+      max-width: 100%;
+
+      @media (min-width: @sizes[minMD]) {
+        max-width: 646px;
+        flex: 1 0 47%;
+      }
+
+      @media (min-width: @sizes[minLG]) {
+        max-width: 646px;
+        flex: 1 0 47%;
+      }
 
       &--2, &--3 {
-        max-width: 500px;
-        flex: 1 0 30%;
+
+        @media (max-width: @sizes[maxSM]) {
+          flex: 1 0 100%;
+          width: 100%;
+        }
+
+        @media (min-width: @sizes[minMD]) {
+          max-width: 646px;
+          flex: 1 0 30%;
+        }
+
+        @media (min-width: @sizes[minLG]) {
+          max-width: 500px;
+          flex: 1 0 37%;
+        }
+      }
+
+      &--2 {
+        @media (min-width: @sizes[minSM]) and (max-width: @sizes[maxLG]) {
+          max-width: 646px;
+          flex: 1 0 47%;
+        }
       }
     }
 
@@ -56,14 +86,18 @@
       border: 1px solid #E4E4E4;
       background: transparent;
       padding: 26px 22px;
-      max-width: 310px;
+      max-width: 100%;
 
-      @media (max-width: @sizes[maxSM]) {
-        max-width: 100%;
+      @media (min-width: @sizes[minXS]) {
+        flex: 1 0 47%;
       }
 
-      &:last-child {
-        flex: 1 0 270px;
+      @media (min-width: @sizes[minSM]) {
+        flex: 1 0 47%;
+      }
+
+      @media (min-width: @sizes[minLG]) {
+        flex: 1 0 20%;
       }
 
       .item__top {
@@ -81,8 +115,17 @@
       &__title {
         height: 25px;
         margin-bottom: 43px;
-        margin-top: 52px;
+        margin-top: clamp(20px, 4vw, 52px);
       }
+
+      
+    }
+
+    .empty.mobhidden {
+
+        @media (max-width: @sizes[maxSM]) {
+            display: none;
+        }
     }
 
     

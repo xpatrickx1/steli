@@ -19,13 +19,18 @@
           Пн - Сб: c 9:00 до 19:00
         </div>
 
-        <div class='header__phone'>
-          +38 063 654 63 85
+        <div class='header__autonom'>
+          <?= get_bloginfo("language") == 'ru' ? 'Рабоаем автономно' : 'Працюємо автономно'?>
         </div>
 
-        <div class='header__autonom'>
-          Рабоаем автономно
+        <div class="header--top-left">
+          <?php if (function_exists ('wpm_language_switcher')) wpm_language_switcher (); ?>
+
+          <div class='header__phone'>
+            +38 063 654 63 85
+          </div>
         </div>
+        
       </div>
       <div class="header--bottom">
           <a href="/"
@@ -66,14 +71,12 @@
             endif; ?>
           </ul>
 
-          <div class="header__buttons">
-            <a 
-              href="#"
-              rel="nofollow" id="headerCalculateButtonMob"
-              class="button--second">
-              Заказать звонок
-            </a>
-          </div>
+          <a 
+            href="#"
+            rel="nofollow" id="headerCalculateButtonMob"
+            class="button--second">
+            Заказать звонок
+          </a>
 
           <div class="header__hamburger js-hamburger">
             <div class="hamburger-line1"></div>

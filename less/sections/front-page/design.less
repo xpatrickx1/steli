@@ -44,12 +44,14 @@
 
     @media (max-width: @sizes[maxSM]) {
       flex-direction: column;
+      align-items: center;
     }
 
     .item {
       width: 100%;
       transition: @transition;
       padding: 16px 16px 42px;
+      max-width: 470px;
       
       @media (min-width: @sizes[minSM]) {
         width: 48%;

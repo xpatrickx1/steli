@@ -10,10 +10,14 @@
 
   &__center {
     overflow: hidden;
-    height: 310px;
+    height: 320px;
+
+    @media (max-width: @sizes[maxLG]) {
+      height: 330px;
+    }
     
-    @media (max-width: @sizes[maxSM]) {
-      height: 350px;
+    @media (max-width: @sizes[maxMD]) {
+      height: 380px;
     }
 
     @media (max-width: @sizes[maxXS]) {
@@ -34,6 +38,7 @@
 
     @media (max-width: @sizes[maxSM]) {
       flex-direction: column;
+      align-items: center;
     }
 
     .item {
@@ -45,8 +50,13 @@
       border-radius: 6px;
       max-width: 420px;
 
-      @media (max-width: @sizes[maxSM]) {
-        flex-direction: column;
+      @media (max-width: @sizes[maxMD]) {
+        width: 47%;
+        height: 375px;
+      }
+
+      @media (min-width: @sizes[minLG]) {
+        width: 32%;
       }
     }
     
