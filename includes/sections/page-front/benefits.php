@@ -28,15 +28,15 @@
     </div>
 
     <div class="benefits__center">
-      <div class="quality__description section-description">
-        <?= get_field('quality_description') ? the_field('quality_description') : '<strong>Мы решаем задачи разной сложности:</strong> от комплектовки простых заказов до партнёрских проектов с уникальным дизайном и поэтапной реализацией.' ?>
+      <div class="benefits__description section-description">
+        <?= get_field('benefits_description') ? the_field('benefits_description') : '<strong>Мы решаем задачи разной сложности:</strong> от комплектовки простых заказов до партнёрских проектов с уникальным дизайном и поэтапной реализацией.' ?>
       </div>
       <ul class="benefits__list">
         <?php if (have_rows('benefits_list')) :
           while ( have_rows('benefits_list')) : the_row(); ?>
             <li class="item">
               <div class="item__title"><?= get_sub_field('item_title') ?></div>
-              <div class="item__text"><?= get_sub_field('item_text') ?></div>
+              <div class="item__text"><?= get_sub_field('item_description') ?></div>
             </li>
           <?php endwhile; ?>
         <?php else : ?>

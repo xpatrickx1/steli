@@ -92,7 +92,15 @@
       </ul>
 
     </div>
-    <div id="reviewsShowmore" class="reviews__showmore"><?= get_field('reviews_showmore') ? the_field('reviews_showmore') : 'Загрузить еще' ?></div>
-
-  </div>
+    <button id="reviewsShowmore" class="reviews__showmore button--second">
+    <?php if ( get_field('reviews_showmore'))  { 
+      echo get_field('reviews_showmore') ;
+      } else { 
+      if (get_bloginfo("language") == 'ru') {
+        echo 'Загрузить еще' ;
+      } else {
+        echo 'Завантажити ще';
+      } 
+    }; ?>
+  </button>
 </section>

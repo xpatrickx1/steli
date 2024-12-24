@@ -25,11 +25,12 @@
       }
     }
 
-    button {
+    .button--main {
       background: @background[white];
       max-width: 244px;
       .fontNunito(700);
       .fontSize(18px, 44px);
+      color: #000;
       padding: 7px 39px;
       cursor: pointer;
       border-radius: 6px;
@@ -44,6 +45,37 @@
       @media ( max-width: @sizes[ maxLG ] ) {
         flex-direction: column;
         align-items: center;
+      }
+    }
+
+    .button--main {
+      background: @background[white];
+      color: @color[black];
+      .fontSize(18px, 60px);
+      max-width: fit-content;
+      max-height: 60px;
+      border-radius: 6px;
+  
+      span {
+        color: #000;
+      }
+  
+      &:before{
+        .fontSize(18px, 60px);
+      }
+  
+      &:hover {
+        @media ( min-width: @sizes[ minLG ] ) {
+          background: linear-gradient(95.62deg, #ffffff 40.55%, #a1a1a1 102.32%);
+    
+          span {
+            color: #000;
+          }
+    
+          &:before {
+            color: #000;
+          }
+        }
       }
     }
   }

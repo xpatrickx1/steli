@@ -22,7 +22,11 @@
       <div class="footer__orders">
         <?= get_field('footer_orders') ? the_field('footer_orders') : 'Прием заявок на сайте происходит круглосуточно' ?>
       </div>
-      <button>вам перезвонить ?</button>
+      <a href="#" 
+         class="button--main"
+         data-hover="<?= get_bloginfo("language") == 'ru' ? 'вам перезвонить ?' : 'Вам передзвонити?'?>">
+         <span><?= get_bloginfo("language") == 'ru' ? 'вам перезвонить ?' : 'Вам передзвонити?'?></span>
+        </a>
     </div>
   </div>
 

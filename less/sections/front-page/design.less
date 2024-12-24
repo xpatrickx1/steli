@@ -28,10 +28,12 @@
 
   &__top {
     max-width: 310px;
+    flex: 1 0 auto;
   }
 
   &__center {
     z-index: 2;
+    width: fit-content;
   }
 
 
@@ -39,7 +41,8 @@
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    gap: 24px;
+    justify-content: flex-end;
+    gap: 5px;
     z-index: 1;
 
     @media (max-width: @sizes[maxSM]) {
@@ -52,6 +55,7 @@
       transition: @transition;
       padding: 16px 16px 42px;
       max-width: 470px;
+      border-radius: 6px;
       
       @media (min-width: @sizes[minSM]) {
         width: 48%;

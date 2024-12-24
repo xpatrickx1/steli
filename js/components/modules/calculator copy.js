@@ -12,8 +12,6 @@ const parameters = [
     { name: 'rod', value: 0 },
 ];
 
-console.log(get_locale());
-
 function createParameterElement(parameter) {
     const div = document.createElement('div');
     div.classList.add('input-group');

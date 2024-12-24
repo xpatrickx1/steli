@@ -12,15 +12,15 @@
       
       <div class="banner__right">
         <a 
-          href="#"
-          data-hover="<?= get_field('banner_btn') ? the_field('recommendation_btn') : 'Оформить оплату частями' ?>"
+          href="<?= get_field('banner_href') ? the_field('banner_href') : '#' ?>"
+          data-hover="<?= get_field('banner_btn') ? the_field('banner_btn') : 'Оформить оплату частями' ?>"
           rel="nofollow" id="orderBanner"
           class="button--main">
           <span><?= get_field('banner_btn') ? the_field('banner_btn') : 'Оформить оплату частями' ?></span> 
         </a>
 
         <div class="banner__text">
-          Рассрочка до 8 платежей от Монобанка под 0%
+          <?= get_field('banner_title') ? the_field('banner_title') : 'Рассрочка до 8 платежей от Монобанка под 0%' ?>
         </div>
       </div>
     </div>

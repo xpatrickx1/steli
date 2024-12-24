@@ -36,7 +36,7 @@
           while ( have_rows('numbers_list')) : the_row(); ?>
             <li class="item">
               <div class="item__title"><?= get_sub_field('item_title') ?></div>
-              <div class="item__text"><?= get_sub_field('item_text') ?></div>
+              <div class="item__text"><?= get_sub_field('item_description') ?></div>
             </li>
           <?php endwhile; ?>
         <?php else : ?>
