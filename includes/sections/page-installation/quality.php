@@ -80,8 +80,23 @@
         <ul class="quality__list">
           <?php if (have_rows('quality_list')) :
             while ( have_rows('quality_list')) : the_row(); ?>
-              <li class="item"><?= get_sub_field('item_title') ?></li>
-              <li class="item"><?= get_sub_field('item_text') ?></li>
+              <li class="item">
+                <div class="item__title">
+                  <?= get_sub_field('item_title') ?>
+                </div>
+                <div class="item__text">
+                  <?= get_sub_field('item_text') ?>
+                </div>
+                <?php if (have_rows('item_sublist')) : ?>
+                  <ul class="quality__sublist">
+                  <?php while ( have_rows('item_sublist')) : the_row(); ?>
+                    <li class="item__info">
+                      <?= get_sub_field('sublist_text'); ?>
+                    </li>
+                  <?php endwhile; ?>
+                  </ul>
+                <?php endif; ?>
+              </li>
             <?php endwhile; ?>
           <?php else : ?>
             <?php foreach ( $quality as $key => $item ) : ?>
@@ -96,7 +111,7 @@
                 <?php if ($item['sublist']) :?>
                   <ul class="quality__sublist">
                     <?php foreach ( $item['sublist'] as $k => $sublist ) : ?>
-                      <?= $sublist ?>
+                      <li><?= $sublist ?></li>
                     <?php endforeach; ?>
                   </ul>
                 <?php endif; ?>
@@ -105,9 +120,5 @@
           <?php endif; ?>
         </ul>
       </div>
-    
-
-  
-
   </div>
 </section>

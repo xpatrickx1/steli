@@ -19,19 +19,19 @@
     <div class="top-screen__wrap">
     
       <h3>
-        <?= get_field('top-screen_title') ? the_field('top-screen_title') : 'Способы оплаты' ?>
+      <?= get_field( 'page_title' ) ? the_field( 'page_title' ) : get_the_title() ?>
       </h3>
 
       <div class="top-screen__right">
         <div class="top-screen__description">
-          <?= get_field('top-screen_description') ? the_field('top-screen_description') : 'После проведения бесплатного замера и согласования всех деталей заключается договор на установку натяжных потолков. В договоре фиксируются права и обязанности сторон, гарантии, сроки выполнения работ, стоимость и порядок оплаты.' ?>
+          <?= get_field('top_screen_description') ? the_field('top_screen_description') : 'После проведения бесплатного замера и согласования всех деталей заключается договор на установку натяжных потолков. В договоре фиксируются права и обязанности сторон, гарантии, сроки выполнения работ, стоимость и порядок оплаты.' ?>
         </div>
         <div class="top-screen__list-title">
-          <?= get_field('top-screen_title') ? the_field('top-screen_title') : 'Мы предлагаем варианты полной или частичной предоплаты:' ?>
+          <?= get_field('list_title') ? the_field('list_title') : 'Мы предлагаем варианты полной или частичной предоплаты:' ?>
         </div>
         <ul class="top-screen__list">
-          <?php if (have_rows('top-screen_list')) :
-            while ( have_rows('top-screen_list')) : the_row(); ?>
+          <?php if (have_rows('top_screen_list')) :
+            while ( have_rows('top_screen_list')) : the_row(); ?>
               <li class="item"><?= get_sub_field('item_title') ?></li>
             <?php endwhile; ?>
           <?php else : ?>

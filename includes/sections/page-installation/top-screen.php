@@ -53,7 +53,7 @@
       <div class="top-screen__bottom--right">
         <div class="top-screen__bottom--wrp">
           <div class="top-screen__description">
-            <?= get_field('top_screen_description') ? the_field('top_screen_description') : 'Правильная установка натяжных потолков — залог долговечности, эстетичности и надёжности конструкции. Выполняется только профессионалами, а не мастерами-универсалами.' ?>
+            <?= get_field('top_screen_description1') ? the_field('top_screen_description1') : 'Правильная установка натяжных потолков — залог долговечности, эстетичности и надёжности конструкции. Выполняется только профессионалами, а не мастерами-универсалами.' ?>
           </div>
           <div class="top-screen__description">
             <?= get_field('top_screen_description2') ? the_field('top_screen_description2') : 'Тогда вы избавите себя от рисков, связанных с безопасностью при монтажных работах, эстетичностью и долговечности конструкции.' ?>
@@ -73,8 +73,9 @@
           <a 
             href="#"
             rel="nofollow"
+            data-hover="<?= get_bloginfo("language") == 'ru' ? 'Бесплатный замер' : 'Безкоштовний замір'?>"
             class="button--main">
-            Бесплатный замер
+            <span><?= get_bloginfo("language") == 'ru' ? 'Бесплатный замер' : 'Безкоштовний замір'?></span>
           </a>
       </div>
     </div>

@@ -14,15 +14,15 @@
 
   &__top {
     width: 100%;
-    grid-area: 'top';
+    grid-area: top;
   }
 
   .quality_guarantee {
-    grid-area: 'guarantee';
+    grid-area: guarantee;
   }
 
   &__list-wrp {
-    grid-area: 'list';
+    grid-area: list;
     margin-top: clamp(40px, 7vw, 62px);
     max-width: 640px;
   }
@@ -34,7 +34,7 @@
   }
 
   .quality_guarantee {
-    grid-area: 'guarantee';
+    grid-area: guarantee;
   }
 
   &__sublist {
@@ -129,6 +129,16 @@
       .fontSize(16px, 22px);
       color: rgba(0, 0, 0, .5);
       ;
+    }
+  }
+
+  .quality__sublist {
+    padding-left: 20px;
+    .fontNunito(400);
+    .fontSize(14px, 16px);
+
+    li {
+      margin-bottom: 13px;
     }
   }
 

@@ -21,8 +21,8 @@
         <div class="top-screen__phone">
           <?= get_field('topscreen_phone') ? the_field('topscreen_phone') : '+38 063 654 63 85' ?>
         </div>
-        <div class="top-screen__mail">
-          <?= get_field('topscreen_phone') ? the_field('offices_title') : 'hi@stelio.com.ua' ?>
+        <div class="top-screen__mail"> 
+          <?= get_field('topscreen_email') ? the_field('offices_title') : 'hi@stelio.com.ua' ?>
         </div>
       </div>
 
@@ -32,10 +32,10 @@
         </div>
         <ul class="top-screen__work-time">
           <li>
-            <?= get_field('topscreen_worktitle') ? the_field('topscreen_worktitle') : 'С понедельника по субботу: с <span>9:00</span> до <span>19:00</span>' ?>
+            <?= get_field('topscreen_worktitle2') ? the_field('topscreen_worktitle2') : 'С понедельника по субботу: с <span>9:00</span> до <span>19:00</span>' ?>
           </li>
           <li>
-            <?= get_field('topscreen_worktitle') ? the_field('topscreen_worktitle') : 'Воскресенье: офис — по согласованию.' ?>
+            <?= get_field('topscreen_worktitle3') ? the_field('topscreen_worktitle3') : 'Воскресенье: офис — по согласованию.' ?>
           </li>
         </ul>
       </div>
@@ -44,14 +44,14 @@
     <div class="top-screen__images">
       <img 
         src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-        data-src="<?= bloginfo('template_url') . '/images/page-contacts/contacts1.png' ?>"
+        data-src="<?= get_sub_field('team_top_1')['url'] ? get_sub_field('team_top_1')['url'] : bloginfo('template_url') . '/images/page-contacts/contacts1.png' ?>"
         class="lazy"
         width="1px"
         height="1px"
       />
       <img 
         src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-        data-src="<?= bloginfo('template_url') . '/images/page-contacts/contacts2.png' ?>"
+        data-src="<?= get_sub_field('team_top_2')['url'] ? get_sub_field('team_top_2')['url'] : bloginfo('template_url') . '/images/page-contacts/contacts2.png' ?>"
         class="lazy"
         width="1px"
         height="1px"

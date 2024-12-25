@@ -56,8 +56,8 @@
       </h2>
 
     <ul class="catalog__list">
-      <?php if (have_rows('catalog_list')) :
-        while ( have_rows('catalog_list')) : the_row(); ?>
+      <?php if (have_rows('catalog_top')) :
+        while ( have_rows('catalog_top')) : the_row(); ?>
           <li class="item">
             <a href="<?= get_sub_field('item_link') ?>">
               <div class="item__img">

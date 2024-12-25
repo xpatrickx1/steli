@@ -32,12 +32,16 @@
                 <?= get_sub_field('item_title') ?>
                 </div>  
                 <div class="item__text">
-                <?= get_sub_field('item_title') ?>
+                <?= get_sub_field('item_text') ?>
                 </div>  
                 <ul class="item__list">
-                  <?php foreach ( $item['items'] as $key => $i ) : ?>
-                    <li><?= get_sub_field('item_title') ?></li>
-                  <?php endforeach; ?>
+                  <?php if (have_rows('subitem_list')) :
+                    while ( have_rows('subitem_list')) : the_row(); ?>
+                      <li class="item__info">
+                        <?= get_sub_field('subitem_title'); ?>
+                      </li>
+                    <?php endwhile; ?>
+                  <?php endif; ?>
                 </ul>
               </div>
             </li>

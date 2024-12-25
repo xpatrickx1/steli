@@ -44,7 +44,7 @@
       <div class="top-screen__images--top">
         <img 
           src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-          data-src="<?= bloginfo('template_url') . '/images/page-team/team1.png' ?>"
+          data-src="<?= get_sub_field('team_top_1')['url'] ? get_sub_field('team_top_1')['url'] : bloginfo('template_url') . '/images/page-team/team1.png' ?>"
           class="lazy"
           width="1px"
           height="1px"
@@ -53,14 +53,14 @@
       <div class="top-screen__images--bottom">
         <img 
           src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-          data-src="<?= bloginfo('template_url') . '/images/page-team/team2.png' ?>"
+          data-src="<?= get_sub_field('team_top_2')['url'] ? get_sub_field('team_top_2')['url'] : bloginfo('template_url') . '/images/page-team/team2.png' ?>"
           class="lazy"
           width="1px"
           height="1px"
         />
         <img 
           src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-          data-src="<?= bloginfo('template_url') . '/images/page-team/team3.png' ?>"
+          data-src="<?= get_sub_field('team_top_3')['url'] ? get_sub_field('team_top_3')['url'] : bloginfo('template_url') . '/images/page-team/team3.png' ?>"
           class="lazy"
           width="1px"
           height="1px"

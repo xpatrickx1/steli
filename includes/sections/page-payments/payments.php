@@ -50,15 +50,28 @@
     </h3>
   
     <ul class="payments__list">
-      <?php if (have_rows('top_list')) :
-        while ( have_rows('top_list')) : the_row(); ?>
-          <li class="item"><img 
-                  src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-                  data-src="<?= get_sub_field('item_img')['url'] ?>"
-                  class="lazy"
-                  width="1px"
-                  height="1px"
-                /></li>
+      <?php if (have_rows('payments_method')) :
+        while ( have_rows('payments_method')) : the_row(); ?>
+          <li class="item"><div class="item__title">
+            <?= get_sub_field('item_title') ?>
+            </div>
+            <ul class="item__list">
+              <?php if (have_rows('item_list')) :
+                while ( have_rows('item_list')) : the_row(); ?>
+                 <li><?= get_sub_field('item_text') ?></li>
+                <?php endwhile; ?>
+              <?php endif; ?>
+            </ul> 
+            <?php if ( get_row_index() == 3 ) : ?>
+              <img 
+                src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
+                data-src="<?= bloginfo('template_url') . '/images/icons/payments.png' ?>"
+                class="lazy"
+                width="1px"
+                height="1px"
+              />
+            <?php endif; ?>
+            </li>
         <?php endwhile; ?>
       <?php else : ?>
         <?php foreach ( $payments as $key => $item ) : ?>
@@ -92,7 +105,7 @@
         <?= get_field('payments_title') ? the_field('payments_title') : 'Для физических лиц' ?>
       </h3>
       <div class="payments__text">
-        <?= get_field('payments_title') ? the_field('payments_title') : '<p>Коммерческие организации могут оплатить услуги безналичным переводом на расчётный счёт ООО. Мы работаем с НДС и без НДС в зависимости от вашей системы налогообложения.</p><p>Реквизиты, режим работы и адрес офиса в разделе контакты.</p>' ?>
+        <?= get_field('payments_subtitle') ? the_field('payments_subtitle') : '<p>Коммерческие организации могут оплатить услуги безналичным переводом на расчётный счёт ООО. Мы работаем с НДС и без НДС в зависимости от вашей системы налогообложения.</p><p>Реквизиты, режим работы и адрес офиса в разделе контакты.</p>' ?>
       </div>
 
     </div>
