@@ -15,9 +15,13 @@
     position: relative;
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+    
     gap: clamp(15px, 3vw, 30px);
     margin: clamp(30px, 4vw, 50px) auto 0;
+
+    @media ( max-width: @sizes[ maxSM ] ) {
+      flex-wrap: wrap;
+    }
   }
 
 
@@ -37,7 +41,7 @@
     display: flex;
     gap: 12px;
 
-    @media ( max-width: @sizes[ maxSM ] ) {
+    @media ( max-width: @sizes[ maxLG ] ) {
       flex-direction: column;
     }
   }

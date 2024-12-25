@@ -102,6 +102,17 @@
   form {
     width: 100%;
 
+    @media (max-width: @sizes[maxSM]) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+     p {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+     }
+    }
+
     span {
       max-width: 370px;
       width: 100%;
@@ -121,6 +132,8 @@
         flex-direction: column;
         gap: 12px;
         align-items: flex-start;
+        width: 100%;
+        max-width: 370px;
       }
     }
 
@@ -150,17 +163,31 @@
 
     .text {
       align-items: flex-start;
-      span {
+      width: 100%;
+      
+
+      @media (max-width: @sizes[maxSM]) {
         max-width: 370px;
+      }
+      
+      span {
         width: 100%;
         line-height: 44px;
+        max-width: 370px;
       }
     }
 
     .file {
+      display: flex;
+      align-items: flex-start;
+      line-height: 44px;
+
+      .wpcf7-form-control-wrap {
+        display: none;
+      }
+
       input[type="file"] {
-        border: none;
-        position: relative;
+        display: none;
 
         &:-webkit-file-upload-button {
           visibility: hidden;
@@ -169,21 +196,40 @@
         input[type="file"]::-webkit-file-upload-button {
           visibility: hidden;
         }
+        
+      }
 
-        &:before {
-          content: 'Загрузить план';
+      .file-wrp {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .file-text {
+        .fontNunito(400);
+        color: #4A4A4A;
+        .fontSize(12px, 44px);
+      }
+
+      .file-btn {
+        position: relative;
+        display: flex;
+        text-decoration: underline;
+        white-space: nowrap;
+        cursor: pointer;
+        .fontNunito(600);
+        .fontSize(16px, 44px);
+        color: #0085EB;
+
+        &:after {
+          content: '';
           display: inline-block;
-          background: linear-gradient(to top, #f9f9f9, #e3e3e3);
-          border: 1px solid #999;
-          border-radius: 3px;
-          padding: 5px 8px;
-          outline: none;
-          white-space: nowrap;
-          -webkit-user-select: none;
           cursor: pointer;
-          text-shadow: 1px 1px #fff;
-          font-weight: 700;
-          font-size: 10pt;
+          width: 35px;
+          height: 44px;
+          padding-left: 10px;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-image: url("data:image/svg+xml,%3Csvg width='21' height='21' viewBox='0 0 21 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.66602 4.73462H16.1599V6.12282H3.66602V4.73462Z' fill='%230085EB'/%3E%3Cpath d='M3.66602 8.89966H9.21883V10.2879H3.66602V8.89966Z' fill='%230085EB'/%3E%3Cpath d='M8.52454 20.0052H2.33315C1.15317 20.0052 0.195312 19.0681 0.195312 17.9229V2.65262C0.195312 1.50736 1.15317 0.570312 2.33315 0.570312H17.4923C18.6723 0.570312 19.6302 1.50736 19.6302 2.65262V8.89954H18.242V2.65262C18.242 2.27085 17.9088 1.95852 17.4923 1.95852H2.33315C1.92362 1.95852 1.58352 2.27085 1.58352 2.65262V17.9229C1.58352 18.3046 1.91669 18.617 2.33315 18.617H8.52454V20.0052Z' fill='%230085EB'/%3E%3Cpath d='M12.8773 20.5259C11.8916 20.5259 10.9754 20.1441 10.2883 19.457C8.87236 18.0341 8.87236 15.7088 10.2744 14.2442C11.9264 12.5853 14.2447 10.1769 14.2725 10.156L15.272 11.1208C15.272 11.1208 12.9744 13.5085 11.3086 15.1744C10.3855 16.0975 10.3716 17.583 11.267 18.4783C11.6973 18.9086 12.2665 19.1446 12.8773 19.1446C13.502 19.1446 14.092 18.9017 14.5431 18.4575L18.5343 14.4594C19.0548 13.9319 19.0687 13.0921 18.562 12.5784C18.0692 12.0856 17.2016 12.0995 16.6949 12.6062L13.03 16.2848C12.9051 16.4097 12.8982 16.611 13.0162 16.736C13.0856 16.8054 13.1689 16.8193 13.2244 16.8193C13.273 16.8193 13.3702 16.8054 13.4604 16.7221L16.9795 13.196L17.9652 14.1747L14.446 17.7008C14.1198 18.027 13.6894 18.2074 13.2313 18.2074C12.7802 18.2074 12.3568 18.0339 12.0375 17.7146C11.3781 17.0552 11.385 15.9724 12.0513 15.306L15.7162 11.6274C16.2368 11.1068 16.9239 10.8153 17.6597 10.8153C18.3746 10.8153 19.0479 11.0929 19.5546 11.5996C20.6027 12.6477 20.5888 14.3691 19.5268 15.438L15.5566 19.4222L15.39 19.5957C14.6959 20.1996 13.8213 20.5397 12.8981 20.5397L12.8773 20.5259Z' fill='%230085EB'/%3E%3C/svg%3E%0A");
         }
       }
     }

@@ -24,6 +24,10 @@
     flex-wrap: wrap;
     max-width: 128px;
 
+    @media (min-width: @sizes[minSM]) and (max-width: @sizes[maxMD]) {
+      max-width: 17%;
+    }
+
     label {
       color: #ABABAB;
       width: 100%;
