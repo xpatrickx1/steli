@@ -52,9 +52,9 @@
     </div>
 
     <div class="suitable__bottom">
-      <?php if (have_rows('suitable_bottom')) :
-        while ( have_rows('suitable_bottom')) : the_row(); ?>
-          <p><?= get_sub_field('suitable_bottom') ?></p>
+      <?php if (have_rows('suitable_bottom_text')) :
+        while ( have_rows('suitable_bottom_text')) : the_row(); ?>
+          <p><?= get_sub_field('suitable_bottom_text') ?></p>
         <?php endwhile; ?>
       <?php else : ?>
         <p>При работе с теневыми потолками есть один момент, который требует аккуратности и опыта. На углах профиль запиливают. Когда профиль огибает угол стены, из-за наклона «полки» образуется острый клин, который может порвать полотно. </p>

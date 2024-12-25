@@ -13,6 +13,7 @@
 
     @media (max-width: @sizes[maxMD]) {
       flex-wrap: wrap;
+      justify-content: center;
       gap: 26px;
     }
 
@@ -167,7 +168,7 @@
 
   .correct__price {
     .fontNunito(700);
-    .fontSize(clamp(30px, 6vw, 42px), clamp(30px, 7vw, 61px));
+    .fontSize(clamp(30px, 6vw, 42px), clamp(45px, 7vw, 61px));
     color: #FFFFFF;
   }
 
@@ -220,6 +221,8 @@
     border-radius: 6px;
     padding: 8px 20px;
     width: 100%;
+    display: block;
+    text-align: center;
     max-width: 446px;
     color: #00871D;
     .fontNunito(600);

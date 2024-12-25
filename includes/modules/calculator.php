@@ -31,15 +31,15 @@
     <div class="calc">
       <div id="parameters">
         <div class="input-group">
-          <label for="square">Площадь, м2</label>
-          <input type="number" id="square" value="17">
+          <label for="square"><?= get_bloginfo("language") == 'ru' ? 'Площадь, м2' : 'Площа, м2'?></label>
+          <input type="number" id="square" value="<?= get_field('calculator_square_value') ? the_field('calculator_square_value') : 17 ?>">
           <div class="calc__buttons">
             <button class="decrement">-</button>
             <button class="increment">+</button>
           </div>
         </div>
         <div class="input-group">
-          <label for="angles">Площадь, м2</label>
+          <label for="angles"><?= get_bloginfo("language") == 'ru' ? 'Количество углов' : 'Кількість кутів'?></label>
           <input type="number" id="angles" value="4">
           <div class="calc__buttons">
             <button class="decrement">-</button>
@@ -47,7 +47,7 @@
           </div>
         </div>
         <div class="input-group">
-          <label for="lightingPoints">Площадь, м2</label>
+          <label for="lightingPoints"><?= get_bloginfo("language") == 'ru' ? 'Светильники' : 'Світильники'?></label>
           <input type="number" id="lightingPoints" value="0">
           <div class="calc__buttons">
             <button class="decrement">-</button>
@@ -55,7 +55,7 @@
           </div>
         </div>
         <div class="input-group">
-          <label for="chandeliers">Площадь, м2</label>
+          <label for="chandeliers"><?= get_bloginfo("language") == 'ru' ? 'Люстры' : 'Люстри'?></label>
           <input type="number" id="chandeliers" value="0">
           <div class="calc__buttons">
             <button class="decrement">-</button>
@@ -63,8 +63,8 @@
           </div>
         </div>
         <div class="input-group">
-          <label for="rod">Площадь, м2</label>
-          <input type="number" id="rod" value="0">
+          <label for="rod"><?= get_bloginfo("language") == 'ru' ? 'Трубы' : 'Труби'?></label>
+          <input type="number" id="pipes" value="0">
           <div class="calc__buttons">
             <button class="decrement">-</button>
             <button class="increment">+</button>

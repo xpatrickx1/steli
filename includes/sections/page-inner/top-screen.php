@@ -42,7 +42,7 @@
         <?= get_field( 'page_title' ) ? the_field( 'page_title' ) : get_the_title() ?>
       </h2>
       <div class="top-screen__description">
-        <?= get_field('top_screen_description') ? the_field('top_screen_description') : 'Теневое примыкание натяжного потолка создаёт визуальный эффект — между потолочной конструкцией и стеной пролегает глубокая тень. ' ?>
+        <?= get_field('top_screen_description_1') ? the_field('top_screen_description_1') : 'Теневое примыкание натяжного потолка создаёт визуальный эффект — между потолочной конструкцией и стеной пролегает глубокая тень. ' ?>
       </div>
       <div class="top-screen__description">
         <?= get_field('top_screen_description2') ? the_field('top_screen_description2') : 'Из-за этого кажется, что потолочная «плита» парит в воздухе, не соприкасаясь со стеной. Они хорошо смотрятся в современных и минималистичных интерьерах.' ?>
@@ -51,9 +51,10 @@
 
     <a 
       href="#"
-      rel="nofollow"
+      data-hover="<?= get_bloginfo("language") == 'ru' ? 'Бесплатный замер' : 'Безкоштовний замір'?>"
+      rel="nofollow" id="headerOrderBtn"
       class="button--main">
-      Бесплатный замер
+      <span><?= get_bloginfo("language") == 'ru' ? 'Бесплатный замер' : 'Безкоштовний замір'?></span>
     </a>
 
   </div>

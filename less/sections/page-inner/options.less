@@ -1,6 +1,6 @@
 .options {
   position: relative;
-  padding: 66px 0 20px;
+  padding: 0 0 20px;
   background: @background[white];
 
   &__wrap {
@@ -49,6 +49,10 @@
       border-radius: 2px;
       padding: clamp(20px, 5vw, 48px);
       border: 1px solid #E7E7E7;
+
+      @media (max-width: @sizes[maxSM]) {
+        flex-direction: column;
+      }
     }
 
     .item__left {

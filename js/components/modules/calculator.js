@@ -9,42 +9,28 @@ const parameters = [
     { name: 'angles', value: 4 },
     { name: 'lightingPoints', value: 0 },
     { name: 'chandeliers', value: 0 },
-    { name: 'rod', value: 0 },
+    { name: 'pipes', value: 0 },
 ];
 
-console.log(get_locale());
-
 function createParameterElement(parameter) {
-    const div = document.createElement('div');
-    div.classList.add('input-group');
-    div.innerHTML = `
-    <label for="${parameter.name}">${parameter.name} ${parameter.unit || ''}</label>
-    <input type="number" id="${parameter.name}" value="${parameter.value}">
-    <div class="calc__buttons">
-    <button class="decrement">-</button>
-    <button class="increment">+</button>
-    </div>
-  `;
+    parameters.forEach( (parameter) => {
+        const itemGroup = document.getElementById(parameter.name).closest('.input-group');
 
-    const decrementButton = div.querySelector('.decrement');
-    decrementButton.addEventListener('click', () => {
-        parameter.value = Math.max(0, parameter.value - 1);
-        document.getElementById(parameter.name).value = parameter.value;
-        updateResult();
+        itemGroup.querySelector('.decrement').addEventListener('click', () => {
+            parameter.value = Math.max(0, parameter.value - 1);
+            document.getElementById(parameter.name).value = parameter.value;
+            updateResult();
+        });
+
+        itemGroup.querySelector('.increment').addEventListener('click', () => {
+            parameter.value++;
+            document.getElementById(parameter.name).value = parameter.value;
+            updateResult();
+        });
     });
-
-    const incrementButton = div.querySelector('.increment');
-    incrementButton.addEventListener('click', () => {
-        parameter.value++;
-        document.getElementById(parameter.name).value = parameter.value;
-        updateResult();
-    });
-
-    return div;
 }
 
 function updateResult() {
-    // Розрахунок вартості на основі значень параметрів
     const totalPrice = calculatePrice(parameters);
     console.log(totalPrice);
     wrongPrice.textContent = totalPrice / 100 * 70;
@@ -67,12 +53,10 @@ function calculatePrice(parameters) {
     const cornersPrice = getValueByName('angles') * 20;
     const lightingPointsPrice = getValueByName('lightingPoints') * 20;
     const chandeliersPrice = getValueByName('chandeliers') * 20;
-    const rodPrice = getValueByName('rod') * 20;
+    const rodPrice = getValueByName('pipes') * 20;
     return basePrice + areaPrice + cornersPrice + lightingPointsPrice + chandeliersPrice + rodPrice; // Повернути розраховану ціну
 }
 
-parameters.forEach(parameter => {
-    parametersContainer.appendChild(createParameterElement(parameter));
-});
+createParameterElement();
 
 updateResult();
