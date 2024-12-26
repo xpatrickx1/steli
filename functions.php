@@ -33,16 +33,15 @@ function ox_adding_scripts()
 
 
 
-        // preload top image
-        // add_action('wp_head', function () {
-        //     if (is_front_page()) {
-        //         if (wp_is_mobile()) {
-        //             echo '<link rel="preload" as="image" href="/wp-content/themes/Paper/images/page-front/top-screen__mobile.webp"/>';
-        //         } else {
-        //             echo '<link rel="preload" as="image" href="/wp-content/themes/Paper/images/page-front/top-screen__img.webp"/>';
-        //         }
-        //     }
-        // }, 1000);
+        add_action('wp_head', function () {
+            if (is_front_page()) {
+                if (wp_is_mobile()) {
+                    echo '<link rel="preload" as="image" href="/wp-content/themes/steli/images/first-screen/natyzhnoy-potolok-s-podsvetkoy.jpg"/>';
+                } else {
+                    echo '<link rel="preload" as="image" href="/wp-content/themes/steli/images/first-screen/natyzhnoy-potolok-s-podsvetkoy.jpg"/>';
+                }
+            }
+        }, 1000);
 
 
 

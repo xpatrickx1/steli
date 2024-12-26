@@ -29,10 +29,12 @@
 
 <section class="top-screen">
   <div class="container">
-    <div class="breadcrumbs">
+  <div class="breadcrumbs">
       <span><a href="<?= home_url(); ?>">Натяжные потолки в Киеве</a></span>
       <span class="breadcrumbs__slash"> / </span>
-      <span><?= get_field('breadcrumb') ? the_field('breadcrumb') : 'Каталог потолков' ?></span>
+      <span><a href="/prices/"><?= get_bloginfo("language") == 'ru' ? 'Цены' : 'Ціни' ?></a></span>
+      <span class="breadcrumbs__slash"> / </span>
+      <span><?= get_field('breadcrumb') ? the_field('breadcrumb') : 'Калькулятор' ?></span>
     </div>
   </div>
   

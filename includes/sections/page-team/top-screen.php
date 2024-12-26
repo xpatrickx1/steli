@@ -13,10 +13,12 @@
 
 <section class="top-screen">
   <div class="container">
-    <div class="top-screen__breadcrumbs">
-      <span><a href="<?= home_url(); ?>">Home</a></span>
-      <span> > </span>
-      <span><?= get_field('breadcrumb') ? the_field('breadcrumb') : 'Inner' ?></span>
+    <div class="breadcrumbs">
+      <span><a href="<?= home_url(); ?>">Натяжные потолки в Киеве</a></span>
+      <span class="breadcrumbs__slash"> / </span>
+      <span><a href="/prices/"><?= get_bloginfo("language") == 'ru' ? 'Цены' : 'Ціни' ?></a></span>
+      <span class="breadcrumbs__slash"> / </span>
+      <span><?= get_field('breadcrumb') ? the_field('breadcrumb') : 'О компании' ?></span>
     </div>
   </div>
   
@@ -51,6 +53,7 @@
         />
       </div>
       <div class="top-screen__images--bottom">
+        
         <img 
           src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
           data-src="<?= get_sub_field('team_top_2')['url'] ? get_sub_field('team_top_2')['url'] : bloginfo('template_url') . '/images/page-team/team2.png' ?>"

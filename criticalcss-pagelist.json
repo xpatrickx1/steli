@@ -3,6 +3,34 @@
     {
       "link": "/",
       "name": "front"
+    },
+    {
+      "link": "/payments/",
+      "name": "payments"
+    },
+    {
+      "link": "/team/",
+      "name": "team"
+    },
+    {
+      "link": "/calculator/",
+      "name": "calculator"
+    },
+    {
+      "link": "/inner/",
+      "name": "inner"
+    },
+    {
+      "link": "/installation/",
+      "name": "installation"
+    },
+    {
+      "link": "/contacts/",
+      "name": "contacts"
+    },
+    {
+      "link": "/catalog/",
+      "name": "catalog"
     }
   ]
 }

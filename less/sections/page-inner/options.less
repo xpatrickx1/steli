@@ -50,13 +50,17 @@
       padding: clamp(20px, 5vw, 48px);
       border: 1px solid #E7E7E7;
 
-      @media (max-width: @sizes[maxSM]) {
+      @media (max-width: @sizes[maxLG]) {
         flex-direction: column;
       }
     }
 
     .item__left {
-      max-width: 300px
+      max-width: 100%;
+
+      @media (min-width: @sizes[minLG]) {
+        max-width: 300px
+      }
     }
 
     .item__title {

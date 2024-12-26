@@ -3,7 +3,7 @@
     <div class="breadcrumbs">
       <span><a href="<?= home_url(); ?>">Натяжные потолки в Киеве</a></span>
       <span class="breadcrumbs__slash"> / </span>
-      <span><?= get_field('breadcrumb') ? the_field('breadcrumb') : 'inner' ?></span>
+      <span><?= get_field('breadcrumb') ? the_field('breadcrumb') : 'Контакти' ?></span>
     </div>
   </div>
   

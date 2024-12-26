@@ -34,8 +34,15 @@
     display: flex;
     justify-content: space-between;
 
-    @media ( max-width: @sizes[ maxSM ] ) {
-      flex-direction: column;
+    @media ( max-width: 1320px ) {
+      max-height: 270px;
+      img {
+        max-width: 38%;
+
+        &:first-child {
+          width: 24%;
+        }
+      }
     }
   }
 

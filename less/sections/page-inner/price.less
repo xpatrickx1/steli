@@ -1,3 +1,11 @@
+#prices .container {
+  max-width: 780px;
+
+  @media (min-width: @sizes[minLG]) {
+    margin-right: calc((100% - 780px) / 2);
+  }
+}
+
 .price {
   position: relative;
   padding: 66px 0 clamp(40px, 7vw, 80px);

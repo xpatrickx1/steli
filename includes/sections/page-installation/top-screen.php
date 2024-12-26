@@ -13,6 +13,8 @@
     <div class="breadcrumbs">
       <span><a href="<?= home_url(); ?>">Натяжные потолки в Киеве</a></span>
       <span class="breadcrumbs__slash"> / </span>
+      <span><a href="/catalog/"><?= get_bloginfo("language") == 'ru' ? 'Заказчикам' : 'Замовникам' ?></a></span>
+      <span class="breadcrumbs__slash"> / </span>
       <span><?= get_field('breadcrumb') ? the_field('breadcrumb') : 'Каталог потолков' ?></span>
     </div>
     

@@ -7,11 +7,26 @@
     max-width: 1045px;
     margin-left: auto;
     
-
     @media (min-width: @sizes[minLG]) {
       margin-right: calc((100% - 1316px) / 2);
     }
 
+    @media (max-width: @sizes[maxLG]) {
+      margin-right: 16px;
+      width: calc(100% - 280px);
+    }
+
+    @media (max-width: @sizes[maxMD]) {
+      width: calc(100% - 260px);
+    }
+
+    @media (max-width: @sizes[maxSM]) {
+      width: 100%;
+    }
+  }
+
+  &__wrap {
+    position: relative;
   }
 
   .calculator {
@@ -30,7 +45,6 @@
 
       @media (max-width: @sizes[maxMD]) {
         padding: 10px;
-
       }
 
       input {

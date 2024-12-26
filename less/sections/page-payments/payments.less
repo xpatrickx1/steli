@@ -57,6 +57,10 @@
     max-width: 422px;
     border-radius: 6px;
 
+    @media ( min-width: @sizes[ minLG ] ) {
+      width: 32%;
+    }
+
     @media ( max-width: @sizes[ maxMD ] ) {
       flex-direction: column;
       padding: clamp(16px, 3vw, 60px) 10px;

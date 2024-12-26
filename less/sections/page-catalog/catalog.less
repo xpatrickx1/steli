@@ -25,6 +25,14 @@
     display: flex;
     gap: 24px;
 
+    @media ( min-width: @sizes[ minSM ] ) and ( max-width: @sizes[ maxMD ] ) {
+      flex-wrap: wrap;
+    }
+
+    &:not(.catalog__list:first-child) {
+      margin-top: 36px;
+    }
+
       @media ( max-width: @sizes[ maxSM ] ) {
         flex-direction: column;
       }
@@ -61,7 +69,29 @@
     .list__brands {
       margin: 36px 0 0;
       .item {
-        width: 23%;
+        width: 24%;
+        max-width: 310px;
+
+        @media ( min-width: @sizes[ minSM ] ) and ( max-width: @sizes[ maxMD ] ) {
+          width: auto;
+        }
+
+        @media ( max-width: @sizes[ maxSM ] ) {
+          width: 100%;
+        }
+      }
+    }
+
+    .catalog__list_3 {
+      margin-top: 36px;
+
+      li:first-child {
+        width: 100%;
+        max-width: 607px;
+      }
+
+      .item__text {
+        max-width: 500px;
       }
     }
 }
