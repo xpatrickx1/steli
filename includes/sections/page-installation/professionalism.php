@@ -54,21 +54,21 @@
         <?php else : ?>
           <img 
             src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-             data-src="<?= bloginfo('template_url') . '/images/page-installation/professionalism1.png' ?>"
+             data-src="<?= bloginfo('template_url') . '/images/page-installation/professionalism1.webp' ?>"
             class="lazy"
             width="1px"
             height="1px"
           />
           <img 
             src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-            data-src="<?= bloginfo('template_url') . '/images/page-installation/professionalism2.png' ?>"
+            data-src="<?= bloginfo('template_url') . '/images/page-installation/professionalism2.webp' ?>"
             class="lazy"
             width="1px"
             height="1px"
           />
           <img 
             src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-            data-src="<?= bloginfo('template_url') . '/images/page-installation/professionalism3.png' ?>"
+            data-src="<?= bloginfo('template_url') . '/images/page-installation/professionalism3.webp' ?>"
             class="lazy"
             width="1px"
             height="1px"

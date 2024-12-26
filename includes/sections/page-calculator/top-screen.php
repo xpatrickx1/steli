@@ -76,7 +76,7 @@
     <div class="top-screen--right">
       <img 
         src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-        data-src="<?= bloginfo('template_url') . '/images/page-calculator/calcbg.png' ?>"
+        data-src="<?= bloginfo('template_url') . '/images/page-calculator/calcbg.webp' ?>"
         class="lazy"
         width="1px"
         height="1px"

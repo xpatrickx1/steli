@@ -13,7 +13,7 @@
       <div class="top-screen--left">
         <img 
           src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-          data-src="<?= get_sub_field('inner_top_1')['url'] ? get_sub_field('inner_top_1')['url'] : bloginfo('template_url') . '/images/page-inner/innerTop1.png' ?>"
+          data-src="<?= get_sub_field('inner_top_1')['url'] ? get_sub_field('inner_top_1')['url'] : bloginfo('template_url') . '/images/page-inner/innerTop1.webp' ?>"
           class="lazy"
           width="1px"
           height="1px"
@@ -23,14 +23,14 @@
       <div class="top-screen--right">
         <img 
           src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-          data-src="<?= get_sub_field('inner_top_2')['url'] ? get_sub_field('inner_top_2')['url'] : bloginfo('template_url') . '/images/page-inner/innerTop2.png' ?>"
+          data-src="<?= get_sub_field('inner_top_2')['url'] ? get_sub_field('inner_top_2')['url'] : bloginfo('template_url') . '/images/page-inner/innerTop2.webp' ?>"
           class="lazy"
           width="1px"
           height="1px"
         />
         <img 
           src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-          data-src="<?= get_sub_field('inner_top_3')['url'] ? get_sub_field('inner_top_3')['url'] : bloginfo('template_url') . '/images/page-inner/innerTop3.png' ?>"
+          data-src="<?= get_sub_field('inner_top_3')['url'] ? get_sub_field('inner_top_3')['url'] : bloginfo('template_url') . '/images/page-inner/innerTop3.webp' ?>"
           class="lazy"
           width="1px"
           height="1px"

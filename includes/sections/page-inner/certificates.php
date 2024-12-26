@@ -27,14 +27,14 @@
           <div class="item__img">
             <img 
               src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-              data-src="<?= bloginfo('template_url') . '/images/page-inner/certificates1.png' ?>"
+              data-src="<?= bloginfo('template_url') . '/images/page-inner/certificates1.webp' ?>"
               class="lazy"
               width="1px"
               height="1px"
             />
             <img 
               src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-              data-src="<?= bloginfo('template_url') . '/images/page-inner/certificates2.png' ?>"
+              data-src="<?= bloginfo('template_url') . '/images/page-inner/certificates2.webp' ?>"
               class="lazy"
               width="1px"
               height="1px"

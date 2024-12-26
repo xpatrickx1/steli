@@ -44,14 +44,14 @@
     <div class="top-screen__images">
       <img 
         src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-        data-src="<?= get_sub_field('team_top_1')['url'] ? get_sub_field('team_top_1')['url'] : bloginfo('template_url') . '/images/page-contacts/contacts1.png' ?>"
+        data-src="<?= get_sub_field('team_top_1')['url'] ? get_sub_field('team_top_1')['url'] : bloginfo('template_url') . '/images/page-contacts/contacts1.webp' ?>"
         class="lazy"
         width="1px"
         height="1px"
       />
       <img 
         src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-        data-src="<?= get_sub_field('team_top_2')['url'] ? get_sub_field('team_top_2')['url'] : bloginfo('template_url') . '/images/page-contacts/contacts2.png' ?>"
+        data-src="<?= get_sub_field('team_top_2')['url'] ? get_sub_field('team_top_2')['url'] : bloginfo('template_url') . '/images/page-contacts/contacts2.webp' ?>"
         class="lazy"
         width="1px"
         height="1px"

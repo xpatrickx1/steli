@@ -3,7 +3,7 @@
       <div class="banner__left">
         <img 
           src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-          data-src="<?= bloginfo('template_url') . '/images/page-front/banner.png' ?>"
+          data-src="<?= bloginfo('template_url') . '/images/page-front/banner.webp' ?>"
           class="lazy"
           width="1px"
           height="1px"

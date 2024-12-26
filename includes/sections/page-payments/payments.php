@@ -65,7 +65,7 @@
             <?php if ( get_row_index() == 3 ) : ?>
               <img 
                 src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-                data-src="<?= bloginfo('template_url') . '/images/icons/payments.png' ?>"
+                data-src="<?= bloginfo('template_url') . '/images/icons/payments.webp' ?>"
                 class="lazy"
                 width="1px"
                 height="1px"
@@ -89,7 +89,7 @@
             <?php if ( $key == 2 ) : ?>
               <img 
                 src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-                data-src="<?= bloginfo('template_url') . '/images/icons/payments.png' ?>"
+                data-src="<?= bloginfo('template_url') . '/images/icons/payments.webp' ?>"
                 class="lazy"
                 width="1px"
                 height="1px"

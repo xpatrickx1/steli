@@ -182,7 +182,7 @@
             <div class="item__img">
               <img 
                 src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-                data-src="<?= bloginfo('template_url') . '/images/page-catalog/catalog' . ($key + 1) . '.png' ?>"
+                data-src="<?= bloginfo('template_url') . '/images/page-catalog/catalog' . ($key + 1) . '.webp' ?>"
                 class="lazy"
                 width="1px"
                 height="1px"
@@ -225,7 +225,7 @@
             <div class="item__img">
               <img 
                 src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-                data-src="<?= bloginfo('template_url') . '/images/page-catalog/catalogBrand' . ($key + 1) . '.png' ?>"
+                data-src="<?= bloginfo('template_url') . '/images/page-catalog/catalogBrand' . ($key + 1) . '.webp' ?>"
                 class="lazy"
                 width="1px"
                 height="1px"
@@ -268,7 +268,7 @@
             <div class="item__img">
               <img 
                 src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-                data-src="<?= bloginfo('template_url') . '/images/page-catalog/catalog-3-' . ($key + 1) . '.png' ?>"
+                data-src="<?= bloginfo('template_url') . '/images/page-catalog/catalog-3-' . ($key + 1) . '.webp' ?>"
                 class="lazy"
                 width="1px"
                 height="1px"
@@ -311,7 +311,7 @@
             <div class="item__img">
               <img 
                 src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-                data-src="<?= bloginfo('template_url') . '/images/page-catalog/catalog-4-' . ($key + 1) . '.png' ?>"
+                data-src="<?= bloginfo('template_url') . '/images/page-catalog/catalog-4-' . ($key + 1) . '.webp' ?>"
                 class="lazy"
                 width="1px"
                 height="1px"
@@ -354,7 +354,7 @@
             <div class="item__img">
               <img 
                 src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-                data-src="<?= bloginfo('template_url') . '/images/page-catalog/catalog-5-' . ($key + 1) . '.png' ?>"
+                data-src="<?= bloginfo('template_url') . '/images/page-catalog/catalog-5-' . ($key + 1) . '.webp' ?>"
                 class="lazy"
                 width="1px"
                 height="1px"
@@ -397,7 +397,7 @@
             <div class="item__img">
               <img 
                 src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-                data-src="<?= bloginfo('template_url') . '/images/page-catalog/catalog-6-' . ($key + 1) . '.png' ?>"
+                data-src="<?= bloginfo('template_url') . '/images/page-catalog/catalog-6-' . ($key + 1) . '.webp' ?>"
                 class="lazy"
                 width="1px"
                 height="1px"
@@ -440,7 +440,7 @@
             <div class="item__img">
               <img 
                 src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-                data-src="<?= bloginfo('template_url') . '/images/page-catalog/catalog-7-' . ($key + 1) . '.png' ?>"
+                data-src="<?= bloginfo('template_url') . '/images/page-catalog/catalog-7-' . ($key + 1) . '.webp' ?>"
                 class="lazy"
                 width="1px"
                 height="1px"
