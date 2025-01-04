@@ -32,11 +32,27 @@
 
     <div class="order__top">
       <h2>
-        <?= get_field('order_title') ? the_field('order_title') : 'Закажите детальный расчет стоимости теневого потолка' ?>
+      <?php if ( get_field('order_title'))  { 
+        echo get_field('order_title') ;
+          } else { 
+            if (get_bloginfo("language") == 'ru') {
+              echo 'Закажите детальный расчет стоимости теневого потолка' ;
+            } else {
+              echo 'Замовте детальний розрахунок вартості тіньової стелі';
+            } 
+        }; ?>
       </h2>
 
       <div class="order__description section-description">
-        <?= get_field('order_description') ? the_field('order_description') : 'Отправьте ваш проект и требования по материалам. Мы посчитаем, составим предложение и перезвоним для консультации по смете.' ?>
+      <?php if ( get_field('order_description'))  { 
+        echo get_field('order_description') ;
+          } else { 
+            if (get_bloginfo("language") == 'ru') {
+              echo 'Отправьте ваш проект и требования по материалам. Мы посчитаем, составим предложение и перезвоним для консультации по смете.' ;
+            } else {
+              echo 'Надішліть ваш проект та вимоги за матеріалами. Ми порахуємо, складемо пропозицію та передзвонимо для консультації з кошторису.';
+            } 
+        }; ?>
       </div>
     
 

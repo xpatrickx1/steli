@@ -225,7 +225,6 @@
     border-radius: 6px;
     padding: 8px 20px;
     width: 100%;
-    display: block;
     text-align: center;
     max-width: 446px;
     color: #00871D;
@@ -238,10 +237,28 @@
     cursor: pointer;
     transition: @transition;
 
+    span {
+      color: #00871D;
+    }
+    
+    &:before{
+      .fontNunito(600);
+      .fontSize(18px, 60px);
+    }
+
     @media (min-width: @sizes[minMD]) {
       &:hover {
         box-shadow: none;
         color: #005f15;
+        background: #fff;
+
+        span {
+          color: #005f15;
+        }
+
+        &:before{
+          color: #005f15;
+        }
       }
     }
   }

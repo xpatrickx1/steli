@@ -104,8 +104,8 @@
                   </li>
                 <?php endwhile; ?>
               <?php else : ?>
-                <li class="wrong__cause">Цена за материал и работу, но без профиля по периметру. Или эконом плёнка и пластиковый багет.</li>  
-                <li class="wrong__cause">Или эконом плёнка и пластиковый багет.</li>  
+                <li class="wrong__cause"><?= get_bloginfo("language") == 'ru' ? 'Цена за материал и работу, но без профиля по периметру. Или эконом плёнка и пластиковый багет.' : 'Ціна за матеріал та роботу, але без профілю по периметру. Або економ плівка та пластиковий багет.'?></li>  
+                <li class="wrong__cause"><?= get_bloginfo("language") == 'ru' ? 'Или эконом плёнка и пластиковый багет.' : 'Або економ плівка та пластиковий багет.'?></li>  
               <?php endif; ?>
             </ul>
         </div>
@@ -140,23 +140,34 @@
                   </li>
                 <?php endwhile; ?>
               <?php else : ?>
-                <li>Алюминиевый профиль</li>
-                <li>Монтажные работы</li>
-                <li>Установка светильников</li>
-                <li>Гарантия на монтаж 3 года</li>
+                <li><?= get_bloginfo("language") == 'ru' ? 'Алюминиевый профиль' : 'Алюмінієвий профіль'?></li>
+                <li><?= get_bloginfo("language") == 'ru' ? 'Монтажные работы' : 'Монтажні роботи'?></li>
+                <li><?= get_bloginfo("language") == 'ru' ? 'Установка светильников' : 'Встановлення світильників'?>Установка светильников</li>
+                <li><?= get_bloginfo("language") == 'ru' ? 'Гарантия на монтаж 3 года' : 'Гарантія на монтаж 3 роки'?>Гарантия на монтаж 3 года</li>
               <?php endif; ?>
             
           </ul>  
-          <a href="<?= get_field('calculator_brn_href') ? the_field('calculator_brn_href') : '#' ?>" class="correct__btn">
+          <a 
+          data-hover="
           <?php if ( get_field('calculator_brn_name'))  { 
+                  echo get_field('calculator_brn_name') ;
+                  } else { 
+                    if (get_bloginfo("language") == 'ru') {
+                      echo 'Бесплатный замер' ;
+                    } else {
+                      echo 'Безкоштовний замір';
+                    } 
+                }; ?>"
+          href="<?= get_field('calculator_brn_href') ? the_field('calculator_brn_href') : '#' ?>" class="correct__btn button--main">
+          <span><?php if ( get_field('calculator_brn_name'))  { 
                echo get_field('calculator_brn_name') ;
               } else { 
                 if (get_bloginfo("language") == 'ru') {
-                  echo 'Безкоштовний замір' ;
+                  echo 'Бесплатный замер' ;
                 } else {
-                  echo 'Бесплатный замер';
+                  echo 'Безкоштовний замір';
                 } 
-              }; ?>
+              }; ?></span>
               </a> 
         </div>
     </div>

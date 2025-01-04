@@ -13,8 +13,9 @@
 <body>
 
 <header class="header">
-    <div class="container">
-      <div class="header--top">
+    
+    <div class="header--top">
+      <div class="container header--top-wrp">
         <div class='header__schedule'>
           Пн - Сб: c 9:00 до 19:00
         </div>
@@ -26,12 +27,23 @@
         <div class="header--top-left">
           <?php if (function_exists ('wpm_language_switcher')) wpm_language_switcher (); ?>
 
-          <div class='header__phone'>
+          <a 
+            class="header__phone" 
+            href="tel:+38 063 654 63 85" 
+            rel="nofollow">
             +38 063 654 63 85
+          </a>
+          <div class="header__show-phones">
+            <ul class="header__phones">
+              <li>+38 067 654 63 85</li>
+              <li>+38 093 654 63 85</li>
+            </ul>
           </div>
         </div>
         
       </div>
+    </div>
+    <div class="container">
       <div class="header--bottom">
           <a href="/"
             class="header__logo" aria-label="Header logo"

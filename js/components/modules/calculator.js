@@ -32,7 +32,6 @@ function createParameterElement(parameter) {
 
 function updateResult() {
     const totalPrice = calculatePrice(parameters);
-    console.log(totalPrice);
     wrongPrice.textContent = totalPrice / 100 * 70;
     resultPriceFrom.textContent = totalPrice;
     resultPriceTo.textContent = totalPrice / 100 * 120;

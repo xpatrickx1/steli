@@ -64,11 +64,19 @@ function ox_adding_scripts()
                 wp_enqueue_script($pageTemplateName, $jsFilePath, array('jquery'), time(), true);
             }
         }
-
+       
         //добавляем стили для блога и постов
         if (is_home() || is_single()) {
             wp_enqueue_style('post', get_template_directory_uri() . '/css/page-post.min.css', array(), time());
             wp_enqueue_script('post', get_template_directory_uri() . '/js/min/page-post.min.js', null, time(), true);
+        }
+
+        if (  get_post_meta( get_the_ID(), '_wp_page_template', true ) === 'single2.php' ) {
+            wp_deregister_style('post');
+            wp_dequeue_style('post');
+            wp_dequeue_script('post');
+            wp_enqueue_style('inner2', get_template_directory_uri() . '/css/page-inner-2.min.css', array(), time(), 'all');
+            wp_enqueue_script('inner2js', get_template_directory_uri() . '/js/min/page-inner-2.min.js', null, time(), true);
         }
 
         if (is_front_page()) {

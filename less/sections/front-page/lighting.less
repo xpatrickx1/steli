@@ -23,8 +23,8 @@
   &__list {
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 24px;
+    align-items: stretch;
+    gap: 0px;
     margin-top: clamp(20px, 5vw, 48px);
 
     @media (max-width: @sizes[maxSM]) {
@@ -35,7 +35,9 @@
     .item {
       width: 100%;
       transition: @transition;
-      max-width: 423px;
+      max-width: 455px;
+      padding: 16px;
+      border-radius: 6px;
       
       @media (min-width: @sizes[minSM]) {
         width: 48%;
