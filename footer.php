@@ -12,7 +12,15 @@
           <img src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" data-src="<?= bloginfo('template_url') . '/images/icons/footer-logo.png' ?>" class="lazy" width="170px" height="57px" alt="footer site logo">
         </a>
         <div class="footer__desc">
-          <?= get_field('footer_desc') ? the_field('footer_desc') : 'Современные натяжные потолки и освещение в Киеве' ?>
+          <?php if ( get_field('footer_desc'))  { 
+              echo get_field('footer_desc') ;
+             } else { 
+              if (get_bloginfo("language") == 'ru') {
+                echo 'Современные натяжные потолки и освещение в Киеве' ;
+              } else {
+                echo 'Сучасні натяжні стелі та освітлення у Києві';
+              } 
+          }; ?>
         </div>
       </div>
 
@@ -20,7 +28,15 @@
         <?= get_field('footer_phone') ? the_field('footer_phone') : '+38 063 654 63 85' ?>
       </div>
       <div class="footer__orders">
-        <?= get_field('footer_orders') ? the_field('footer_orders') : 'Прием заявок на сайте происходит круглосуточно' ?>
+        <?php if ( get_field('footer_orders'))  { 
+          echo get_field('footer_orders') ;
+          } else { 
+          if (get_bloginfo("language") == 'ru') {
+            echo 'Прием заявок на сайте происходит круглосуточно' ;
+          } else {
+            echo 'Прийом заявок на сайті відбувається цілодобово';
+          } 
+        }; ?>
       </div>
       <a href="#" 
          class="button--main"
@@ -34,7 +50,7 @@
   <div class="footer__main">
     <div class="container">
       <div class="footer__menu">
-        <div class="footer__menu-title">каталог потолков</div>
+        <div class="footer__menu-title"><?= get_bloginfo("language") == 'ru' ? 'каталог потолков' : 'каталог стель'?></div>
         <ul class="footer__menu footer__menu--post text--capitalize">
           <?php if (has_nav_menu('footer_menu_catalog')) :
             $nav_args = array(
@@ -48,7 +64,7 @@
       </div>
 
       <div class="footer__menu">
-        <div class="footer__menu-title">потолки с подсветкой</div>
+        <div class="footer__menu-title"><?= get_bloginfo("language") == 'ru' ? 'потолки с подсветкой' : 'стелі з підсвічуванням'?></div>
         <ul class="footer__menu footer__menu--post text--capitalize">
           <?php if (has_nav_menu('footer_menu_lighting')) :
             $nav_args = array(
@@ -62,7 +78,7 @@
       </div>
 
       <div class="footer__menu">
-        <div class="footer__menu-title">цены</div>
+        <div class="footer__menu-title"><?= get_bloginfo("language") == 'ru' ? 'цены' : 'ціни'?></div>
         <ul class="footer__menu footer__menu--post text--capitalize">
           <?php if (has_nav_menu('footer_menu_price')) :
             $nav_args = array(
@@ -76,7 +92,7 @@
       </div>
 
       <div class="footer__menu">
-        <div class="footer__menu-title">наши работы</div>
+        <div class="footer__menu-title"><?= get_bloginfo("language") == 'ru' ? 'наши работы' : 'наші роботи'?></div>
         <ul class="footer__menu footer__menu--post text--capitalize">
           <?php if (has_nav_menu('footer_menu_works')) :
             $nav_args = array(
@@ -90,7 +106,7 @@
       </div>
 
       <div class="footer__menu">
-        <div class="footer__menu-title">заказчикам</div>
+        <div class="footer__menu-title"><?= get_bloginfo("language") == 'ru' ? 'заказчикам' : 'замовникам'?></div>
         <ul class="footer__menu footer__menu--post text--capitalize">
           <?php if (has_nav_menu('footer_menu_customers')) :
             $nav_args = array(
@@ -104,7 +120,7 @@
       </div>
 
       <div class="footer__menu">
-        <div class="footer__menu-title">контакты</div>
+        <div class="footer__menu-title"><?= get_bloginfo("language") == 'ru' ? 'контакты' : 'контакти'?></div>
         <ul class="footer__menu footer__menu--post text--capitalize">
           <?php if (has_nav_menu('footer_menu_contacts')) :
             $nav_args = array(
@@ -121,7 +137,7 @@
   </div>
 
   <div class="footer__bottom">
-    Работаем по Киеву и Киевской области
+    <?= get_bloginfo("language") == 'ru' ? 'Работаем по Киеву и Киевской области' : 'Працюємо по Києву та Київській області'?>
   </div>
 </footer>
 

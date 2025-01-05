@@ -35,12 +35,35 @@
       <ul class="advertising__list">
         <?php if (have_rows('advertising_list')) :
           while ( have_rows('advertising_list')) : the_row(); ?>
-            <li class="item">
+            <li class="item item--<?= get_row_index() ; ?>">
               <div class="item__top">реклама</div>
               <div class="item__title"><?= get_sub_field('item_title') ?></div>
               <div class="item__true"><?= get_bloginfo("language") == 'ru' ? 'на самом деле' : 'насправді'?></div>
               <div class="item__text"><?= get_sub_field('item_text') ?></div>
             </li>
+            <?php if(get_row_index() == 1 ) : ?>
+              <li class="item empty">
+                <div class="item__top">реклама</div>
+                <div class="empty__title empty__line"></div>
+                <div class="empty__line"></div>
+                <div class="empty__line"></div>
+                <div class="empty__line"></div>
+              </li>
+              <li class="item empty">
+                <div class="item__top">реклама</div>
+                <div class="empty__title empty__line"></div>
+                <div class="empty__line"></div>
+                <div class="empty__line"></div>
+                <div class="empty__line"></div>
+              </li>
+              <li class="item empty mobhidden">
+                <div class="item__top">реклама</div>
+                <div class="empty__title empty__line"></div>
+                <div class="empty__line"></div>
+                <div class="empty__line"></div>
+                <div class="empty__line"></div>
+              </li>
+            <?php endif; ?> 
           <?php endwhile; ?>
         <?php else : ?>
           <li class="item">

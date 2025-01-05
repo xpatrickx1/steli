@@ -28,7 +28,15 @@
 
       <div class="top-screen--right">
         <div class="top-screen__work-title">
-          <?= get_field('topscreen_worktitle') ? the_field('topscreen_worktitle') : 'Режим работы шоурума и отдела продаж:' ?>
+        <?php if ( get_field('topscreen_worktitle'))  { 
+              echo get_field('topscreen_worktitle') ;
+             } else { 
+              if (get_bloginfo("language") == 'ru') {
+                echo 'Режим работы шоурума и отдела продаж:' ;
+              } else {
+                echo 'Графік роботи шоуруму та відділу продажу:';
+              } 
+            }; ?>
         </div>
         <ul class="top-screen__work-time">
           <li>

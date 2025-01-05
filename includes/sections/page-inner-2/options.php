@@ -46,8 +46,10 @@
       <?php if (have_rows('options_list')) :
         while ( have_rows('options_list')) : the_row(); ?>
           <li class="item">
+          <div class="item__left">
             <div class="item__title"><?= get_sub_field('item_title') ?></div>
             <div class="item__text"><?= get_sub_field('item_text') ?></div>
+            </div>
           </li>
         <?php endwhile; ?>
       <?php else : ?>

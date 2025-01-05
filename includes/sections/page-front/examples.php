@@ -91,7 +91,9 @@
           while ( have_rows('examples_list')) : the_row(); ?>
             <li class="item">
               <div class="item__price">
-                <?= get_sub_field('item_price') ?>
+                <div class="item__top">
+                  <div class="item__top--text"><?= get_bloginfo("language") == 'ru' ? 'Всё включено' : 'Все включено'?></div> <div class="item__value"><?= get_sub_field('item_price') ?></div>
+                </div>
               </div>
               <div class="item__img">
                 <?php if(get_sub_field('item_img')['url']) : ?>
@@ -123,8 +125,8 @@
           <?php foreach ( $examples as $key => $item ) : ?>
             <li class="item">
               <div class="item__price">
-                <div class="item__subtitle">
-                <div>Всё включено</div> <div class="item__value"><?= $item['price'] ?></div>
+                <div class="item__top">
+                  <div class="item__top--text"><?= get_bloginfo("language") == 'ru' ? 'Всё включено' : 'Все включено'?></div> <div class="item__value"><?= $item['price'] ?></div>
                 </div>
               </div>
               <div class="item__img">

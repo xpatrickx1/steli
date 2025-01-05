@@ -25,8 +25,7 @@
       <ul class="professionalism__list">
         <?php if (have_rows('professionalism_list')) :
           while ( have_rows('professionalism_list')) : the_row(); ?>
-            <li class="item"><?= get_sub_field('item_title') ?></li>
-            <li class="item"><?= get_sub_field('item_text') ?></li>
+            <li class="item"><div class="item__title"><?= get_sub_field('item_title') ?></div></li>
           <?php endwhile; ?>
         <?php else : ?>
           <?php foreach ( $professionalism as $key => $item ) : ?>

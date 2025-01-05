@@ -62,8 +62,8 @@
           </div>
         </div>
         <ul class="top-screen__list">
-            <?php if (have_rows('top-screen_list')) :
-              while ( have_rows('top-screen_list')) : the_row(); ?>
+            <?php if (have_rows('top_screen_list')) :
+              while ( have_rows('top_screen_list')) : the_row(); ?>
                 <li class="item"><?= get_sub_field('item_title') ?></li>
               <?php endwhile; ?>
             <?php else : ?>

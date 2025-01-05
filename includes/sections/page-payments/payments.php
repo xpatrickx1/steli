@@ -102,7 +102,15 @@
 
     <div class="payments__bottom">
       <h3 class="payments__title">
-        <?= get_field('payments_title') ? the_field('payments_title') : 'Для физических лиц' ?>
+      <?php if ( get_field('payments_title_ur'))  { 
+        echo get_field('payments_title_ur') ;
+        } else { 
+        if (get_bloginfo("language") == 'ru') {
+          echo 'Для юридических лиц' ;
+        } else {
+          echo 'Для юридичних осіб';
+        } 
+      }; ?>
       </h3>
       <div class="payments__text">
         <?= get_field('payments_subtitle') ? the_field('payments_subtitle') : '<p>Коммерческие организации могут оплатить услуги безналичным переводом на расчётный счёт ООО. Мы работаем с НДС и без НДС в зависимости от вашей системы налогообложения.</p><p>Реквизиты, режим работы и адрес офиса в разделе контакты.</p>' ?>
@@ -111,3 +119,4 @@
     </div>
   </div>
 </section>
+
