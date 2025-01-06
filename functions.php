@@ -112,6 +112,14 @@ $css_files = array(
     'front',
     'main',
     'inner',
+    'inner2',
+    'calculator',
+    'catalog',
+    'contacts',
+    'installation',
+    'order',
+    'payments',
+    'team',
 );
 
 add_action('wp_enqueue_scripts', 'ox_adding_critical_css');
@@ -141,7 +149,15 @@ function ox_adding_critical_css()
 
     $pageTemplates = array(
         "front-page" => "front",
+        "page-calculator" => "calculator",
+        "page-catalog" => "catalog",
+        "page-contacts" => "contacts",
+        "page-inner-2" => "inner2",
         "page-inner" => "inner",
+        "page-installation" => "installation",
+        "page-order" => "order",
+        "page-payments" => "payments",
+        "page-team" => "team",
     );
     $currentPageTemplate = get_page_template_slug();
     $currentPageTemplateName = str_replace(['pages/', '.php'], '', $currentPageTemplate);
