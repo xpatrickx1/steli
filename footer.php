@@ -49,93 +49,99 @@
     
   <div class="footer__main">
     <div class="container">
-      <div class="footer__menu">
-        <div class="footer__menu-title"><?= get_bloginfo("language") == 'ru' ? 'каталог потолков' : 'каталог стель'?></div>
-        <ul class="footer__menu footer__menu--post text--capitalize">
-          <?php if (has_nav_menu('footer_menu_catalog')) :
-            $nav_args = array(
-              'theme_location' => 'footer_menu_catalog',
-              'container' => '',
-              'items_wrap' => '%3$s',
-            );
-            wp_nav_menu($nav_args);
-          endif; ?>
-        </ul>
+      <div class="footer__menu-wrp">
+        <div class="footer__menu">
+          <div class="footer__menu-title"><?= get_bloginfo("language") == 'ru' ? 'каталог потолков' : 'каталог стель'?></div>
+          <ul class="footer__menu footer__menu--post text--capitalize">
+            <?php if (has_nav_menu('footer_menu_catalog')) :
+              $nav_args = array(
+                'theme_location' => 'footer_menu_catalog',
+                'container' => '',
+                'items_wrap' => '%3$s',
+              );
+              wp_nav_menu($nav_args);
+            endif; ?>
+          </ul>
+        </div>
+
+        <div class="footer__menu">
+          <div class="footer__menu-title"><?= get_bloginfo("language") == 'ru' ? 'потолки с подсветкой' : 'стелі з підсвічуванням'?></div>
+          <ul class="footer__menu footer__menu--post text--capitalize">
+            <?php if (has_nav_menu('footer_menu_lighting')) :
+              $nav_args = array(
+                'theme_location' => 'footer_menu_lighting',
+                'container' => '',
+                'items_wrap' => '%3$s',
+              );
+              wp_nav_menu($nav_args);
+            endif; ?>
+          </ul>
+        </div>
+
+        <div class="footer__menu">
+          <div class="footer__menu-title"><?= get_bloginfo("language") == 'ru' ? 'цены' : 'ціни'?></div>
+          <ul class="footer__menu footer__menu--post text--capitalize">
+            <?php if (has_nav_menu('footer_menu_price')) :
+              $nav_args = array(
+                'theme_location' => 'footer_menu_price',
+                'container' => '',
+                'items_wrap' => '%3$s',
+              );
+              wp_nav_menu($nav_args);
+            endif; ?>
+          </ul>
+        </div>
+
+        <div class="footer__menu">
+          <div class="footer__menu-title"><?= get_bloginfo("language") == 'ru' ? 'наши работы' : 'наші роботи'?></div>
+          <ul class="footer__menu footer__menu--post text--capitalize">
+            <?php if (has_nav_menu('footer_menu_works')) :
+              $nav_args = array(
+                'theme_location' => 'footer_menu_works',
+                'container' => '',
+                'items_wrap' => '%3$s',
+              );
+              wp_nav_menu($nav_args);
+            endif; ?>
+          </ul>
+        </div>
+
+        <div class="footer__menu">
+          <div class="footer__menu-title"><?= get_bloginfo("language") == 'ru' ? 'заказчикам' : 'замовникам'?></div>
+          <ul class="footer__menu footer__menu--post text--capitalize">
+            <?php if (has_nav_menu('footer_menu_customers')) :
+              $nav_args = array(
+                'theme_location' => 'footer_menu_customers',
+                'container' => '',
+                'items_wrap' => '%3$s',
+              );
+              wp_nav_menu($nav_args);
+            endif; ?>
+          </ul>
+        </div>
+
+        <div class="footer__menu">
+          <div class="footer__menu-title"><?= get_bloginfo("language") == 'ru' ? 'контакты' : 'контакти'?></div>
+          <ul class="footer__menu footer__menu--post text--capitalize">
+            <?php if (has_nav_menu('footer_menu_contacts')) :
+              $nav_args = array(
+                'theme_location' => 'footer_menu_contacts',
+                'container' => '',
+                'items_wrap' => '%3$s',
+              );
+              wp_nav_menu($nav_args);
+            endif; ?>
+          </ul>
+        </div>
       </div>
 
-      <div class="footer__menu">
-        <div class="footer__menu-title"><?= get_bloginfo("language") == 'ru' ? 'потолки с подсветкой' : 'стелі з підсвічуванням'?></div>
-        <ul class="footer__menu footer__menu--post text--capitalize">
-          <?php if (has_nav_menu('footer_menu_lighting')) :
-            $nav_args = array(
-              'theme_location' => 'footer_menu_lighting',
-              'container' => '',
-              'items_wrap' => '%3$s',
-            );
-            wp_nav_menu($nav_args);
-          endif; ?>
-        </ul>
-      </div>
-
-      <div class="footer__menu">
-        <div class="footer__menu-title"><?= get_bloginfo("language") == 'ru' ? 'цены' : 'ціни'?></div>
-        <ul class="footer__menu footer__menu--post text--capitalize">
-          <?php if (has_nav_menu('footer_menu_price')) :
-            $nav_args = array(
-              'theme_location' => 'footer_menu_price',
-              'container' => '',
-              'items_wrap' => '%3$s',
-            );
-            wp_nav_menu($nav_args);
-          endif; ?>
-        </ul>
-      </div>
-
-      <div class="footer__menu">
-        <div class="footer__menu-title"><?= get_bloginfo("language") == 'ru' ? 'наши работы' : 'наші роботи'?></div>
-        <ul class="footer__menu footer__menu--post text--capitalize">
-          <?php if (has_nav_menu('footer_menu_works')) :
-            $nav_args = array(
-              'theme_location' => 'footer_menu_works',
-              'container' => '',
-              'items_wrap' => '%3$s',
-            );
-            wp_nav_menu($nav_args);
-          endif; ?>
-        </ul>
-      </div>
-
-      <div class="footer__menu">
-        <div class="footer__menu-title"><?= get_bloginfo("language") == 'ru' ? 'заказчикам' : 'замовникам'?></div>
-        <ul class="footer__menu footer__menu--post text--capitalize">
-          <?php if (has_nav_menu('footer_menu_customers')) :
-            $nav_args = array(
-              'theme_location' => 'footer_menu_customers',
-              'container' => '',
-              'items_wrap' => '%3$s',
-            );
-            wp_nav_menu($nav_args);
-          endif; ?>
-        </ul>
-      </div>
-
-      <div class="footer__menu">
-        <div class="footer__menu-title"><?= get_bloginfo("language") == 'ru' ? 'контакты' : 'контакти'?></div>
-        <ul class="footer__menu footer__menu--post text--capitalize">
-          <?php if (has_nav_menu('footer_menu_contacts')) :
-            $nav_args = array(
-              'theme_location' => 'footer_menu_contacts',
-              'container' => '',
-              'items_wrap' => '%3$s',
-            );
-            wp_nav_menu($nav_args);
-          endif; ?>
-        </ul>
+      <div class='footer__autonom'>
+        <?= get_bloginfo("language") == 'ru' ? 'Рабоаем автономно' : 'Працюємо автономно'?>
       </div>
 
     </div>
   </div>
-
+  
   <div class="footer__bottom">
     <?= get_bloginfo("language") == 'ru' ? 'Работаем по Киеву и Киевской области' : 'Працюємо по Києву та Київській області'?>
   </div>

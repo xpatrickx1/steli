@@ -109,6 +109,7 @@ function setup_collapsible_submenus() {
         if (!($(event.target).parents('.sub-menu').length)) {
             $('.sub-menu').removeClass('visible');
             $('.second-level-sub-menu').removeClass('visible');
+            $('.header__navigation a').removeClass('open');
         }
     });
 }
