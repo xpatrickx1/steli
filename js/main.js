@@ -6,3 +6,7 @@ $(document).ready(() => {
 });
 
 //= include components/helpers.js
+
+document.querySelector('.wpcf7-file').onchange = function() { 
+    document.querySelector('.file-name').textContent = this.value.replace(/^.*[\\\/]/, '');
+};

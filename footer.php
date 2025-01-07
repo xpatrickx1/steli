@@ -134,6 +134,7 @@
           </ul>
         </div>
       </div>
+      
 
       <div class='footer__autonom'>
         <?= get_bloginfo("language") == 'ru' ? 'Рабоаем автономно' : 'Працюємо автономно'?>

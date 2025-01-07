@@ -135,7 +135,6 @@
       flex-wrap: wrap;
       justify-content: space-between;
       
-
       @media ( max-width: @sizes[ maxSM ] ) {
         flex-direction: column;
         align-items: center;
@@ -148,7 +147,8 @@
       .fontSize(14px, 44px);
       color: #fff;
       margin-left: auto;
-      width: fit-content;
+      width: 100%;
+      max-width: 215px;
 
       @media ( max-width: @sizes[ maxSM ] ) {
         margin: 0 auto;
