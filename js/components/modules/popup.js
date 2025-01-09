@@ -3,6 +3,7 @@ const popupTriggers = [
     '#headerCallbackPopup',
     '#caculatorOrder',
     '#footerOrder',
+    '#recommendationOrder',
     '#orderBanner'
 ];
 

@@ -13,7 +13,7 @@
       <a 
         href="#"
         data-hover="<?= get_field('recommendation_btn') ? the_field('recommendation_btn') : 'Бесплатный замер' ?>"
-        rel="nofollow" id="headerOrderBtn"
+        rel="nofollow" id="recommendationOrder"
         class="button--main">
         <span><?= get_field('recommendation_btn') ? the_field('recommendation_btn') : 'Бесплатный замер' ?></span>
       </a>

@@ -87,7 +87,11 @@
             href="#"
             rel="nofollow" id="headerCallbackPopup"
             class="button--second">
-            Заказать звонок
+            <?php if (get_bloginfo("language") == 'ru') {
+                  echo 'Заказать звонок' ;
+                } else {
+                  echo 'Замовити дзвінок';
+                }; ?>
           </a>
 
           <div class="header__hamburger js-hamburger">

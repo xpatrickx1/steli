@@ -1,22 +1,43 @@
 <?php
 
   $numbers = [
-    [
-      'title' => '10+',
-      'text' => 'лет опыта',
+    'ru' => [
+      [
+        'title' => '10+',
+        'text' => 'лет опыта',
+      ],
+      [
+        'title' => '170+',
+        'text' => 'реализованных проектов',
+      ],
+      [
+        'title' => '18',
+        'text' => 'монтажников готовых к работе',
+      ],
+      [
+        'title' => '2400+',
+        'text' => 'метров натянутых потолков',
+      ],
     ],
-    [
-      'title' => '170+',
-      'text' => 'реализованных проектов',
-    ],
-    [
-      'title' => '18',
-      'text' => 'монтажников готовых к работе',
-    ],
-    [
-      'title' => '2400+',
-      'text' => 'метров натянутых потолков',
-    ],
+    'ua' => [
+      [
+        'title' => '10+',
+        'text' => 'років досвіду',
+      ],
+      [
+        'title' => '170+',
+        'text' => 'реалізованих проектів',
+      ],
+      [
+        'title' => '18',
+        'text' => 'майстрів готових до роботи',
+      ],
+      [
+        'title' => '2400+',
+        'text' => 'метрів зроблених стель',
+      ],
+    ]
+    
   ];
 
 ?>
@@ -40,7 +61,7 @@
             </li>
           <?php endwhile; ?>
         <?php else : ?>
-          <?php foreach ( $numbers as $key => $item ) : ?>
+          <?php foreach ( get_bloginfo("language") == 'ru' ? $numbers['ru'] : $numbers['ua'] as $key => $item ) : ?>
             <li class="item">
               <div class="item__title"><?= $item['title'] ?></div>
               <div class="item__text"><?= $item['text'] ?></div>
