@@ -42,7 +42,7 @@
                 } 
               }; ?>
       </h2>
-      <?=  get_bloginfo("language") ?>
+      
       <div class="call__description section-description">
         <?php if ( get_field('call_title'))  { 
           echo get_field('call_title') ;

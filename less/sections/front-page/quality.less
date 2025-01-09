@@ -34,13 +34,13 @@
 
     .item {
       width: 100%;
-      transition: @transition;
       max-width: 453px;
       padding: 15px;
       border-radius: 6px;
+      transition: @transition;
 
       @media (min-width: @sizes[minSM]) {
-        width: 47%;
+        width: 100%;
       }
 
       @media (min-width: @sizes[minMD]) {
@@ -54,8 +54,8 @@
       @media (min-width: @sizes[minSM]) {
 
         &:hover {
-          background: #FCFCFC;
-          box-shadow: 10px 5px 5px #C5C5C514;
+          background: #fff;
+          box-shadow: 10px 5px 5px #c5c5C514;
         }
 
         a:hover {
@@ -72,7 +72,8 @@
       .fontSize( 18px, 34px );
       margin: 24px 0 6px;
       padding-left: 5px;
-
+      transition: @transition;
+      
       @media (max-width: @sizes[maxMD]) {
         margin: 10px 0 6px;
       }

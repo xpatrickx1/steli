@@ -23,7 +23,6 @@
 
     &__list {
     display: flex;
-    gap: 24px;
 
     @media ( min-width: @sizes[ minSM ] ) and ( max-width: @sizes[ maxMD ] ) {
       flex-wrap: wrap;
@@ -59,6 +58,7 @@
       .font( 700 );
       margin: 12px 0 0;
       .fontSize( 18px, 25px );
+      transition: @transition;
     }
 
     .item__text {
@@ -68,9 +68,12 @@
 
     .list__brands {
       margin: 36px 0 0;
+      
       .item {
-        width: 24%;
-        max-width: 310px;
+        width: 25%;
+        padding: 15px;
+        border-radius: 6px;
+        transition: @transition;
 
         @media ( min-width: @sizes[ minSM ] ) and ( max-width: @sizes[ maxMD ] ) {
           width: auto;
@@ -78,6 +81,18 @@
 
         @media ( max-width: @sizes[ maxSM ] ) {
           width: 100%;
+        }
+
+        @media (min-width: @sizes[minSM]) {
+
+          &:hover {
+            background: #fff;
+            box-shadow: 10px 5px 5px #c5c5C514;
+
+            .item__title {
+              color: @color[accent];
+              }
+          }
         }
       }
     }
@@ -92,6 +107,26 @@
 
       .item__text {
         max-width: 500px;
+      }
+    }
+
+    ul {
+      li {
+        padding: 15px;
+        border-radius: 6px;
+        transition: @transition;
+
+        @media (min-width: @sizes[minSM]) {
+
+          &:hover {
+            background: #fff;
+            box-shadow: 10px 5px 5px #c5c5C514;
+
+            .item__title {
+              color: @color[accent];
+              }
+          }
+        }
       }
     }
 }
