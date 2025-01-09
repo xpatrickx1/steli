@@ -43,7 +43,7 @@
     </ul>
 
     <div class="steps__title">
-     <?= get_field('steps_title') ? the_field('steps_title') : 'Основные этапы монтажа' ?>
+     <?= get_field('steps_steptitle') ? the_field('steps_steptitle') : 'Основные этапы монтажа' ?>
     </div>
       <ul class="steps__list">
         <?php if (have_rows('steps_list')) :
@@ -97,7 +97,6 @@
           <?php endforeach; ?>
         <?php endif; ?>
       </ul>
-    </div>
 
   </div>
 </section>

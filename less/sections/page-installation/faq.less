@@ -65,8 +65,22 @@
     position: relative;
     transition: @transition;
     padding: clamp(16px, 3vw, 36px);
-    background: linear-gradient(0deg, #FFFFFF -3.01%, #F8F8F8 100%);
+    background: #FFFFFF;
     border-top: 1px solid #DFDFDF;
+
+    @media (min-width: @sizes[minMD]) {
+      &:hover {
+        background: linear-gradient(0deg, #FFFFFF -3.01%, #F8F8F8 100%);
+      }
+
+      &:active {
+        background: @background[white];
+      }
+    }
+
+    &.currentFaq {
+      background: linear-gradient(0deg, #FFFFFF -3.01%, #F8F8F8 100%);
+    }
   }
 
   &__title-wrap {
