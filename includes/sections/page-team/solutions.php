@@ -18,7 +18,7 @@
           while ( have_rows('solutions_list')) : the_row(); ?>
           <li class="item">
               <div class="item__number">
-                0<?= ($key + 1) ?>
+                0<?= (get_row_index()) ?>
               </div>
               <img 
                 src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 

@@ -38,49 +38,50 @@
     </div>
   </div>
   
-  <div class="container top-screen__wrap">
+  <div class="container">
+    <div class="top-screen__wrap">
+      <div class="top-screen--left">
+        <h2>
+          <?= get_field( 'page_title' ) ? the_field( 'page_title' ) : get_the_title() ?>
+        </h2>
+      
 
-    <div class="top-screen--left">
-      <h2>
-        <?= get_field( 'page_title' ) ? the_field( 'page_title' ) : get_the_title() ?>
-      </h2>
-    
+        <ul class="top-screen__list">
+          <?php if (have_rows('top_list')) :
+            while ( have_rows('top_list')) : the_row(); ?>
+              <li class="item">
+                <div class="item__title item-title18">
+                  <?= get_sub_field('item_title') ?>
+                </div>  
+                <div class="item__text">
+                  <?= get_sub_field('item_text') ?>
+                </div>  
+              </li>
+            <?php endwhile; ?>
+          <?php else : ?>
+            <?php foreach ( get_bloginfo("language") == 'ru' ? $calculator['ru'] : $calculator['ua'] as $key => $item ) : ?>
+              <li class="item">
+                <div class="item__title item-title18">
+                  <?= $item['title'] ?>
+                </div>  
+                <div class="item__text">
+                  <?= $item['text'] ?> 
+                </div>  
+              </li>
+            <?php endforeach; ?>
+          <?php endif; ?>
+        </ul>
+      </div>
 
-      <ul class="top-screen__list">
-        <?php if (have_rows('top_list')) :
-          while ( have_rows('top_list')) : the_row(); ?>
-            <li class="item">
-              <div class="item__title item-title18">
-                <?= get_sub_field('item_title') ?>
-              </div>  
-              <div class="item__text">
-                <?= get_sub_field('item_text') ?>
-              </div>  
-            </li>
-          <?php endwhile; ?>
-        <?php else : ?>
-          <?php foreach ( get_bloginfo("language") == 'ru' ? $calculator['ru'] : $calculator['ua'] as $key => $item ) : ?>
-            <li class="item">
-              <div class="item__title item-title18">
-                <?= $item['title'] ?>
-              </div>  
-              <div class="item__text">
-                <?= $item['text'] ?> 
-              </div>  
-            </li>
-          <?php endforeach; ?>
-        <?php endif; ?>
-      </ul>
-    </div>
-
-    <div class="top-screen--right">
-      <img 
-        src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-        data-src="<?= bloginfo('template_url') . '/images/page-calculator/calcbg.webp' ?>"
-        class="lazy"
-        width="1px"
-        height="1px"
-      />
+      <div class="top-screen--right">
+        <img 
+          src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
+          data-src="<?= bloginfo('template_url') . '/images/page-calculator/calcbg.webp' ?>"
+          class="lazy"
+          width="1px"
+          height="1px"
+        />
+      </div>
     </div>
   </div>
 </section>

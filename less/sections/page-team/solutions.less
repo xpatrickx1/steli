@@ -1,6 +1,6 @@
 .solutions {
   position: relative;
-  padding: clamp(100px, 14vw, 130px) 0 clamp(60px, 7vw, 90px);
+  padding: clamp(100px, 14vw, 100px) 0 clamp(60px, 7vw, 90px);
   background: @background[white];
 
   @media ( max-width: @sizes[ maxLG ] ) {
@@ -42,9 +42,15 @@
 
   h3 {
     width: 100%;
+    max-width: 511px;
     .fontSize(clamp(25px, 3vw, 36px), clamp(30px, 3vw, 39px));
     .fontNunito(700);
-    margin: 0 0 clamp(30px, 3vw, 47px);
+    margin: 0 clamp(60px, 10vw, 161px) clamp(30px, 3vw, 47px) 0;
+  }
+
+  &__description {
+    max-width: 423px;
+    .fontSize( 18px, 24px );
   }
 
   &__list {
@@ -56,7 +62,10 @@
   .item {
     display: flex;
     padding: clamp(16px, 3vw, 60px);
-    border-bottom: 1px solid #E6E6E6;
+
+    &:not(.item:last-child) {
+      border-bottom: 1px solid #E6E6E6;
+    }
 
     @media ( max-width: @sizes[ maxMD ] ) {
       flex-direction: column;

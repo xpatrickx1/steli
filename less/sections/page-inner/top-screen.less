@@ -34,8 +34,17 @@
   }
 
   &__bottom {
-    margin-top: clamp(30px, 4vw, 48px);
+    display: flex;
     justify-content: space-between;
+    margin-top: clamp(30px, 4vw, 48px);
+
+    &--left {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      flex: 1 0 auto;
+      max-width: 853px;
+    }
   }
 
   h2 {
@@ -49,15 +58,12 @@
   &__description {
     .fontSize(clamp(14px, 2vw, 18px), clamp(18px, 3vw, 25px));
     font-weight: 400;
-    max-width: 429px;
-
-    &:first-child {
-      min-width: 400px;
-    }
+    width: 385px;
+    max-width: 48%;
   }
 
   .button--main {
-    margin: 35px auto 0;
+    margin: 35px 0 0;
     max-width: 252px;
     max-height: 48px;
   }

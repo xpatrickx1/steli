@@ -80,7 +80,7 @@ $('.header__navigation li a, .footer__menu li a').click(function(event) {
 });
 
 
-const $menu = $('.header__navigation ');
+const $menu = $('.header__navigation');
 const top_level_link = '.menu-item-has-children > a';
 function setup_collapsible_submenus() {
     $menu.find(top_level_link).each(function() {
@@ -89,17 +89,23 @@ function setup_collapsible_submenus() {
 
         $(this).on('click', function(event) {
             event.stopPropagation();
-            $(this).toggleClass('open');
-            $(this).next('.sub-menu').toggleClass('visible');
-            $(this).next('.sub-menu').toggleClass('hide');
-            $(this).next('.second-level-sub-menu').toggleClass('visible');
-            $(this).next('.second-level-sub-menu').toggleClass('hide');
-            // $menu.find('.sub-menu').first().find('.menu-item-has-children').first().addClass('active');
 
-            if (!($(this).hasClass('open'))) {
+            if($(this).parent('li').parent('ul').hasClass('header__navigation')) {
+                if (!($(this).hasClass('open'))) {
+                    $menu.find(top_level_link).removeClass('open');
+                }
                 $('.second-level-sub-menu').removeClass('visible');
                 $('.second-level-sub-menu').addClass('hide');
-                $('.sub-menu a').removeClass('open');
+                $('.sub-menu').removeClass('visible');
+                $('.sub-menu').addClass('hide');
+            }
+
+            if (!($(this).hasClass('open'))) {
+                $(this).addClass('open');
+                $(this).next('ul').addClass('visible').removeClass('hide');
+            } else {
+                $(this).removeClass('open');
+                $(this).next('ul').removeClass('visible').addClass('hide');
             }
             return false;
         });
@@ -107,8 +113,8 @@ function setup_collapsible_submenus() {
 
     $(window).click(function(event) {
         if (!($(event.target).parents('.sub-menu').length)) {
-            $('.sub-menu').removeClass('visible');
-            $('.second-level-sub-menu').removeClass('visible');
+            $('.sub-menu').removeClass('visible').addClass('hide');
+            $('.second-level-sub-menu').removeClass('visible').addClass('hide');
             $('.header__navigation a').removeClass('open');
         }
     });

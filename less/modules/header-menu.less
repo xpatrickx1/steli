@@ -24,7 +24,7 @@
       position: relative;
 
       > a {
-        padding-right: 20px;
+        padding-right: 15px;
 
         &:after {
           content: '';
@@ -78,6 +78,10 @@
           color: @color[ accent ];
         }
       }
+
+      &.active {
+        color: @color[ accent ];
+      }
     }
 
   }
@@ -100,7 +104,7 @@
   
   .header .navigation {
     position: absolute;
-    top: 145px;
+    top: 165px;
     right: 0;
     left: 0;
     bottom: 0;
@@ -147,8 +151,8 @@
   .is-open {
 
     .header__navigation {
-      backdrop-filter: blur(5px);
       transform: scaleY(1);
+      background: @background[white];
     }
 
   }
@@ -157,7 +161,7 @@
 
 @media ( max-width: @sizes[ maxSM ] ) {
   .header .navigation {
-    top: 75px;
+    top: 95px;
     height: calc(100vh - 75px);
     padding: 40px 15px;
     justify-content: flex-start;
@@ -264,26 +268,29 @@
   }
 
   @media ( max-width: @sizes[ maxLG ] ) { 
-    transform: scale(0);
+    transform: scaleY(0);
     position: relative;
     top: 0;
+    height: 0;
     background: transparent;
-    display: none;
     width: 100%;
+    box-shadow: none;
 
     li {
       text-align: center;
       width: 100%;
+      transition: @transition;
+      border-top: none;
     }
 
     &.visible {
-      transform: scale(1);
-      display: block;
+      transform: scaleY(1);
+      height: 100%;
     }
 
     li.menu-item-has-children a {
       width: fit-content;
-      padding-right: 20px;
+      padding-right: 15px;
 
       &.open {
         background: transparent;
@@ -385,21 +392,23 @@
   }
 
   @media ( max-width: @sizes[ maxLG ] ) { 
-    transform: scale(0);
+    transform: scaleY(0);
     position: relative;
     width: 100%;
     left: 0;
     top: 0;
-    background: transparent;
-    display: none;
+    background: @background[white];
+    box-shadow: none;
+    height: 0;
+    transition: @transition;
 
     li {
       text-align: center;
     }
 
     &.visible {
-      transform: scale(1);
-      display: block;
+      transform: scaleY(1);
+      height: 100%;
     }
 
     

@@ -143,7 +143,8 @@
 ?>
 
 <section class="catalog">
-  <div class="container catalog__wrap">
+  <div class="container ">
+    <div class="catalog__wrap">
     <div class="breadcrumbs">
       <span><a href="<?= home_url(); ?>">Натяжные потолки в Киеве</a></span>
       <span class="breadcrumbs__slash"> / </span>
@@ -454,6 +455,6 @@
 
       <?php endif; ?>
     </ul>
-
+    </div>
   </div>
 </section>

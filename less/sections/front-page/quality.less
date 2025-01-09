@@ -11,6 +11,11 @@
     max-width: 427px;
   }
 
+  &__center {
+    position: relative;
+    z-index: 1;
+  }
+
   &__description {
     max-width: 805px;
   }
@@ -19,7 +24,6 @@
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    gap: 24px;
     margin-top: clamp(20px, 5vw, 48px);
 
     @media (max-width: @sizes[maxSM]) {
@@ -31,14 +35,16 @@
     .item {
       width: 100%;
       transition: @transition;
-      max-width: 423px;
-      
+      max-width: 453px;
+      padding: 15px;
+      border-radius: 6px;
+
       @media (min-width: @sizes[minSM]) {
         width: 47%;
       }
 
       @media (min-width: @sizes[minMD]) {
-        width: 32%;
+        width: 33%;
       }
 
       .item__title {

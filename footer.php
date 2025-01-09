@@ -2,6 +2,8 @@
 
 <?php include(locate_template('main-vars.php', true)); ?>
 
+<?php get_template_part('includes/modules/popup')?>
+
 <footer class="footer">
   <div class="footer__top">
     <div class="container">
@@ -39,7 +41,8 @@
         }; ?>
       </div>
       <a href="#" 
-         class="button--main"
+         id="footerOrder"
+         class="button--second"
          data-hover="<?= get_bloginfo("language") == 'ru' ? 'вам перезвонить ?' : 'Вам передзвонити?'?>">
          <span><?= get_bloginfo("language") == 'ru' ? 'вам перезвонить ?' : 'Вам передзвонити?'?></span>
         </a>

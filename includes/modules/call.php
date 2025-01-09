@@ -33,16 +33,16 @@
     <div class="call__top">
       <h2>
         <?php if ( get_field('call_title'))  { 
-          echo get_field('call_title') ;
-          } else { 
-          if (get_bloginfo("language") == 'ru') {
-            echo 'Запишитесь на бесплатный замер потолков' ;
-          } else {
-            echo 'Запишіться на безкоштовне вимірювання стель';
-          } 
-        }; ?>
+                echo get_field('call_title') ;
+                } else { 
+                if (get_bloginfo("language") == 'ru') {
+                  echo 'Запишитесь на бесплатный замер потолков' ;
+                } else {
+                  echo 'Запишіться на безкоштовне вимірювання стель';
+                } 
+              }; ?>
       </h2>
-
+      <?=  get_bloginfo("language") ?>
       <div class="call__description section-description">
         <?php if ( get_field('call_title'))  { 
           echo get_field('call_title') ;

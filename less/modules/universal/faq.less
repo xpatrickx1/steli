@@ -64,10 +64,20 @@
 
   &__item {
     position: relative;
-    transition: @transition;
     padding: clamp(16px, 3vw, 36px);
     background: linear-gradient(0deg, #FFFFFF -3.01%, #F8F8F8 100%);
     border-top: 1px solid #DFDFDF;
+    transition: @transition;
+
+    @media (min-width: @sizes[minMD]) {
+      &:hover {
+        background: @background[white];
+      }
+
+      &:active {
+        background: @background[white];
+      }
+    }
   }
 
   &__title-wrap {

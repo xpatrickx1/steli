@@ -69,18 +69,20 @@
   &__schedule {
     position: relative;
     .fontSize(14px, 44px);
+    padding-left: 16px;
 
     &:before {
       content: '';
-      display: inline-block;
+      position: absolute;
       width: 6px;
       height: 6px;
-      margin-right: 9px;
+      top: 19px;
+      left: 0;
       opacity: 1;
       background: @background[ green ];
       border-radius: 50%;
       animation-name: blinkAnimation;
-      animation-duration: 1s;
+      animation-duration: 2s;
       animation-fill-mode: forwards;
       animation-iteration-count: infinite;
       transition: .6s;
@@ -90,18 +92,20 @@
   &__autonom {
     position: relative;
     .fontSize(14px, 44px);
+    padding-left: 18px;
 
     &:before {
       content: '';
-      display: inline-block;
-      margin-right: 9px;
+      position: absolute;
+      top: calc( 50% - 7px );
+      left: 0;
       width: 8px;
       height: 16px;
       background-image: url("data:image/svg+xml,%3Csvg width='9' height='17' viewBox='0 0 9 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.98567 4.92466H5.46549L6.77899 1.17657V1.17742C6.80294 1.11072 6.79268 1.03633 6.75163 0.978174C6.71058 0.920879 6.64388 0.885817 6.57376 0.885817H2.93512C2.83421 0.881541 2.74442 0.947387 2.7162 1.04316L0.308106 9.32527C0.288437 9.39283 0.302119 9.46551 0.345733 9.5211C0.389346 9.57668 0.456902 9.60833 0.527024 9.60576H2.49729L2.11162 16.0391C2.10478 16.1434 2.17148 16.2384 2.27239 16.2657C2.37244 16.2931 2.47848 16.2461 2.5255 16.1537L8.18913 5.24458C8.22419 5.17702 8.22162 5.09578 8.18143 5.02994C8.1421 4.96495 8.07112 4.92475 7.99415 4.92475L7.98567 4.92466Z' fill='%23E90000'/%3E%3C/svg%3E%0A");
       background-repeat: no-repeat;
       background-position: center;
       animation-name: blinkAnimation;
-      animation-duration: 1s;
+      animation-duration: 2s;
       animation-fill-mode: forwards;
       animation-iteration-count: infinite;
       transition: .6s;
@@ -220,7 +224,13 @@
     max-width: 200px;
 
     @media ( max-width: @sizes[ maxLG ] ) {
-      flex-grow: 0;
+      flex-grow: 1;
+      max-height: 51px;
+
+      img {
+        width: 100%;
+        max-width: 170px;
+      }
     }
   }
 
@@ -237,8 +247,7 @@
 
     .logo__mobile {
       img {
-        max-width: 100%;
-        // max-width: 37px;
+        max-width: 160px;
       }
     }
   }
@@ -329,6 +338,11 @@
 }
 
 @media ( max-width: @sizes[ maxLG ] ) {
+
+  .button--second {
+    margin-left: auto;
+    margin-right: 24px;
+  }
 
   .is-open {
 

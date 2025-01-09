@@ -6,7 +6,5 @@ $(document).ready(() => {
 });
 
 //= include components/helpers.js
+//= include components/modules/popup.js
 
-document.querySelector('.wpcf7-file').onchange = function() { 
-    document.querySelector('.file-name').textContent = this.value.replace(/^.*[\\\/]/, '');
-};
