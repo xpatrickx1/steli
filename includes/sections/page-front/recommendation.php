@@ -23,7 +23,18 @@
       <div class="recommendation__reviews--title"><?= get_field('recommendation_rating_title') ? the_field('recommendation_rating_title') : 'Stelio рекомендуют' ?></div>
       <div class="recommendation__reviews--top">
         <div class="recommendation__reviews--center">
-          <span class="recommendation__reviews--rating"><strong><?= get_field('recommendation_rating') ? the_field('recommendation_rating') : '4.7' ?></strong>/5</span>
+          <span class="recommendation__reviews--rating">
+            <strong><?= get_field('recommendation_rating') ? the_field('recommendation_rating') : '4.7' ?>
+          </strong>/5</span>
+          <span class="recommendation__stars">
+          <img 
+            src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
+            data-src="<?= bloginfo('template_url') . '/images/first-screen/stars.png' ?>"
+            class="lazy"
+            width="1px"
+            height="1px"
+          />  
+          </span>
           <span class="recommendation__reviews--text"><?= get_field('recommendation_reviews') ? the_field('recommendation_reviews') : '27 отывов' ?></span>
         </div>
       </div>

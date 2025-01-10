@@ -195,7 +195,6 @@
 
 .navigation .sub-menu {
   position: absolute;
-  // display: none;
   width: 251px;
   list-style: none;
   margin: 0;
@@ -205,13 +204,18 @@
   transition: @transition;
   transform: scaleY(0);
   transform-origin: top;
-  background: #fff;
   visibility: hidden;
+  background: #fff;
+  height: 0;
 
+  &.hiden {
+    height: auto;
+  }
 
   &.visible {
-    display: block;
+    visibility: visible;
     transform: scaleY(1);
+    height: auto;
   }
 
   &>li {
@@ -354,7 +358,6 @@
   transform: scaleY(0);
 
   &.hide {
-    // display: none;
     visibility: hidden;
     transform: scaleY(0);
   }
