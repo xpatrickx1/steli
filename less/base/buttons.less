@@ -44,7 +44,6 @@
       background: linear-gradient(95.62deg, #000000 40.55%, #454545 102.32%);
 
       span {
-        // opacity: 0; 
         transform: translate(0,100%);
       }
 
@@ -57,9 +56,17 @@
   }
 
   &:active {
-    background: @backgroundButton[ mainButtonActive ];
-    color: @colorButton[ mainButtonActive ];
-    box-shadow: none;
+    background: linear-gradient(95.62deg, #000000 40.55%, #454545 102.32%);
+
+      span {
+        transform: translate(0,100%);
+      }
+
+      &:before {
+        color: #fff;
+        opacity: 1;
+        transform: translate(0,0);
+      }
   }
 }
 
@@ -112,9 +119,11 @@
   }
 
   &:active {
-    background: @backgroundButton[ mainButton ];
-    color: @colorButton[ mainButton ];
-    box-shadow: none;
+    color: #fff;
+
+      &::before {
+        box-shadow:inset 0 0 0 @width #000;
+      }
   }
 }
 
