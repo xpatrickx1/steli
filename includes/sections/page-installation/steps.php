@@ -1,6 +1,6 @@
 <?php include 'steps-data.php' ?>
 
-<section class="steps">
+<section id="steps" class="steps">
   
   <div class="container steps__wrap">
 

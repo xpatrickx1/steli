@@ -75,6 +75,7 @@
           <a 
             href="#"
             rel="nofollow"
+            id="installationOrder"
             data-hover="<?= get_bloginfo("language") == 'ru' ? 'Бесплатный замер' : 'Безкоштовний замір'?>"
             class="button--main">
             <span><?= get_bloginfo("language") == 'ru' ? 'Бесплатный замер' : 'Безкоштовний замір'?></span>

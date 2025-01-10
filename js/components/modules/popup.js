@@ -4,6 +4,8 @@ const popupTriggers = [
     '#caculatorOrder',
     '#footerOrder',
     '#recommendationOrder',
+    '#installationOrder',
+    '#headerOrderBtn',
     '#orderBanner'
 ];
 
