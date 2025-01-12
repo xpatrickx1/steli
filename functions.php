@@ -173,6 +173,8 @@ function ox_adding_critical_css()
         "page-payments" => "payments",
         "page-team" => "team",
         "page-works" => "works",
+        "page-works" => "works",
+        "page-single-works" => "singleworks",
     );
     $currentPageTemplate = get_page_template_slug();
     $currentPageTemplateName = str_replace(['pages/', '.php'], '', $currentPageTemplate);
@@ -250,6 +252,7 @@ register_nav_menus(array(
     'footer_menu_contacts' => 'Footer Menu Contacts',
     'inner_sidebar' => 'Inner Sidebar Menu',
     'installation_sidebar' => 'Installation Sidebar Menu',
+    'categoty_works' => 'Categoty Works Menu',
 ));
 
 //custom classes for menu items
@@ -555,9 +558,11 @@ function display_webp_in_media_library( $result, $path ) {
 
 add_filter( 'file_is_displayable_image', 'display_webp_in_media_library', 10, 2 );
 
+
 function disable_wp_auto_p( $content ) {
     remove_filter( 'the_content', 'wpautop' );
     remove_filter( 'the_excerpt', 'wpautop' );
     return $content;
   }
-  add_filter( 'the_content', 'disable_wp_auto_p', 0 );
+
+add_filter( 'the_content', 'disable_wp_auto_p', 0 );

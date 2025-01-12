@@ -17,7 +17,7 @@ add_filter( 'pre_get_posts', 'my_search_filter' );
 
 <div class="category-content">
     <div class="container">
-        <div class="content__wrap">
+        <div class="category-content__wrap">
             <?php if (have_posts() ) :
                 while (have_posts()) : the_post(); ?>
                     <?php the_content(); ?> 

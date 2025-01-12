@@ -13,7 +13,7 @@ $the_query = new WP_Query( $args );
 
 <div class="category-content">
     <div class="container">
-        <div class="content__wrap">
+        <div class="category-content__wrap">
 <?php
 if ( $the_query->have_posts() ) {
   while ( $the_query->have_posts() ) {

@@ -35,6 +35,10 @@
     {
       "link": "/catalog/",
       "name": "catalog"
+    },
+    {
+      "link": "/works/shadow/",
+      "name": "singleworks"
     }
   ]
 }

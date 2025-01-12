@@ -26,25 +26,16 @@ $works = [
         }; ?>
     </h2>
 
-    <ul class="works__list">
-      <?php if (have_rows('works_list')) :
-        while ( have_rows('works_list')) : the_row(); ?>
-          <li class="item">
-            <a href="#">
-              <?= get_sub_field('item_text') ?>
-            </a>
-          </li>
-        <?php endwhile; ?>
-      <?php else : ?>
-        <?php foreach ( $works as $key => $item ) : ?>
-          <li class="item">
-            <a href="#">
-              <?= $item ?>
-            </a>
-          </li>
-        <?php endforeach; ?>
-      <?php endif; ?>
-    </ul>
+    <div class="works__list">
+      <?php if (has_nav_menu('categoty_works')) :
+        $nav_args = array(
+          'theme_location' => 'categoty_works',
+          'container' => '',
+          'items_wrap' => '%3$s',
+        );
+        wp_nav_menu($nav_args);
+      endif; ?>
+    </div>
     
   </div>
 </section>

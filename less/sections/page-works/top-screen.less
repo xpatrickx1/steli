@@ -26,18 +26,22 @@
     margin: 24px 0 0;
     padding-bottom: 24px;
     border-bottom: 1px solid #d3d3d3;
+    list-style: none;
 
-    .item {
+    li {
       .font( 600 );
       .fontSize( 14px, 22px );
-      padding: 7px 15px;
       background: #F9F9F9;
       border: 1px solid #F9F9F9;
       border-radius: 6px;
       transition: @transition;
 
       a {
+        display: block;
         height: 100%;
+        background: transparent;
+        border: none;
+        padding: 7px 15px;
       }
 
       @media (min-width: @sizes[minSM]) {
