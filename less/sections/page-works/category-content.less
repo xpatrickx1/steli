@@ -1,0 +1,39 @@
+.category-content {
+  position: relative;
+  padding: 24px 0 60px;
+  background: @background[white];
+
+  @media ( max-width: @sizes[ maxSM ] ) {
+    padding: 0 0 30px;
+  }
+
+  &__wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  
+  img {
+    border-radius: 8px;
+    max-width: 32%;
+    width: 100%;
+    margin: 5px;
+
+    @media ( max-width: @sizes[ maxLG ] ) {
+      max-width: 48%;
+    }
+
+    @media ( max-width: @sizes[ maxSM ] ) {
+      max-width: 100%;
+    }
+  }
+
+  p {
+    margin: 0;
+    display: inline;
+  }
+
+  
+}

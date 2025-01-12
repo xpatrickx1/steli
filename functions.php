@@ -91,9 +91,23 @@ function ox_adding_scripts()
         }
 
         // для категорий
-        if (is_category()) {
-            wp_enqueue_style('blog', get_template_directory_uri() . '/css/page-blog.min.css', array(), time());
-            wp_enqueue_script('blog', get_template_directory_uri() . '/js/min/page-blog.min.js', null, time(), true);
+        if (is_category('catalog')) {
+            wp_dequeue_style('inner2');
+            wp_enqueue_style('blog', get_template_directory_uri() . '/css/page-catalog.min.css', array(), time());
+            wp_enqueue_script('blog', get_template_directory_uri() . '/js/min/page-catalog.min.js', null, time(), true);
+        }
+
+        if ( is_category('works') ) {
+            wp_enqueue_style('works', get_template_directory_uri() . '/css/page-works.min.css', array(), time(), 'all');
+            wp_enqueue_script('works-js', get_template_directory_uri() . '/js/min/page-works.min.js', null, time(), true);
+             wp_deregister_script('blog-js');
+        }
+
+        if (get_post_meta( get_the_ID(), '_wp_page_template', true ) === 'single-works.php') {
+            wp_dequeue_style('blog');
+            wp_dequeue_style('post');
+            wp_enqueue_style('single-works', get_template_directory_uri() . '/css/page-single-works.min.css', array(), time());
+            wp_enqueue_script('single-works-js', get_template_directory_uri() . '/js/min/page-single-works.js', null, time(), true);
         }
 
         //для 404 страницы
@@ -158,6 +172,7 @@ function ox_adding_critical_css()
         "page-order" => "order",
         "page-payments" => "payments",
         "page-team" => "team",
+        "page-works" => "works",
     );
     $currentPageTemplate = get_page_template_slug();
     $currentPageTemplateName = str_replace(['pages/', '.php'], '', $currentPageTemplate);
@@ -498,3 +513,51 @@ function estimated_reading_time()
 
 add_filter('the_content', 'iframelazy');
 
+
+function add_webp_upload_mime( $mimes ) {
+    $mimes['webp'] = 'image/webp';
+    return $mimes;
+}
+
+add_filter( 'mime_types', 'add_webp_upload_mime' );
+
+function webp_is_displayable($result, $path) {
+    if ($result === false) {
+        $displayable_image_types = array( IMAGETYPE_WEBP );
+        $info = @getimagesize( $path );
+        if (empty($info)) {
+            $result = false;
+        } elseif (!in_array($info[2], $displayabe_image_types)) {
+            $result = false;
+        } else {
+            $result = true;
+        }
+    }
+  return $result;
+}
+
+add_filter('file_is_displayable_image', 'webp_is_displayable', 10, 2);
+
+function display_webp_in_media_library( $result, $path ) {
+    if ( $result === false ) {
+        $displayable_image_types = array( IMAGETYPE_WEBP );
+        $info = @getimagesize( $path );
+        if ( empty( $info ) ) {
+            $result = false;
+        } elseif ( ! in_array( $info[2], $displayable_image_types ) ) {
+            $result = false;
+        } else {
+            $result = true;
+        }
+    }
+    return $result;
+}
+
+add_filter( 'file_is_displayable_image', 'display_webp_in_media_library', 10, 2 );
+
+function disable_wp_auto_p( $content ) {
+    remove_filter( 'the_content', 'wpautop' );
+    remove_filter( 'the_excerpt', 'wpautop' );
+    return $content;
+  }
+  add_filter( 'the_content', 'disable_wp_auto_p', 0 );
