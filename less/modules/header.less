@@ -246,6 +246,7 @@
     }
 
     .logo__mobile {
+      margin-right: 24px;
       img {
         max-width: 160px;
       }
@@ -333,6 +334,13 @@
   .button--second {
     width: 100%;
     max-width: 185px;
+    white-space: nowrap;
+
+    @media ( max-width: @sizes[ maxXS ] ) {
+      padding: 13px 10px;
+      max-width: 165px;
+    }
+    
   }
 
 }

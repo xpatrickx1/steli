@@ -1,4 +1,4 @@
-<?php /* Template Name: News page */?>
+<?php /* Template Name: Catalog page */?>
 
 <?php get_header(); ?>
 <?php get_template_part('includes/sections/page-catalog/catalog')?>

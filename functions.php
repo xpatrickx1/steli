@@ -189,6 +189,21 @@ function ox_adding_critical_css()
         $counter = $counter + 1;
     }
 
+    if (  get_post_meta( get_the_ID(), '_wp_page_template', true ) === 'single-works.php' ) {
+        $currentCritical = load_template_part("css/critical-singleworks.css");
+        echo '<style>' . $currentCritical . '</style>';
+    }
+
+    if (  get_post_meta( get_the_ID(), '_wp_page_template', true ) === 'single2.php' ) {
+        $currentCritical = load_template_part("css/critical-inner2.css");
+        echo '<style>' . $currentCritical . '</style>';
+    }
+    
+    if (  get_post_meta( get_the_ID(), '_wp_page_template', true ) === 'single.php' ) {
+        $currentCritical = load_template_part("css/critical-inner.css");
+        echo '<style>' . $currentCritical . '</style>';
+    }
+
     global $css_files;
 
     foreach ($css_files as $key => $item) {
