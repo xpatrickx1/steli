@@ -106,8 +106,9 @@ function ox_adding_scripts()
         if (get_post_meta( get_the_ID(), '_wp_page_template', true ) === 'single-works.php') {
             wp_dequeue_style('blog');
             wp_dequeue_style('post');
+            wp_dequeue_script('post');
             wp_enqueue_style('single-works', get_template_directory_uri() . '/css/page-single-works.min.css', array(), time());
-            wp_enqueue_script('single-works-js', get_template_directory_uri() . '/js/min/page-single-works.js', null, time(), true);
+            // wp_enqueue_script('single-works-js', get_template_directory_uri() . '/js/min/page-single-works.js', null, time(), true);
         }
 
         //для 404 страницы
@@ -173,7 +174,7 @@ function ox_adding_critical_css()
         "page-payments" => "payments",
         "page-team" => "team",
         "page-works" => "works",
-        "page-works" => "works",
+        "page-price" => "price",
         "page-single-works" => "singleworks",
     );
     $currentPageTemplate = get_page_template_slug();
@@ -486,22 +487,6 @@ function lazyloadmyframes(){
 		ytv[i].src = ytv[i].getAttribute('data-src');
 	}
 };
-
-function estimated_reading_time()
-{
-    $post = get_post();
-    $postcnt = strip_tags($post->post_content);
-    $words = count(preg_split('/\s+/', $postcnt));
-    $minutes = floor($words / 120);
-    $seconds = floor($words % 120 / (120 / 60));
-    if (1 <= $minutes) {
-        $estimated_time = $minutes . ' min';   // . ($minutes == 1 ? '' : 's')
-    } else {
-        $estimated_time = $seconds . ' s';     // . ($seconds == 1 ? '' : 's')
-    }
-    return $estimated_time;
-};
-
 
 </script>
 <?php

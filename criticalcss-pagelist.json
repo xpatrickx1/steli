@@ -37,6 +37,14 @@
       "name": "catalog"
     },
     {
+      "link": "/works/",
+      "name": "works"
+    },
+    {
+      "link": "/price/",
+      "name": "price"
+    },
+    {
       "link": "/works/shadow/",
       "name": "singleworks"
     }
