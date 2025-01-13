@@ -58,16 +58,13 @@
             </div>
 
             <div class="logo__mobile">
-              <picture class="lazy">
-                <source
-                  data-srcset="<?= bloginfo('template_url') . '/images/icons/header-logo.png' ?>, <?= bloginfo('template_url') . '/images/icons/header-logo.png' ?> 2x">
-                <img
-                  src="<?php bloginfo('template_url'); ?>/images/loader.gif"
-                  alt="Back to homepage logo link"
-                  class="lazy"
-                  width="74px"
-                  height="78px">
-              </picture>
+              <img
+                src="<?php bloginfo('template_url'); ?>/images/loader.gif"
+                data-src="<?= bloginfo('template_url') . '/images/icons/header-logo.svg' ?>" class="lazy"
+                alt="Back to homepage logo link"
+                class="lazy"
+                width="74px"
+                height="78px">
             </div>
           </a>
 
