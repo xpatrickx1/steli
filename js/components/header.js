@@ -52,7 +52,6 @@ const checkUrls = () => {
 
 
 $('.header__navigation li a').each( function () {
-
     if  (($( this ).attr( 'href' ) ).match(/^#/i)) {
         anchors.push( $( this ).attr( 'href' ) );
     }

@@ -79,6 +79,14 @@ function ox_adding_scripts()
             wp_enqueue_script('inner2js', get_template_directory_uri() . '/js/min/page-inner-2.min.js', null, time(), true);
         }
 
+        if (  get_post_meta( get_the_ID(), '_wp_page_template', true ) === 'single3.php' ) {
+            wp_deregister_style('post');
+            wp_dequeue_style('post');
+            wp_dequeue_script('post');
+            wp_enqueue_style('inner3', get_template_directory_uri() . '/css/page-inner-3.min.css', array(), time(), 'all');
+            wp_enqueue_script('inner3-js', get_template_directory_uri() . '/js/min/page-inner-3.min.js', null, time(), true);
+        }
+
         if (is_front_page()) {
             wp_enqueue_style('front', get_template_directory_uri() . '/css/page-front.min.css', array(), time());
             wp_enqueue_script('front-js', get_template_directory_uri() . '/js/min/page-front.min.js', null, time(), true);
@@ -168,6 +176,7 @@ function ox_adding_critical_css()
         "page-catalog" => "catalog",
         "page-contacts" => "contacts",
         "page-inner-2" => "inner2",
+        "page-inner" => "inner3",
         "page-inner" => "inner",
         "page-installation" => "installation",
         "page-order" => "order",
@@ -258,17 +267,27 @@ remove_action('wp_head', 'wp_oembed_add_discovery_links', 10);
 //--------------------------------------------------
 register_nav_menus(array(
     'header_menu' => 'Header Menu',
+    'header_menu_ru' => 'Header Menu RU',
     'footer_menu_terms' => 'Footer Terms Menu',
+    'footer_menu_terms_ru' => 'Footer Terms Menu RU',
     'footer_menu_post' => 'Footer Post Menu',
+    'footer_menu_post_ru' => 'Footer Post Menu RU',
     'footer_menu_catalog' => 'Footer Menu Catalog',
+    'footer_menu_catalog_ru' => 'Footer Menu Catalog RU',
     'footer_menu_lighting' => 'Footer Menu Lighting',
+    'footer_menu_lighting_ru' => 'Footer Menu Lighting RU',
     'footer_menu_price' => 'Footer Menu Price',
+    'footer_menu_price_ru' => 'Footer Menu Price RU',
     'footer_menu_works' => 'Footer Menu Works',
+    'footer_menu_works_ru' => 'Footer Menu Works RU',
     'footer_menu_customers' => 'Footer Menu Customers',
+    'footer_menu_customers_ru' => 'Footer Menu Customers RU',
     'footer_menu_contacts' => 'Footer Menu Contacts',
     'inner_sidebar' => 'Inner Sidebar Menu',
+    'inner3_sidebar' => 'Inner 3 Sidebar Menu',
     'installation_sidebar' => 'Installation Sidebar Menu',
     'categoty_works' => 'Categoty Works Menu',
+    'categoty_works_ru' => 'Categoty Works Menu RU',
 ));
 
 //custom classes for menu items

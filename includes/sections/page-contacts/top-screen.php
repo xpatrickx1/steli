@@ -40,30 +40,34 @@
           </div>
           <ul class="top-screen__work-time">
             <li>
-              <?= get_field('topscreen_worktitle2') ? the_field('topscreen_worktitle2') : 'С понедельника по субботу: с <span>9:00</span> до <span>19:00</span>' ?>
+              <?= get_field('topscreen_worktitle1') ? the_field('topscreen_worktitle1') : 'С понедельника по субботу: с <span>9:00</span> до <span>19:00</span>' ?>
             </li>
             <li>
-              <?= get_field('topscreen_worktitle3') ? the_field('topscreen_worktitle3') : 'Воскресенье: офис — по согласованию.' ?>
+              <?= get_field('topscreen_worktitle2') ? the_field('topscreen_worktitle2') : 'Воскресенье: офис — по согласованию.' ?>
             </li>
           </ul>
         </div>
       </div>
 
       <div class="top-screen__images">
+        <div class="top-screen__img">
         <img 
           src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-          data-src="<?= get_sub_field('team_top_1')['url'] ? get_sub_field('team_top_1')['url'] : bloginfo('template_url') . '/images/page-contacts/contacts1.webp' ?>"
+          data-src="<?= get_field('team_top_1')['url'] ? get_field('team_top_1')['url'] : bloginfo('template_url') . '/images/page-contacts/contacts1.webp' ?>"
           class="lazy"
           width="1px"
           height="1px"
         />
+        </div>
+        <div class="top-screen__img">
         <img 
           src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-          data-src="<?= get_sub_field('team_top_2')['url'] ? get_sub_field('team_top_2')['url'] : bloginfo('template_url') . '/images/page-contacts/contacts2.webp' ?>"
+          data-src="<?= get_field('team_top_2')['url'] ? get_field('team_top_2')['url'] : bloginfo('template_url') . '/images/page-contacts/contacts2.webp' ?>"
           class="lazy"
           width="1px"
           height="1px"
         />
+        </div>
       </div>
         
     </div>

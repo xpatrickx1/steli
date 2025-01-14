@@ -37,34 +37,52 @@
       <div class="options__description">
         <?= get_field('options_description') ? the_field('options_description') : '<p>Матовый натяжной потолок — универсальный вид полотна. Внешне он напоминает хорошо оштукатуренную и окрашенную поверхность. Это лучший вариант для консерваторов, которые предпочитают классическую отделку в интерьере. На таком потолке не будет отвлекающих бликов и разводов. </p><p>Матовый подвесной потолок удобно использовать для помещений с большой площадью — места стыковки разных полотен на нем незаметны. А также в тех комнатах, где планируется сложная композиция из разных материалов, которые должны органично сочетаться друг с другом.</p>' ?>
       </div>
+
+      
+        <?php
+          if (have_posts() ) { ?>
+
+          <div class="options__content">
+
+           <?php while (have_posts()) : the_post();
+                echo the_content();
+            endwhile; ?>
+          </div>
+         <?php }
+        ?>
     </div>
 
-    <div class="options__list-title">
-      Характеристики
-    </div>
-    <ul class="options__list">
-      <?php if (have_rows('options_list')) :
-        while ( have_rows('options_list')) : the_row(); ?>
-          <li class="item">
-          <div class="item__left">
-            <div class="item__title"><?= get_sub_field('item_title') ?></div>
-            <div class="item__text"><?= get_sub_field('item_text') ?></div>
-            </div>
-          </li>
-        <?php endwhile; ?>
-      <?php else : ?>
-        <?php foreach ( $options as $key => $item ) : ?>
-          <li class="item">
+    <?php if (have_rows('green_markers_list')) : ?>
+     <div class="options__greenlist-wrp">
+      <div class="options__list-title">
+        <?= get_field('green_markers_list_title') ? the_field('green_markers_list_title') : 'Как сэкономить?' ?>
+      </div>
+      <ul class="options__greenlist">
+        <?php while ( have_rows('green_markers_list')) : the_row(); ?>
+            <li class="item">
+              <?= get_sub_field('item_text') ?>
+            </li>
+          <?php endwhile; ?>
+        </ul>
+      </div>
+    <?php endif; ?>
+
+    <?php if (have_rows('options_list')) : ?>
+     
+      <div class="options__list-title">
+        Характеристики
+      </div>
+      <ul class="options__list">
+        <?php while ( have_rows('options_list')) : the_row(); ?>
+            <li class="item">
             <div class="item__left">
-              <div class="item__title"><?= $item['title'] ?></div>
-              <div class="item__text"><?= $item['text'] ?></div>
-            </div>
-          </li>
-        <?php endforeach; ?>
-
-      <?php endif; ?>
-    </ul>
-
+              <div class="item__title"><?= get_sub_field('item_title') ?></div>
+              <div class="item__text"><?= get_sub_field('item_text') ?></div>
+              </div>
+            </li>
+          <?php endwhile; ?>
+      </ul>
+    <?php endif; ?>
 
     <ul class="options__advantages advantages">
       <?php if (have_rows('advantages_list')) :
@@ -109,5 +127,19 @@
       <?php endif; ?>
     </ul>
 
+    <?php if (have_rows('green_markers_list')) : ?>
+      <div class="options__bottom">
+      <div class="options__bottom--title">
+        <?= get_field('options_bottom_title') ? the_field('options_bottom_title') : 'Расценки на дополнительные услуги' ?>
+      </div>
+      <div class="options__bottom--text">
+        <?= the_field('options_bottom_text') ; ?>
+      </div>
+      </div>
+    <?php endif; ?>
+
+    
+      
+    
   </div>
 </section>

@@ -25,6 +25,10 @@
       "name": "inner2"
     },
     {
+      "link": "/catalog/inner3/",
+      "name": "inner3"
+    },
+    {
       "link": "/installation/",
       "name": "installation"
     },

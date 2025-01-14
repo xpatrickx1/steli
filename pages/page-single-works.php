@@ -21,14 +21,26 @@ $works = [
     </h2>
 
     <div class="works__list">
-      <?php if (has_nav_menu('categoty_works')) :
-        $nav_args = array(
-          'theme_location' => 'categoty_works',
-          'container' => '',
-          'items_wrap' => '%3$s',
-        );
-        wp_nav_menu($nav_args);
-      endif; ?>
+
+      <?php if (get_bloginfo("language") == 'ru') { 
+          if (has_nav_menu('categoty_works_ru')) {
+            $nav_args = array(
+              'theme_location' => 'categoty_works_ru',
+              'container' => '',
+              'items_wrap' => '%3$s',
+            );
+            wp_nav_menu($nav_args);
+          }
+        } else {
+          if (has_nav_menu('categoty_works')) {
+            $nav_args = array(
+              'theme_location' => 'categoty_works',
+              'container' => '',
+              'items_wrap' => '%3$s',
+            );
+            wp_nav_menu($nav_args);
+          }
+        }; ?>
     </div>
     
   </div>

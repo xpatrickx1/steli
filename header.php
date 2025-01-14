@@ -46,7 +46,7 @@
     </div>
     <div class="container">
       <div class="header--bottom">
-          <a href="/"
+          <a href="<?= get_bloginfo("language") == 'ru' ? '/ru/' : '/'?>"
             class="header__logo" aria-label="Header logo"
           >
             <div class="logo__desktop">
@@ -70,7 +70,15 @@
           </a>
 
           <ul class="header__navigation navigation">
-            <?php if (has_nav_menu('header_menu')) :
+            <?php if (get_bloginfo("language") == 'ru') { 
+              $nav_args = array(
+                'theme_location' => 'header_menu_ru',
+                'container' => '',
+                'items_wrap' => '%3$s',
+                'walker' => new My_Walker_Nav_Menu(),
+              );
+              wp_nav_menu($nav_args);
+            } else {
               $nav_args = array(
                 'theme_location' => 'header_menu',
                 'container' => '',
@@ -78,7 +86,9 @@
                 'walker' => new My_Walker_Nav_Menu(),
               );
               wp_nav_menu($nav_args);
-            endif; ?>
+            }; ?>
+
+            <li class="desctop__hidden"><?php if (function_exists ('wpm_language_switcher')) wpm_language_switcher (); ?></li>
           </ul>
 
           <a 
