@@ -2,6 +2,7 @@
   position: relative;
   padding: clamp(100px, 14vw, 130px) 0 clamp(60px, 7vw, 90px);
   background: @background[main];
+  overflow: hidden;
 
   @media ( max-width: @sizes[ maxLG ] ) {
     padding: 120px 0 60px;
@@ -27,6 +28,7 @@
     display: flex;
     align-items: stretch;
     gap: 24px;
+    max-width: 100%;
 
     @media ( max-width: @sizes[ maxLG ] ) {
       flex-wrap: wrap;
@@ -35,6 +37,7 @@
 
   &__bottom {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin-top: clamp(30px, 4vw, 48px);
 
@@ -44,6 +47,11 @@
       justify-content: space-between;
       flex: 1 0 auto;
       max-width: 853px;
+
+      @media ( max-width: @sizes[ maxLG ] ) {
+        flex-direction: column;
+        max-width: 100%;
+      }
     }
   }
 
@@ -60,6 +68,10 @@
     font-weight: 400;
     width: 385px;
     max-width: 48%;
+    
+    @media ( max-width: @sizes[ maxLG ] ) {
+      max-width: 100%;
+    }
   }
 
   .button--main {

@@ -10,6 +10,13 @@
     grid-template-areas: 
     'top guarantee'
     'list guarantee';
+
+    @media ( max-width: @sizes[ maxSM ] ) {
+      grid-template-areas: 
+      'top'
+      'guarantee'
+      'list';
+    }
   }
 
   &__top {
@@ -49,6 +56,12 @@
     flex-direction: column;
     text-align: center;
     gap: 24px;
+
+    @media ( max-width: @sizes[ maxSM ] ) {
+      flex-direction: row;
+      justify-content: center;
+      margin: 24px 0;
+    }
 
     &__item {
       display: flex;

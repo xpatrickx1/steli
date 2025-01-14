@@ -9,12 +9,12 @@ $works = [
 <section class="top-screen">
   <div class="container">
   <div class="breadcrumbs">
-      <span><a href="<?= home_url(); ?>">Натяжные потолки в Киеве</a></span>
-      <span class="breadcrumbs__slash"> / </span>
-      <span><a href="/works/"><?= get_bloginfo("language") == 'ru' ? 'Наши работы' : 'Наші роботи' ?></a></span>
-      <span class="breadcrumbs__slash"> / </span>
-      <span><?= get_field('breadcrumb') ? the_field('breadcrumb') : 'Матовый потолок' ?></span>
-    </div>
+    <span><a href="<?= home_url(); ?>">Натяжные потолки в Киеве</a></span>
+    <span class="breadcrumbs__slash"> / </span>
+    <span><a href="/works/"><?= get_bloginfo("language") == 'ru' ? 'Наши работы' : 'Наші роботи' ?></a></span>
+    <span class="breadcrumbs__slash"> / </span>
+    <span><?= get_field('breadcrumb') ? the_field('breadcrumb') : 'Матовый потолок' ?></span>
+  </div>
 
     <h2>
       <?= get_field( 'page_title' ) ? the_field( 'page_title' ) : get_the_title() ?>
