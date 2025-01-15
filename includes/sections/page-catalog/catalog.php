@@ -333,7 +333,6 @@
           <li class="item">
             <a href="<?= get_sub_field('item_link') ?>">
               <div class="item__img">
-                <?php if(get_sub_field('item_img')['url']) : ?>
                   <img 
                     src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
                     data-src="<?= get_sub_field('item_img')['url'] ?>"
@@ -341,7 +340,6 @@
                     width="1px"
                     height="1px"
                   />
-                <?php endif; ?>
               </div>
               <div class="item__title"><?= get_sub_field('item_title') ?></div>
               <div class="item__text"><?= get_sub_field('item_text') ?></div>

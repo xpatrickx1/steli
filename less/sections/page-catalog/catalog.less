@@ -81,6 +81,7 @@
 
         @media ( max-width: @sizes[ maxSM ] ) {
           width: 100%;
+          padding: 15px 0;
         }
 
         @media (min-width: @sizes[minSM]) {
@@ -115,6 +116,43 @@
         padding: 15px;
         border-radius: 6px;
         transition: @transition;
+
+        @media (min-width: @sizes[minSM]) {
+
+          &:hover {
+            background: #fff;
+            box-shadow: 10px 5px 5px #c5c5C514;
+
+            .item__title {
+              color: @color[accent];
+              }
+          }
+        }
+
+        @media ( max-width: @sizes[ maxSM ] ) {
+          width: 100%;
+          padding: 15px 0;
+        }
+      }
+    }
+
+    .catalog__list_5 {
+      margin: 36px 0 0;
+      
+      .item {
+        width: 25%;
+        padding: 15px;
+        border-radius: 6px;
+        transition: @transition;
+
+        @media ( min-width: @sizes[ minSM ] ) and ( max-width: @sizes[ maxMD ] ) {
+          width: auto;
+        }
+
+        @media ( max-width: @sizes[ maxSM ] ) {
+          width: 100%;
+          padding: 15px 0;
+        }
 
         @media (min-width: @sizes[minSM]) {
 
