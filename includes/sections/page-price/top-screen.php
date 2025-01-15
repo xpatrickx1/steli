@@ -56,7 +56,7 @@
         <?php
           if (have_posts() ) { ?>
 
-          <div class="options__content">
+          <div class="content">
 
            <?php while (have_posts()) : the_post();
                 echo the_content();
@@ -77,7 +77,7 @@
       <div class="top-screen__bottom">
         <img 
           src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-          data-src="<?= get_field('inner_top_1')['url'] ? get_field('inner_top_1')['url'] : bloginfo('template_url') . '/images/page-inner-2/inner2Top.png' ?>"
+          data-src="<?= get_field('inner_top_1')['url'] ? get_field('inner_top_1')['url'] : bloginfo('template_url') . '/images/page-inner-2/inner2top.png' ?>"
           class="lazy"
           width="1px"
           height="1px"

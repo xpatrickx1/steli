@@ -579,9 +579,10 @@ add_filter( 'file_is_displayable_image', 'display_webp_in_media_library', 10, 2 
 
 
 function disable_wp_auto_p( $content ) {
-    remove_filter( 'the_content', 'wpautop' );
-    remove_filter( 'the_excerpt', 'wpautop' );
+    if (is_page_template(['pages/page-works.php']) || is_category('works') || is_page_template(['single-works.php'])) {
+      remove_filter( 'the_content', 'wpautop' );
+      remove_filter( 'the_excerpt', 'wpautop' );
+    }
     return $content;
   }
-
-add_filter( 'the_content', 'disable_wp_auto_p', 0 );
+  add_filter( 'the_content', 'disable_wp_auto_p', 0 );
