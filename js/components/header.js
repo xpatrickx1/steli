@@ -100,6 +100,8 @@ function setup_collapsible_submenus() {
             }
 
             if (!($(this).hasClass('open'))) {
+                $('.sub-menu a').removeClass('open');
+                $('.second-level-sub-menu').removeClass('visible');
                 $(this).addClass('open');
                 $(this).next('ul').addClass('visible').removeClass('hide');
             } else {

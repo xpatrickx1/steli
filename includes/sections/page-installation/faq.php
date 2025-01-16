@@ -14,7 +14,7 @@
                   <h3><?= get_sub_field('item_title') ?></h3>
                   <span class="faq__question-icon"></span>
                 </div>
-                <div class="faq__description item-description" ><?= get_sub_field('item_description') ?></div>
+                <div class="faq__description item-description" ><?= get_sub_field('item_text') ?></div>
               </div>
             <?php endwhile; ?>
           <?php else : ?>

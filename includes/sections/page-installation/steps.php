@@ -17,8 +17,8 @@
      <?= get_field('steps_preparation_title') ? the_field('steps_preparation_title') : 'Этапы подготовки:' ?>
     </div>
     <ul class="steps__preparation">
-      <?php if (have_rows('steps__preparation')) :
-        while ( have_rows('steps__preparation')) : the_row(); ?>
+      <?php if (have_rows('steps_preparation')) :
+        while ( have_rows('steps_preparation')) : the_row(); ?>
           <li class="item">
             <span class="item__number">
               <?= (get_row_index()) ?>.

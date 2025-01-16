@@ -29,10 +29,7 @@
         'title' => 'Працюємо виключно за договором із фіксованими цінами.',
       ],
     ]
-
-   
   ];
-
 ?>
 
 <section class="top-screen">
@@ -56,7 +53,7 @@
         <?php
           if (have_posts() ) { ?>
 
-          <div class="content">
+          <div class="page-content">
 
            <?php while (have_posts()) : the_post();
                 echo the_content();

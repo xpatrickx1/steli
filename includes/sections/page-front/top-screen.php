@@ -6,7 +6,7 @@
         <?= get_field( 'page_title' ) ? the_field( 'page_title' ) : get_the_title() ?>
       </h1>
     </div>
-
+    
     <div class="top-screen--right">
       <div class="top-screen__description">
         <?= get_field('top_screen_description') ? the_field('top_screen_description') : 'Компания «Стелио» профессионально занимается установкой натяжных потолков в Киеве.
@@ -34,3 +34,6 @@
 
   </div>
 </section>
+
+
+<?php echo reblex_display_block(741) ?>

@@ -15,15 +15,7 @@ $works = [
     </div>
 
     <h2>
-      <?php if ( get_field('page_title'))  { 
-          echo get_field('page_title') ;
-        } else { 
-          if (get_bloginfo("language") == 'ru') {
-            echo 'Варианты многоуровневых натяжных потолков фото в Киеве' ;
-          } else {
-            echo 'Варіанти багаторівневих натяжних стель у Києві.';
-          } 
-        }; ?>
+      <?= get_field( 'page_title' ) ? the_field( 'page_title' ) : get_the_title() ?>
     </h2>
 
     <div class="works__list">

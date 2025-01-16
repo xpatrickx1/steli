@@ -71,7 +71,7 @@
   ];
 
 ?>
-
+<?php echo reblex_display_block(759) ?>
 <section class="examples">
   <div class="container examples__wrap">
 

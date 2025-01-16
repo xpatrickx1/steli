@@ -13,8 +13,6 @@
     <div class="breadcrumbs">
       <span><a href="<?= home_url(); ?>">Натяжные потолки в Киеве</a></span>
       <span class="breadcrumbs__slash"> / </span>
-      <span><a href="/catalog/"><?= get_bloginfo("language") == 'ru' ? 'Заказчикам' : 'Замовникам' ?></a></span>
-      <span class="breadcrumbs__slash"> / </span>
       <span><?= get_field('breadcrumb') ? the_field('breadcrumb') : 'Каталог потолков' ?></span>
     </div>
     
@@ -55,10 +53,10 @@
       <div class="top-screen__bottom--right">
         <div class="top-screen__bottom--wrp">
           <div class="top-screen__description">
-            <?= get_field('top_screen_description1') ? the_field('top_screen_description1') : 'Правильная установка натяжных потолков — залог долговечности, эстетичности и надёжности конструкции. Выполняется только профессионалами, а не мастерами-универсалами.' ?>
+            <?= get_field('top_screen_description_1') ? the_field('top_screen_description_1') : 'Правильная установка натяжных потолков — залог долговечности, эстетичности и надёжности конструкции. Выполняется только профессионалами, а не мастерами-универсалами.' ?>
           </div>
           <div class="top-screen__description">
-            <?= get_field('top_screen_description2') ? the_field('top_screen_description2') : 'Тогда вы избавите себя от рисков, связанных с безопасностью при монтажных работах, эстетичностью и долговечности конструкции.' ?>
+            <?= get_field('top_screen_description_2') ? the_field('top_screen_description_2') : 'Тогда вы избавите себя от рисков, связанных с безопасностью при монтажных работах, эстетичностью и долговечности конструкции.' ?>
           </div>
         </div>
         <ul class="top-screen__list">
