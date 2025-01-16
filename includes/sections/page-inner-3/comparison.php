@@ -1,4 +1,5 @@
 
+<?php if( get_field('comparison_title') ) : ?>
 <section class="comparison">
   <div class="container comparison__wrap">
 
@@ -58,3 +59,4 @@
 
   </div>
 </section>
+<?php endif; ?>
