@@ -12,6 +12,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    gap: 12px;
   }
 
   img {
@@ -21,6 +22,10 @@
     width: 410px;
     margin: 5px;
     height: 270px;
+
+    @media ( max-width: @sizes[ maxSM ] ) {
+      margin: 0;
+    }
     
   }
 
@@ -29,7 +34,7 @@
     display: block;
     max-width: 32%;
     width: 100%;
-    margin: 5px;
+    margin: 0;
     height: 270px;
     overflow: hidden;
 
@@ -39,6 +44,11 @@
 
     @media ( max-width: @sizes[ maxSM ] ) {
       max-width: 100%;
+      margin: 0;
+    }
+
+    @media ( max-width: @sizes[ maxXS ] ) {
+      height: 228px;
     }
 
     img {
@@ -46,6 +56,7 @@
       height: auto;
       width: auto;
       min-width: 100%;
+      margin: 0;
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);

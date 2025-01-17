@@ -146,7 +146,7 @@
   <div class="container ">
     <div class="catalog__wrap">
     <div class="breadcrumbs">
-      <span><a href="<?= home_url(); ?>">Натяжные потолки в Киеве</a></span>
+      <span><a href="<?= home_url(); ?>"><?= get_bloginfo("language") == 'ru' ? 'Натяжные потолки в Киеве' : 'Натяжні стелі у Києві' ?></a></span>
       <span class="breadcrumbs__slash"> / </span>
       <span><?= get_field('breadcrumb') ? the_field('breadcrumb') : 'Каталог потолков' ?></span>
     </div>

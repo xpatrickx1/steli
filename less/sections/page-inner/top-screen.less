@@ -35,11 +35,22 @@
     }
   }
 
+  &__top {
+    @media ( max-width: @sizes[ maxSM ] ) {
+      order: 2;
+    }
+  }
+
   &__bottom {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin-top: clamp(30px, 4vw, 48px);
+
+    @media ( max-width: @sizes[ maxSM ] ) {
+      order: 1;
+      margin-bottom: 24px;
+    }
 
     &--left {
       display: flex;

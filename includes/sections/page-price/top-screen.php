@@ -35,7 +35,7 @@
 <section class="top-screen">
   <div class="container">
     <div class="breadcrumbs">
-      <span><a href="<?= home_url(); ?>">Натяжные потолки в Киеве</a></span>
+      <span><a href="<?= home_url(); ?>"><?= get_bloginfo("language") == 'ru' ? 'Натяжные потолки в Киеве' : 'Натяжні стелі у Києві' ?></a></span>
       <span class="breadcrumbs__slash"> / </span>
       <span><a href="/price/"><?= get_bloginfo("language") == 'ru' ? 'Цены' : 'Ціни' ?></a></span>
       <span class="breadcrumbs__slash"> / </span>

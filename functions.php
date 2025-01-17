@@ -87,6 +87,13 @@ function ox_adding_scripts()
             wp_enqueue_script('inner3-js', get_template_directory_uri() . '/js/min/page-inner-3.min.js', null, time(), true);
         }
 
+        if (  get_post_meta( get_the_ID(), '_wp_page_template', true ) === 'single-plain-content.php' ) {
+            wp_deregister_style('post');
+            wp_dequeue_style('post');
+            wp_dequeue_script('post');
+            wp_enqueue_style('innerplain', get_template_directory_uri() . '/css/page-inner-plain-content.min.css', array(), time(), 'all');
+        }
+
         if (is_front_page()) {
             wp_enqueue_style('front', get_template_directory_uri() . '/css/page-front.min.css', array(), time());
             wp_enqueue_script('front-js', get_template_directory_uri() . '/js/min/page-front.min.js', null, time(), true);
@@ -137,6 +144,7 @@ $css_files = array(
     'inner',
     'inner2',
     'inner3',
+    'innerplain',
     'calculator',
     'catalog',
     'contacts',
@@ -178,6 +186,7 @@ function ox_adding_critical_css()
         "page-contacts" => "contacts",
         "page-inner-2" => "inner2",
         "page-inner-3" => "inner3",
+        "page-inner-plain" => "innerplain",
         "page-inner" => "inner",
         "page-installation" => "installation",
         "page-order" => "order",
@@ -590,75 +599,4 @@ function disable_wp_auto_p( $content ) {
 
 
 
-  <?php
-
-/*
- * Plugin Name: Register Custom Settings
- * Description: Adds custom setting field in admin.
- * Version: 1.0.0
- * Author: Wordpress
- * Author uri: https://wordpress.org
- * Text Domain: register-custom-settings
-*/
-
-function my_admin_menu() {
-    add_menu_page(
-        __( 'Sample page', 'register-custom-settings' ),
-        __( 'Sample menu', 'register-custom-settings' ),
-        'manage_options',
-        'sample-page',
-        'my_admin_page_contents',
-        'dashicons-schedule',
-        3
-    );
-}
-add_action( 'admin_menu', 'my_admin_menu' );
-
-function my_admin_page_contents() {
-    ?>
-    <h1> <?php esc_html_e( 'Welcome to my custom admin page.', 'register-custom-settings' ); ?> </h1>
-    <form method="POST" action="options.php">
-    <?php
-    settings_fields( 'sample-page' );
-    do_settings_sections( 'sample-page' );
-    submit_button();
-    ?>
-    </form>
-    <?php
-}
-
-
-add_action( 'admin_init', 'my_settings_init' );
-
-function my_settings_init() {
-
-    add_settings_section(
-        'sample_page_setting_section',
-        __( 'Custom settings', 'register-custom-settings' ),
-        'my_setting_section_callback_function',
-        'sample-page'
-    );
-
-        add_settings_field(
-           'my_setting_field',
-           __( 'My custom setting field', 'register-custom-settings' ),
-           'my_setting_markup',
-           'sample-page',
-           'sample_page_setting_section'
-        );
-
-        register_setting( 'sample-page', 'my_setting_field' );
-}
-
-
-function my_setting_section_callback_function() {
-    echo '<p>Intro text for our settings section</p>';
-}
-
-
-function my_setting_markup() {
-    ?>
-    <label for="my-input"><?php _e( 'My Input' ); ?></label>
-    <input type="text" id="my_setting_field" name="my_setting_field" value="<?php echo get_option( 'my_setting_field' ); ?>">
-    <?php
-}
+  

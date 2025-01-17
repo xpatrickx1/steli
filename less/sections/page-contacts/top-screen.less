@@ -67,15 +67,24 @@
   &__img {
     position: relative;
     height: 459px;
+    overflow: hidden;
 
     &:first-child {
       width: 60%;
       max-width: 777px;
+
+      @media ( max-width: @sizes[ maxMD ] ) {
+        width: 100%;
+      }
     }
 
     &:last-child {
       width: 38%;
       max-width: 777px;
+
+      @media ( max-width: @sizes[ maxMD ] ) {
+        width: 100%;
+      }
     }
     
     img {
@@ -84,8 +93,7 @@
       width: auto;
       min-width: 100%;
       min-height: 100%;
-      max-height: 330px;
-      max-width: 800px;
+      max-width: 777px;
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
@@ -115,11 +123,28 @@
     max-width: 215px;
   }
   &__work-time {
-    list-style: disc;
     padding-left: 20px;
     
-    li::marker {
-      color: #0CF200;
+    li {
+      position: relative;
+      padding-left: 16px;
+
+      &:before {
+        content: '';
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        top: 10px;
+        left: 0;
+        opacity: 1;
+        background: @background[ green ];
+        border-radius: 50%;
+        animation-name: blinkAnimation;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+        transition: .6s;
+      }
     }
 
     span {

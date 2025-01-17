@@ -34,6 +34,3 @@
 
   </div>
 </section>
-
-
-<?php echo reblex_display_block(741) ?>

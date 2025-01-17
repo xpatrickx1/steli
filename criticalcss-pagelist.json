@@ -29,6 +29,10 @@
       "name": "inner3"
     },
     {
+      "link": "/catalog/innerplain/",
+      "name": "innerplain"
+    },
+    {
       "link": "/installation/",
       "name": "installation"
     },

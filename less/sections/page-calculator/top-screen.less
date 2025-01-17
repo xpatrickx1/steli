@@ -35,6 +35,24 @@
   &--right {
     max-height: 317px;
     z-index: 2;
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: -200px;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-position: right 0;
+      background-image: url('../images/page-calculator/calc.svg');
+      animation-name: swimAnimation;
+      animation-duration: 3s;
+      animation-fill-mode: both;
+      animation-iteration-count: infinite;
+      transition: 1s;
+    }
   }
 
   &__list {

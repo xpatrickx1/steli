@@ -30,26 +30,17 @@
   <div class="container options__wrap">
 
     <div class="options__top">
-      <h2>
-        <?= get_field('options_title') ? the_field('options_title') : 'О матовых потолках' ?>
-      </h2>
+      <?php
+        if (have_posts() ) { ?>
 
-      <div class="options__description">
-        <?= get_field('options_description') ? the_field('options_description') : '<p>Матовый натяжной потолок — универсальный вид полотна. Внешне он напоминает хорошо оштукатуренную и окрашенную поверхность. Это лучший вариант для консерваторов, которые предпочитают классическую отделку в интерьере. На таком потолке не будет отвлекающих бликов и разводов. </p><p>Матовый подвесной потолок удобно использовать для помещений с большой площадью — места стыковки разных полотен на нем незаметны. А также в тех комнатах, где планируется сложная композиция из разных материалов, которые должны органично сочетаться друг с другом.</p>' ?>
-      </div>
+        <div class="options__content">
 
-      
-        <?php
-          if (have_posts() ) { ?>
-
-          <div class="options__content">
-
-           <?php while (have_posts()) : the_post();
-                echo the_content();
-            endwhile; ?>
-          </div>
-         <?php }
-        ?>
+          <?php while (have_posts()) : the_post();
+              echo the_content();
+          endwhile; ?>
+        </div>
+        <?php }
+      ?>
     </div>
 
     <?php if (have_rows('green_markers_list')) : ?>
@@ -87,14 +78,14 @@
     <ul class="options__advantages advantages">
       <?php if (have_rows('advantages_list')) :
         while ( have_rows('advantages_list')) : the_row(); ?>
-          <li class="item item__green">
-            <div class="item__title"><?= get_field('item_title') ? the_field('item_title') : 'Плюсы матовых полотен' ?></div>
+          <li class="item <?= get_row_index() == 1 ? 'item__green' : 'item__gray' ?>">
+            <div class="item__title"><?= get_sub_field('item_title') ? get_sub_field('item_title') : 'Плюсы матовых полотен' ?></div>
             <ul class="item__list">
               <?php if (have_rows('item_list')) :
                 while ( have_rows('item_list')) : the_row(); ?>
-                  <div class="item__text">
+                  <li>
                     <?= get_sub_field('item_text'); ?>
-                  </div>
+                  </li>
                 <?php endwhile; ?>
               <?php endif; ?>
             </ul>

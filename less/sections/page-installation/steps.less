@@ -80,6 +80,7 @@
     .item {
       display: flex;
       padding: clamp(16px, 3vw, 48px) clamp(16px, 3vw, 24px);
+
   
       &:not(.item:last-child) {
         border-bottom: 1px solid #E6E6E6;
@@ -88,6 +89,10 @@
       @media ( max-width: @sizes[ maxMD ] ) {
         flex-direction: column;
         padding: clamp(16px, 3vw, 60px) 10px;
+      }
+
+      @media ( max-width: @sizes[ maxSM ] ) {
+        padding: 0;
       }
   
       &:nth-child(even) {

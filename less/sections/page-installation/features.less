@@ -23,11 +23,19 @@
 
     @media (max-width: @sizes[maxSM]) {
       flex-direction: column;
+      max-width: 334px;
+      margin: 0 auto;
     }
 
     .item__text {
       .font( 400 );
       .fontSize( 14px, 19px );
+    }
+
+    @media ( max-width: @sizes[ maxXS ] ) {
+      img {
+        width: 100%;
+      }
     }
   }
 

@@ -19,12 +19,14 @@
           <li class="item">
             <div class="item__title"><?= get_sub_field('item_title') ?> <span>₴</span></div>
             <div class="item__main">
-              <?php foreach ( $item['items'] as $key => $i ) : ?>
-                <div class="item__param">
-                  <span><?= get_sub_field('item_param') ?></span>
-                  <span><?= get_sub_field('item_val') ?></span>
-                </div>
-              <?php endforeach; ?>
+              <?php if (get_sub_field('item_list')) :
+                  while ( have_rows('item_list')) : the_row(); ?>
+                    <div class="item__param">
+                      <span><?= get_sub_field('item_param') ?></span>
+                      <span><?= get_sub_field('item_val') ?></span>
+                    </div>
+                <?php endwhile; ?>
+              <?php endif; ?>
             </div>
           </li>  
         <?php endwhile; ?>
