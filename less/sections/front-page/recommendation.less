@@ -18,19 +18,12 @@
 
     @media ( max-width: @sizes[ maxMD ] ) {
      flex-wrap: wrap;
-     justify-content: center;
-     gap: 20px;
-    }
-
-    @media ( max-width: @sizes[ maxMD ] ) {
-      max-width: 774px;
+     justify-content: space-between;
+     gap: 12px;
     }
 
     @media ( max-width: @sizes[ maxSM ] ) {
-      gap: 20px;
-      justify-content: flex-start;
-      width: fit-content;
-      max-width: 420px;
+      flex-direction: column;
     }
 
   }
@@ -41,10 +34,22 @@
     color: @color[black];
     max-width: 310px;
     margin: 0 0 20px;
+    width: 30%;
+
+    @media ( max-width: @sizes[ maxLG ] ) {
+      margin: 0;
+    }
   }
 
   &__center {
     max-width: 405px;
+    width: 100%;
+
+    @media ( max-width: @sizes[ maxMD ] ) {
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+     }
   }
 
   &__reviews {
@@ -53,6 +58,8 @@
     @media ( max-width: @sizes[ maxLG ] ) {
       margin-left: auto;
       max-width: 405px;
+      width: 100%;
+      margin-top: 36px;
      }
 
      @media ( max-width: @sizes[ maxSM ] ) {

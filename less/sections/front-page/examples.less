@@ -60,12 +60,12 @@
 
     &--left {
       .font( 400 );
-    .fontSize( 16px, 30px );
+    .fontSize( 16px, 19px );
     }
 
     &--right {
       .font( 700 );
-    .fontSize( 16px, 30px );
+    .fontSize( 16px, 19px );
     }
   }
 
@@ -88,45 +88,11 @@
       
       @media (min-width: @sizes[minSM]) {
         width: 48%;
+        .fontNunito(400);
+        .fontSize(14px, 19px);
+        max-width: 544px;
+        padding-left: 5px;
       }
-
-      @media (min-width: @sizes[minMD]) {
-        width: 31%;
-      }
-
-      .item__title {
-        transition: @transition;
-      }
-
-      @media (min-width: @sizes[minSM]) {
-
-        &:hover {
-          background: #FCFCFC;
-          box-shadow: 10px 5px 5px #C5C5C514;
-        }
-
-        a:hover {
-          
-          .item__title {
-          color: @color[accent];
-          }
-        }
-      }
-    }
-
-    .item__title {
-      .font( 700 );
-      .fontSize( 18px, 34px );
-      margin: 20px 0 6px;
-      padding-left: 5px;
-      
-    }
-
-    .item__text {
-      .fontNunito(400);
-      .fontSize(14px, 19px);
-      max-width: 544px;
-      padding-left: 5px;
     }
   }
   

@@ -18,6 +18,11 @@
   .button--main {
     max-width: 252px;
     margin-top: 48px;
+
+    @media ( max-width: @sizes[ maxLG ] ) {
+      margin-top: 0;
+      margin-bottom: 36px;
+    }
   }
 
   h1 {

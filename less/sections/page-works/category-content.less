@@ -23,9 +23,19 @@
     margin: 5px;
     height: 270px;
 
+   @media ( max-width: @sizes[ maxLG ] ) {
+      max-width: 48%;
+    }
+
     @media ( max-width: @sizes[ maxSM ] ) {
+      max-width: 100%;
       margin: 0;
     }
+
+    @media ( max-width: @sizes[ maxXS ] ) {
+      height: 228px;
+    }
+
     
   }
 

@@ -56,6 +56,11 @@
       padding: 16px 16px 42px;
       max-width: 470px;
       border-radius: 6px;
+
+      @media (max-width: @sizes[maxSM]) {
+        padding: 16px 0 42px;
+      }
+      
       
       @media (min-width: @sizes[minSM]) {
         width: 48%;

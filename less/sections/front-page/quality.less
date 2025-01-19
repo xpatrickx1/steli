@@ -39,6 +39,10 @@
       border-radius: 6px;
       transition: @transition;
 
+      @media (max-width: @sizes[maxSM]) {
+        padding: 16px 0;
+      }
+
       @media (min-width: @sizes[minSM]) {
         width: 100%;
       }

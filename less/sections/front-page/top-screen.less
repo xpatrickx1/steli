@@ -8,11 +8,15 @@
   }
 
   @media ( max-width: @sizes[ maxSM ] ) {
-    padding: 90px 0 60px;
+    padding: 90px 0 30px;
   }
 
   h1 {
     max-width: 780px;
+
+    @media ( max-width: @sizes[ maxLG ] ) {
+      margin: 0;
+    }
   }
 
   &__wrap {
@@ -35,6 +39,10 @@
     font-weight: 400;
     max-width: 476px;
     margin-top: 25px;
+
+    @media ( max-width: @sizes[ maxLG ] ) {
+      margin-top: 0;
+    }
   }
   
   &--left {
