@@ -82,11 +82,15 @@
     .item {
       width: 100%;
       transition: @transition;
-      
+      max-width: 512px;
+
       @media (min-width: @sizes[minSM]) {
+        width: 100%;
+      }
+
+      @media (min-width: @sizes[minMD]) {
         width: 48%;
       }
-      
       img {
         width: 100%;
       }

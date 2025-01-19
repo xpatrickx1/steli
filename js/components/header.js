@@ -59,6 +59,8 @@ $('.header__navigation li a').each( function () {
 }).promise().done( checkUrls() );
 
 $('.header__navigation li a, .footer__menu li a').click(function(event) {
+    console.log( event.target);
+    console.log( event.target);
     const $this = $(this);
     const $parent = $this.parent('li');
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') ||

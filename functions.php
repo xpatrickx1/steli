@@ -217,6 +217,11 @@ function ox_adding_critical_css()
         $currentCritical = load_template_part("css/critical-inner2.css");
         echo '<style>' . $currentCritical . '</style>';
     }
+
+    if (  get_post_meta( get_the_ID(), '_wp_page_template', true ) === 'single3.php' ) {
+        $currentCritical = load_template_part("css/critical-inner3.css");
+        echo '<style>' . $currentCritical . '</style>';
+    }
     
     if (  get_post_meta( get_the_ID(), '_wp_page_template', true ) === 'single.php' ) {
         $currentCritical = load_template_part("css/critical-inner.css");

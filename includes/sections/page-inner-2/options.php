@@ -118,7 +118,7 @@
       <?php endif; ?>
     </ul>
 
-    <?php if (have_rows('green_markers_list')) : ?>
+    <?php if (get_field('options_bottom_title')) : ?>
       <div class="options__bottom">
       <div class="options__bottom--title">
         <?= get_field('options_bottom_title') ? the_field('options_bottom_title') : 'Расценки на дополнительные услуги' ?>
