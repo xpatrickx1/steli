@@ -64,9 +64,10 @@
         <?php if (have_rows('examples_list')) :
           while ( have_rows('examples_list')) : the_row(); ?>
             <li class="item">
-            <a href="<?= get_sub_field('item_link') ?>">
               <div class="item__price">
-                <?= get_sub_field('item_price') ?>
+                <div class="item__top">
+                  <div class="item__top--text"><?= get_bloginfo("language") == 'ru' ? 'Всё включено' : 'Все включено'?></div> <div class="item__value"><?= get_sub_field('item_price') ?></div>
+                </div>
               </div>
               <div class="item__img">
                 <?php if(get_sub_field('item_img')['url']) : ?>
@@ -79,16 +80,19 @@
                   />
                 <?php endif; ?>
               </div>
-              <div class="item__center">
+              <div class="item__main">
                 <div class="item__title"><?= get_sub_field('item_title') ?></div>
                 <div class="item__text"><?= get_sub_field('item_text') ?></div>
               </div>
-              <div class="item__info">
-                <div class="item__price">
-                  <?= get_sub_field('item_price') ?>
-                </div>
+              <div class="item__bottom">
+                <?php if (have_rows('item_params')) :
+                  while ( have_rows('item_params')) : the_row(); ?>
+                    <div class="item__info">
+                      <span class="item__info--left"><?= get_sub_field('param_title'); ?></span> <span class="item__info--right"><?= get_sub_field('param_value'); ?></span>
+                    </div>
+                  <?php endwhile; ?>
+                <?php endif; ?>
               </div>
-              </a>
             </li>
           <?php endwhile; ?>
         <?php else : ?>

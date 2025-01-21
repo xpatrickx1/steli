@@ -96,15 +96,15 @@
       width: 100%;
       transition: @transition;
       max-width: 421px;
-
-      @media (min-width: @sizes[minLG]) {
-        width: 33%;
-        .fontNunito(400);
-        .fontSize(14px, 19px);
-      }
       
       @media (min-width: @sizes[minSM]) {
         width: 100%;
+        .fontNunito(400);
+        .fontSize(14px, 19px);
+      }
+
+      @media (min-width: @sizes[minLG]) {
+        width: 32%;
         .fontNunito(400);
         .fontSize(14px, 19px);
       }
@@ -113,6 +113,10 @@
         position: relative;
         height: 270px;
         overflow: hidden;
+
+        @media (max-width: @sizes[maxSM]) {
+          height: 220px;
+        }
       }
 
       img {
@@ -122,8 +126,8 @@
         min-width: 100%;
         margin: 0;
         left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
+        top: 0;
+        transform: translate(-50%, 0);
       }
     }
   }

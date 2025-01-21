@@ -32,7 +32,7 @@ function createParameterElement(parameter) {
 
 function updateResult() {
     const totalPrice = calculatePrice(parameters);
-    wrongPrice.textContent = totalPrice / 100 * 70;
+    wrongPrice.textContent = totalPrice / 100 * 50;
     resultPriceFrom.textContent = totalPrice;
     resultPriceTo.textContent = totalPrice / 100 * 120;
 }
@@ -48,11 +48,11 @@ function getValueByName(name) {
 
 function calculatePrice(parameters) {
     const basePrice = 1000;
-    const areaPrice = getValueByName('square') * 50;
-    const cornersPrice = getValueByName('angles') * 20;
-    const lightingPointsPrice = getValueByName('lightingPoints') * 20;
-    const chandeliersPrice = getValueByName('chandeliers') * 20;
-    const rodPrice = getValueByName('pipes') * 20;
+    const areaPrice = getValueByName('square') * 500;
+    const cornersPrice = getValueByName('angles') * 70;
+    const lightingPointsPrice = getValueByName('lightingPoints') * 350;
+    const chandeliersPrice = getValueByName('chandeliers') * 500;
+    const rodPrice = getValueByName('pipes') * 250;
     return basePrice + areaPrice + cornersPrice + lightingPointsPrice + chandeliersPrice + rodPrice; // Повернути розраховану ціну
 }
 

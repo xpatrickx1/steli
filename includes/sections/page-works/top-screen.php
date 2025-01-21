@@ -19,14 +19,21 @@ $works = [
     </h2>
 
     <div class="works__list">
-      <?php if (has_nav_menu('categoty_works')) :
+      <?php if (get_bloginfo("language") == 'ru') { 
+        $nav_args = array(
+          'theme_location' => 'categoty_works_ru',
+          'container' => '',
+          'items_wrap' => '%3$s',
+        );
+        wp_nav_menu($nav_args);
+      } else {
         $nav_args = array(
           'theme_location' => 'categoty_works',
           'container' => '',
           'items_wrap' => '%3$s',
         );
         wp_nav_menu($nav_args);
-      endif; ?>
+      }; ?>
     </div>
     
   </div>

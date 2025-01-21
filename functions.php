@@ -603,5 +603,17 @@ function disable_wp_auto_p( $content ) {
   add_filter( 'the_content', 'disable_wp_auto_p', 0 );
 
 
+  function get_subcategory_name() {
+    $categories = get_the_category();
 
-  
+    if ( ! empty( $categories ) ) {
+        foreach ( $categories as $category ) {
+            if ( $category->parent > 0 ) {
+                // Post belongs to a subcategory
+                return $category->name;
+            }
+        }
+    }
+
+    return ''; // No subcategory found
+}

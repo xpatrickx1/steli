@@ -35,10 +35,28 @@
 
     <div class="reviews__top">
       <h2>
-        <?= get_field('reviews_title') ? the_field('reviews_title') : 'Достоверные отзывы наших заказчиков' ?>
+        <?= get_field('reviews_title') ? the_field('reviews_title') : '' ?>
+        <?php if ( get_field('reviews_title'))  { 
+        echo get_field('reviews_title') ;
+        } else { 
+        if (get_bloginfo("language") == 'ru') {
+          echo 'Достоверные отзывы наших заказчиков' ;
+        } else {
+          echo 'Чесні відгуки наших замовників.';
+        } 
+      }; ?>
       </h2>
 
       <div class="reviews__description section-description">
+      <?php if ( get_field('reviews_description'))  { 
+        echo get_field('reviews_description') ;
+        } else { 
+        if (get_bloginfo("language") == 'ru') {
+          echo 'Все отзывы оставлены реальными людьми. В этом можно легко убедиться, связавшись с ними по контактам в социальных сетях.' ;
+        } else {
+          echo 'Всі відгуки залишені реальними людьми. У цьому ви можете легко переконатися, зв’язавшись з ними по контактах у соціальних мережах.';
+        } 
+      }; ?>
         <?= get_field('reviews_description') ? the_field('reviews_description') : 'Всі відгуки залишені реальними людьми. У цьому ви можете легко переконатися, зв’язавшись з ними по контактах у соціальних мережах.' ?>
       </div>
     </div>
@@ -69,5 +87,15 @@
         
       </ul>
     </div>
+    <button id="reviewsShowmore" class="reviews__showmore button--second">
+    <?php if ( get_field('reviews_showmore'))  { 
+      echo get_field('reviews_showmore') ;
+      } else { 
+      if (get_bloginfo("language") == 'ru') {
+        echo 'Загрузить еще' ;
+      } else {
+        echo 'Завантажити ще';
+      } 
+    }; ?>
   </div>
 </section>

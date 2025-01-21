@@ -3,7 +3,16 @@
 <section class="faq" id="faq">
 
     <div class="container">
-        <h2><?= get_field('faq_title') ? the_field('faq_title') : 'Подготовка. Важные вопросы и ответы на них.' ?></h2>
+        <h2><?php if ( get_field('faq_title'))  { 
+          echo get_field('faq_title') ;
+          } else { 
+          if (get_bloginfo("language") == 'ru') {
+            echo 'Подготовка. Важные вопросы и ответы на них.' ;
+          } else {
+            echo 'Підготовка. Важливі питання та відповіді на них.';
+          } 
+        }; ?>
+        </h2>
 
         <div class="faq__wrap ">
           <div class="faq__accordion">
@@ -18,7 +27,7 @@
               </div>
             <?php endwhile; ?>
           <?php else : ?>
-            <?php foreach ( $faqData as $item ) : ?>
+            <?php foreach ( get_bloginfo("language") == 'ru' ? $faqData['ru'] : $faqData['ua'] as $key => $item ) : ?>
               <div class="faq__item">
                 <div class="faq__title-wrap">
                   <h3><?= $item[ 'title' ] ?></h3>

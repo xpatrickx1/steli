@@ -39,6 +39,13 @@
       <span class="breadcrumbs__slash"> / </span>
       <span><a href="/catalog/"><?= get_bloginfo("language") == 'ru' ? 'Каталог' : 'Каталог' ?></a></span>
       <span class="breadcrumbs__slash"> / </span>
+      <?php 
+        if ( get_subcategory_name() ) { 
+        ?>
+            <span href="/design-sub"><?php echo get_subcategory_name(); ?></span>
+            <span class="breadcrumbs__slash"> / </span>
+        <?php } 
+      ?>
       <span><?= get_field('breadcrumb') ? the_field('breadcrumb') : 'Матовый потолок' ?></span>
     </div>
   </div>

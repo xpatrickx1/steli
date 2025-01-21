@@ -6,14 +6,23 @@
         <span class="breadcrumbs__slash"> / </span>
         <span><a href="/catalog/"><?= get_bloginfo("language") == 'ru' ? 'Каталог' : 'Каталог' ?></a></span>
         <span class="breadcrumbs__slash"> / </span>
+        <?php 
+          if ( get_subcategory_name() ) { 
+          ?>
+              <span href="/design-sub"><?php echo get_subcategory_name(); ?></span>
+              <span class="breadcrumbs__slash"> / </span>
+          <?php } 
+        ?>
         <span><?= get_field('breadcrumb') ? the_field('breadcrumb') : 'Каталог потолков' ?></span>
       </div>
+       
+    
       
       <div class="top-screen__top">
         <div class="top-screen--left">
           <img 
             src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-            data-src="<?= get_sub_field('inner_top_1')['url'] ? get_sub_field('inner_top_1')['url'] : bloginfo('template_url') . '/images/page-inner/innerTop1.webp' ?>"
+            data-src="<?= get_field('inner_top_1')['url'] ? get_field('inner_top_1')['url'] : bloginfo('template_url') . '/images/page-inner/innerTop1.webp' ?>"
             class="lazy"
             width="1px"
             height="1px"
@@ -21,20 +30,24 @@
         </div>
         
         <div class="top-screen--right">
-          <img 
-            src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-            data-src="<?= get_sub_field('inner_top_2')['url'] ? get_sub_field('inner_top_2')['url'] : bloginfo('template_url') . '/images/page-inner/innerTop2.webp' ?>"
-            class="lazy"
-            width="1px"
-            height="1px"
-          />
-          <img 
-            src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-            data-src="<?= get_sub_field('inner_top_3')['url'] ? get_sub_field('inner_top_3')['url'] : bloginfo('template_url') . '/images/page-inner/innerTop3.webp' ?>"
-            class="lazy"
-            width="1px"
-            height="1px"
-          />
+          <div class="top-screen__img">
+            <img 
+              src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
+              data-src="<?= get_field('inner_top_2')['url'] ? get_field('inner_top_2')['url'] : bloginfo('template_url') . '/images/page-inner/innerTop2.webp' ?>"
+              class="lazy"
+              width="1px"
+              height="1px"
+            />
+          </div>
+          <div class="top-screen__img">
+            <img 
+              src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
+              data-src="<?= get_field('inner_top_3')['url'] ? get_field('inner_top_3')['url'] : bloginfo('template_url') . '/images/page-inner/innerTop3.webp' ?>"
+              class="lazy"
+              width="1px"
+              height="1px"
+            />
+          </div>
         </div>
         
       </div>

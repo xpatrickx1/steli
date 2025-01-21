@@ -18,6 +18,11 @@
   .button--main {
     max-width: 252px;
     margin-top: 48px;
+
+    @media ( max-width: @sizes[ maxSM ] ) {
+      margin-top: 24px;
+      margin-bottom: 48px;
+    }
   }
 
   h1 {
@@ -48,12 +53,15 @@
   }
 
   &__bottom {
-    justify-content: space-between;
+    aspect-ratio: 323 / 207;
     max-width: 646px;
+    overflow: hidden;
 
-    img {
-      width: 100%;
-    }
+      margin: 0;
+      // left: 50%;
+      top: 0;
+      // transform: translate(-50%, 0);
+    // }
   }
 
   h2 {
@@ -110,6 +118,7 @@
     &__img {
       width: 56px;
       flex: 1 0 auto;
+      
     }
   }
 }

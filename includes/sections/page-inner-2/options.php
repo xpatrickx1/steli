@@ -30,6 +30,16 @@
   <div class="container options__wrap">
 
     <div class="options__top">
+      <h2>
+        <?= get_field('options_title') ? the_field('options_title') : 'Варианты теневых профилей под разные задачи' ?>
+      </h2>
+
+      <div class="options__description">
+        <?= get_field('options_description') ? the_field('options_description') : 'Теневой зазор по периметру потолка получается благодаря особой геометрии профиля. Его кромка наклонена относительно плоскости примыкания, и полотно огибает её под острым углом. Это подчёркивает чёткие контуры потолка.  Крепление к стене поднято вверх относительно края полотна, что позволяет скрыть детали крепежа и контур припайки гарпуна к полотну.' ?>
+      </div>
+    </div>
+
+    <div class="options__top">
       <?php
         if (have_posts() ) { ?>
 
