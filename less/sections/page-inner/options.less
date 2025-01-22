@@ -53,6 +53,21 @@
       @media (max-width: @sizes[maxLG]) {
         flex-direction: column;
       }
+
+      &__img {
+        position: relative;
+        overflow: hidden;
+        max-width: 606px;
+
+        img {
+          aspect-ratio: 606 / 402;
+          height: auto;
+          width: auto;
+          min-width: 100%;
+          min-height: 100%;
+          margin: 0;
+        }
+      }
     }
 
     .item__left {

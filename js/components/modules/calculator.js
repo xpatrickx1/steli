@@ -4,7 +4,7 @@ const resultPriceTo = document.getElementById('resultPriceTo');
 const wrongPrice = document.getElementById('wrongPrice');
 const resultDetails = document.getElementById('result-details');
 
-const parameters = [
+let parameters = [
     { name: 'square', unit: 'м2', value: 17 },
     { name: 'angles', value: 4 },
     { name: 'lightingPoints', value: 0 },
@@ -27,11 +27,16 @@ function createParameterElement(parameter) {
             document.getElementById(parameter.name).value = parameter.value;
             updateResult();
         });
+
+        itemGroup.querySelector('input').addEventListener('change', () => {
+            parameter.value = document.getElementById(parameter.name).value;
+            updateResult();
+        });
     });
 }
 
 function updateResult() {
-    const totalPrice = calculatePrice(parameters);
+    const totalPrice = Math.ceil(calculatePrice(parameters));
     wrongPrice.textContent = totalPrice / 100 * 50;
     resultPriceFrom.textContent = totalPrice;
     resultPriceTo.textContent = totalPrice / 100 * 120;

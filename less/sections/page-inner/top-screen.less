@@ -27,7 +27,7 @@
   &__top, &__bottom {
     display: flex;
     align-items: stretch;
-    gap: 24px;
+    gap: clamp(15px, 2vw, 23px);
     max-width: 100%;
 
     @media ( max-width: @sizes[ maxLG ] ) {
@@ -156,6 +156,7 @@
         height: auto;
         width: auto;
         min-width: 100%;
+        min-height: 100%;
         margin: 0;
         left: 50%;
         top: 50%;

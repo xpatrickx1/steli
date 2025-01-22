@@ -50,6 +50,21 @@
       @media (min-width: @sizes[minSM]) {
         width: 48%;
       }
+
+      &__img {
+        position: relative;
+        overflow: hidden;
+        max-width: 480px;
+
+        img {
+          aspect-ratio: 480 / 343;
+          height: auto;
+          width: auto;
+          min-width: 100%;
+          min-height: 100%;
+          margin: 0;
+        }
+      }
     }
 
     .item__title {
