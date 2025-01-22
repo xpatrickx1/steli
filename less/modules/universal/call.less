@@ -2,17 +2,18 @@
   position: relative;
   padding: clamp(40px, 7vw, 64px) 0 clamp(60px, 12vw, 114px);
   background: @background[second];
+  z-index: 1;
  
   &::after {
     content: '';
     position: absolute;
-    bottom: -147px;
+    bottom: -200px;
     right: 0;
     width: 100%;
     height: 100%;
     background-repeat: no-repeat;
     background-position: right 0;
-    background-image: url('../images/page-front/call-bg-min.png');
+    background-image: url('../images/page-inner/orderbg.png');
 
     @media (max-width: @sizes[maxSM]) {
       display: none;

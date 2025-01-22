@@ -1,7 +1,7 @@
 <div class="content">
   <div class=" content__wrap">
     <?php get_template_part('includes/sections/page-inner/sidebar')?>
-    <?php get_template_part('includes/sections/page-inner-2/options')?>
+    <?php get_template_part('includes/sections/page-inner-3/options')?>
     <?php get_template_part('includes/sections/page-inner-3/comparison')?>
     <?php get_template_part('includes/sections/page-inner/price')?>
     <?php get_template_part('includes/modules/calculator')?>

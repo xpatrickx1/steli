@@ -55,7 +55,15 @@
 
     <div class="examples__top">
       <h2>
-        <?= get_field('examples_title') ? the_field('examples_title') : 'Примеры установленных натяжных потолков' ?>
+      <?php if ( get_field('examples_title'))  { 
+          echo get_field('examples_title') ;
+          } else { 
+          if (get_bloginfo("language") == 'ru') {
+            echo 'Примеры установленных натяжных потолков' ;
+          } else {
+            echo 'Зразки натяжних стель, які були встановлені';
+          } 
+        }; ?>
       </h2>
     </div>
 
@@ -100,7 +108,7 @@
             <li class="item">
               <div class="item__price">
                 <div class="item__subtitle">
-                <div>Всё включено</div> <div class="item__value"><?= $item['price'] ?></div>
+                <div class="item__top--text"><?= get_bloginfo("language") == 'ru' ? 'Всё включено' : 'Все включено'?></div> <div class="item__value"><?= $item['price'] ?></div>
                 </div>
               </div>
               <div class="item__img">
