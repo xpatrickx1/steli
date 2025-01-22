@@ -36,10 +36,10 @@ function createParameterElement(parameter) {
 }
 
 function updateResult() {
-    const totalPrice = Math.ceil(calculatePrice(parameters));
-    wrongPrice.textContent = totalPrice / 100 * 50;
-    resultPriceFrom.textContent = totalPrice;
-    resultPriceTo.textContent = totalPrice / 100 * 120;
+    const totalPrice = Math.round(calculatePrice(parameters));
+    wrongPrice.textContent = Math.round(totalPrice / 100 * 50);
+    resultPriceFrom.textContent = Math.round(totalPrice);
+    resultPriceTo.textContent = Math.round(totalPrice / 100 * 120);
 }
 
 function getValueByName(name) {
