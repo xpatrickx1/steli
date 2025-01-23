@@ -52,8 +52,8 @@
       </h2>
 
       <div class="advertising__description section-description">
-        <?php if ( get_field('advertising_title'))  { 
-          echo get_field('advertising_title') ;
+        <?php if ( get_field('advertising_description'))  { 
+          echo get_field('advertising_description') ;
           } else { 
           if (get_bloginfo("language") == 'ru') {
             echo 'Кажется, что все компании по натяжным потолкам в Киеве одинаковые. На самом деле, за рекламными ухищрениями с низкими ценами за мистический 1 м2 прячется много подводных камней. Самая частая занижение ценника, без указания стоимости профиля и монтажных работ.' ;
