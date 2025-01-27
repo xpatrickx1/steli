@@ -40,6 +40,10 @@ h2 {
   .font( 700 );
   .fontSize( clamp(25px, 3vw, 32px), clamp(27px, 3vw, 34px) );
   margin: 0 0 12px;
+
+  @media (max-width: @sizes[maxSM]) {
+    margin: 0;
+  }
 }
 
 
