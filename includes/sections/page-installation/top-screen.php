@@ -20,7 +20,7 @@
       <div class="top-screen--left">
         <img 
           src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-          data-src="<?= get_sub_field('installation_top_1')['url'] ? get_sub_field('installation_top_1')['url'] : bloginfo('template_url') . '/images/page-installation/installation1.webp' ?>"
+          data-src="<?= get_field('installation_top_img_1')['url'] ? get_field('installation_top_img_1')['url'] : bloginfo('template_url') . '/images/page-installation/installation1.webp' ?>"
           class="lazy"
           width="1px"
           height="1px"
@@ -30,14 +30,14 @@
       <div class="top-screen--right">
         <img 
           src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-          data-src="<?= get_sub_field('installation_top_2')['url'] ? get_sub_field('installation_top_2')['url'] : bloginfo('template_url') . '/images/page-installation/installation2.webp' ?>"
+          data-src="<?= get_field('installation_top_img_2')['url'] ? get_field('installation_top_img_2')['url'] : bloginfo('template_url') . '/images/page-installation/installation2.webp' ?>"
           class="lazy"
           width="1px"
           height="1px"
         />
         <img 
           src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-          data-src="<?= get_sub_field('installation_top_3')['url'] ? get_sub_field('installation_top_3')['url'] : bloginfo('template_url') . '/images/page-installation/installation3.webp' ?>"
+          data-src="<?= get_field('installation_top_img_3')['url'] ? get_field('installation_top_img_3')['url'] : bloginfo('template_url') . '/images/page-installation/installation3.webp' ?>"
           class="lazy"
           width="1px"
           height="1px"

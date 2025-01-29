@@ -13,7 +13,7 @@
     height: 320px;
 
     @media (max-width: @sizes[maxLG]) {
-      height: 330px;
+      height: 320px;
     }
     
     @media (max-width: @sizes[maxMD]) {
@@ -59,8 +59,13 @@
         width: 47%;
       }
 
+      @media (min-width: @sizes[minMD]) {
+        min-width: 407px;
+      }
+
       @media (min-width: @sizes[minLG]) {
         width: 32%;
+        max-height: 320px;
       }
     }
     
