@@ -175,14 +175,6 @@
                 wp_nav_menu($nav_args);
             }
             }; ?>
-            <?php if (has_nav_menu('footer_menu_customers')) :
-              $nav_args = array(
-                'theme_location' => 'footer_menu_customers',
-                'container' => '',
-                'items_wrap' => '%3$s',
-              );
-              wp_nav_menu($nav_args);
-            endif; ?>
           </ul>
         </div>
 
