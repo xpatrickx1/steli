@@ -4,7 +4,7 @@
 get_header();
 ?>
 
-<?php get_template_part('includes/sections/page-inner/top-screen')?>
+<?php get_template_part('includes/sections/page-inner-2/top-screen')?>
 
 <section class="category-content">
   <div class="container">
@@ -19,6 +19,8 @@ get_header();
     </div>
   </div>
 </section>
+
+<?php get_template_part('includes/modules/call')?>
 
 
 <?php get_footer(); ?>

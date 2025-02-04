@@ -6,7 +6,6 @@ const popupTriggers = [
     '#recommendationOrder',
     '#installationOrder',
     '#headerOrderBtn',
-    '#orderBanner'
 ];
 
 $( '.popup__close, .popup__bg' ).click( function() {
