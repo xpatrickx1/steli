@@ -4,7 +4,15 @@
 
     <div class="certificates__top">
       <h3>
-        <?= get_field('certificates_title') ? the_field('certificates_title') : 'Сертификаты' ?>
+      <?php if ( get_field('certificates_title'))  { 
+        echo get_field('certificates_title') ;
+        } else { 
+        if (get_bloginfo("language") == 'ru') {
+          echo 'Сертификаты' ;
+        } else {
+          echo 'Сертифікати';
+        } 
+      }; ?>
       </h3>
     </div>
 

@@ -25,11 +25,13 @@
   }
 
   &__wrap {
+    position: relative;
     display: flex;
     width: 100%;
     margin: 0 auto;
     max-width: 1584px;
     justify-content: flex-start;
+    z-index: 1;
      
   @media ( max-width: @sizes[ maxMD ] ) {
     flex-direction: column;
@@ -49,7 +51,7 @@
     }
 
     &:before{
-      .fontSize(16px, 60px);
+      .fontSize(18px, 60px);
     }
 
     &:hover {
