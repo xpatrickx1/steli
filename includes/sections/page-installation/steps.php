@@ -52,13 +52,15 @@
               <div class="item__number">
                 0<?= (get_row_index()) ?>
               </div>
-              <img 
-                src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-                 data-src="<?= get_sub_field('item_img')['url'] ?>"
-                class="lazy"
-                width="1px"
-                height="1px"
-              />
+              <div class="item__img">
+                <img 
+                  src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
+                  data-src="<?= get_sub_field('item_img')['url'] ?>"
+                  class="lazy"
+                  width="1px"
+                  height="1px"
+                />
+              </div>
               <div class="item__right">
                 <div class="item__title item-title18">
                 <?= get_sub_field('item_title') ?>
@@ -77,13 +79,15 @@
               <div class="item__number">
                 0<?= ($key + 1) ?>
               </div>
-              <img 
-                src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-                data-src="<?= bloginfo('template_url') . '/images/page-installation/steps' . ($key + 1) . '.png' ?>"
-                class="lazy"
-                width="1px"
-                height="1px"
-              />
+              <div class="item__img">
+                <img 
+                  src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
+                  data-src="<?= bloginfo('template_url') . '/images/page-installation/steps' . ($key + 1) . '.png' ?>"
+                  class="lazy"
+                  width="1px"
+                  height="1px"
+                />
+              </div>
               <div class="item__right">
                 <div class="item__title item-title18">
                   <?= $item['title'] ?>

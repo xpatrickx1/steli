@@ -617,3 +617,9 @@ function disable_wp_auto_p( $content ) {
 
     return ''; // No subcategory found
 }
+
+
+function remove_wp_version() {
+    remove_action('wp_head', 'wp_generator');
+}
+add_action('init', 'remove_wp_version');
