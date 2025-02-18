@@ -2,15 +2,10 @@ h1 {
   position: relative;
   z-index: 1;
   .font( 700 );
-  .fontSize( clamp(25px, 3vw, 32px), clamp(27px, 3vw, 34px) );
+  .fontSize( clamp(25px, 3vw, 36px), clamp(27px, 3vw, 39px) );
   letter-spacing: 2px;
   color: @color[ black ];
   margin: 0 0 30px;
-
-  @media ( max-width: @sizes[ maxSM ] ) {
-    .fontSize( 46px, 53px );
-    margin: 0 0 20px;
-  }
 
   span {
     display: inline-block;

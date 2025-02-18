@@ -367,7 +367,7 @@
 
       <?php endif; ?>
     </ul>
-    <?php if(get_sub_field('item_image')['url']) : ?>
+    
     <ul class="catalog__list catalog__list_6">
     <?php if (have_rows('catalog_list_6')) :
         while ( have_rows('catalog_list_6')) : the_row(); ?>

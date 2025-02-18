@@ -19,15 +19,15 @@
         src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
         data-src="<?= bloginfo('template_url') . '/images/first-screen/natyzhnoy-potolok-s-podsvetkoy.jpg' ?>"
         class="lazy"
-        width="1px"
-        height="1px"
+        width="1"
+        height="1"
       />
       <img 
         src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
         data-src="<?= bloginfo('template_url') . '/images/first-screen/natyzhnoy-potolok-s-trekami.jpg' ?>"
         class="lazy"
-        width="1px"
-        height="1px"
+        width="1"
+        height="1"
       />
     </figure>
 

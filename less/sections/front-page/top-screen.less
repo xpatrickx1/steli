@@ -13,6 +13,8 @@
 
   h1 {
     max-width: 780px;
+    .fontSize( clamp(20px, 6vw, 80px), clamp(25px, 7vw, 80px) );
+    .font( 400 );
 
     @media ( max-width: @sizes[ maxLG ] ) {
       margin: 0;
@@ -28,11 +30,6 @@
     @media ( max-width: @sizes[ maxLG ] ) {
       flex-wrap: wrap;
     }
-  }
-
-  h1 {
-    .fontSize( clamp(20px, 6vw, 80px), clamp(25px, 7vw, 80px) );
-    .font( 400 );
   }
 
   &__top {
@@ -80,6 +77,18 @@
     height: auto;
     max-height: 461px;
     margin: 0;
+
+    @media ( max-width: @sizes[ maxMD ] ) {
+      max-height: 400px;
+    }
+
+    @media ( max-width: @sizes[ maxSM ] ) {
+      max-height: 298px;
+    }
+
+    @media ( max-width: @sizes[ maxXS ] ) {
+      max-height: 163px;
+    }
 
     img {
       width: 100%;
