@@ -47,9 +47,9 @@
     </div>
 
     <div class="top-screen__bottom">
-      <h2>
+      <h1>
         <?= get_field( 'page_title' ) ? the_field( 'page_title' ) : get_the_title() ?>
-      </h2>
+      </h1>
       <div class="top-screen__bottom--right">
         <div class="top-screen__bottom--wrp">
           <div class="top-screen__description">

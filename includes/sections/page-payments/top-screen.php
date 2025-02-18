@@ -20,9 +20,9 @@
 
     <div class="top-screen__wrap">
     
-      <h3>
+      <h1>
       <?= get_field( 'page_title' ) ? the_field( 'page_title' ) : get_the_title() ?>
-      </h3>
+      </h1>
 
       <div class="top-screen__right">
         <div class="top-screen__description">

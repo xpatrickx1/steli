@@ -14,9 +14,9 @@ $works = [
       <span><?= get_field('breadcrumb') ? the_field('breadcrumb') : 'Наши работы' ?></span>
     </div>
 
-    <h2>
+    <h1>
       <?= get_field( 'page_title' ) ? the_field( 'page_title' ) : get_the_title() ?>
-    </h2>
+    </h1>
 
     <div class="works__list">
       <?php if (get_bloginfo("language") == 'ru') { 

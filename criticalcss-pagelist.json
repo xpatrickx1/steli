@@ -21,15 +21,15 @@
       "name": "inner"
     },
     {
-      "link": "/catalog/inner2/",
+      "link": "/inner2/",
       "name": "inner2"
     },
     {
-      "link": "/catalog/inner3/",
+      "link": "/inner3/",
       "name": "inner3"
     },
     {
-      "link": "/catalog/innerplain/",
+      "link": "/innerplain/",
       "name": "innerplain"
     },
     {
@@ -53,7 +53,7 @@
       "name": "price"
     },
     {
-      "link": "/works/shadow/",
+      "link": "/shadow/",
       "name": "singleworks"
     }
   ]

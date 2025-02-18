@@ -151,9 +151,9 @@
       <span><?= get_field('breadcrumb') ? the_field('breadcrumb') : 'Каталог потолков' ?></span>
     </div>
     <div class="catalog__top">
-      <h2>
+      <h1>
         <?= get_field('catalog_title') ? the_field('catalog_title') : 'Каталог натяжных потолков' ?>
-      </h2>
+      </h1>
 
     <ul class="catalog__list">
       <?php if (have_rows('catalog_top')) :

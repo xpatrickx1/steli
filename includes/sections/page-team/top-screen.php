@@ -23,9 +23,9 @@
   <div class="container ">
     <div class="top-screen__wrap">
       <div class="top-screen--top">
-        <h2>
+        <h1>
           <?= get_field( 'page_title' ) ? the_field( 'page_title' ) : get_the_title() ?>
-        </h2>
+        </h1>
       
         <ul class="top-screen__list">
           <?php if (have_rows('top_list')) :

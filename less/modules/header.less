@@ -124,32 +124,16 @@
     @media (max-width: @sizes[ maxSM ] ) {
       display: none;
     }
-
-    // &:after {
-    //   content: '';
-    //   display: inline-block;
-    //   margin-left: 11px;
-    //   width: 14px;
-    //   height: 7px;
-    //   background-image: url("data:image/svg+xml,%3Csvg width='13' height='7' viewBox='0 0 13 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.80354 5.52555C7.4746 5.85449 6.98994 6.33914 6.72667 6.60241C6.46284 6.86625 6.03197 6.86625 5.76813 6.60241C5.5043 6.33858 5.01964 5.85392 4.69127 5.52555L0.439857 1.27414C0.110914 0.945193 0.0576925 0.460539 0.320962 0.197269C0.584798 -0.0665675 1.06945 -0.0127798 1.39783 0.316165L5.64924 4.56757C5.97818 4.89652 6.51606 4.89652 6.845 4.56757L11.0964 0.316165C11.4254 -0.0127784 11.91 -0.0660008 12.1733 0.197269C12.4371 0.461105 12.3833 0.945758 12.0544 1.27414L7.80354 5.52555Z' fill='black'/%3E%3C/svg%3E%0A");
-    //   background-repeat: no-repeat;
-    //   background-position: center;
-    //   animation-duration: 1s;
-    //   animation-fill-mode: forwards;
-    //   animation-iteration-count: infinite;
-    //   transition: .6s;
-    // }
   }
 
   &__phones {
-    // display: none;
     position: absolute;
     width: fit-content;
     .fontSize(16px, 44px);
     .font(700);
     padding: 20px;
-    right: 20px;
-    top: 62px;
+    right: 0;
+    top: 32px;
     box-shadow: 0px 0px 10px 3px #C5C5C514;
     z-index: 3;
     background: #fff;
@@ -162,7 +146,6 @@
       white-space: nowrap;
     }
 
-
     &.visible {
       display: block;
       transform: scaleY(1);
@@ -171,6 +154,7 @@
 
   &__show-phones {
     display: inline-block;
+    position: relative;
     margin-left: 11px;
     width: 14px;
     height: 7px;

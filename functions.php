@@ -142,16 +142,16 @@ $css_files = array(
     'front',
     'main',
     'inner',
-    'inner2',
-    'inner3',
-    'innerplain',
-    'calculator',
-    'catalog',
-    'contacts',
-    'installation',
-    'order',
-    'payments',
-    'team',
+    // 'inner2',
+    // 'inner3',
+    // 'innerplain',
+    // 'calculator',
+    // 'catalog',
+    // 'contacts',
+    // 'installation',
+    // 'order',
+    // 'payments',
+    // 'team',
 );
 
 add_action('wp_enqueue_scripts', 'ox_adding_critical_css');
@@ -181,20 +181,20 @@ function ox_adding_critical_css()
 
     $pageTemplates = array(
         "front-page" => "front",
-        "page-calculator" => "calculator",
-        "page-catalog" => "catalog",
-        "page-contacts" => "contacts",
-        "page-inner-2" => "inner2",
-        "page-inner-3" => "inner3",
-        "page-inner-plain" => "innerplain",
         "page-inner" => "inner",
-        "page-installation" => "installation",
-        "page-order" => "order",
-        "page-payments" => "payments",
-        "page-team" => "team",
-        "page-works" => "works",
-        "page-price" => "price",
-        "page-single-works" => "singleworks",
+        // "page-calculator" => "calculator",
+        // "page-catalog" => "catalog",
+        // "page-contacts" => "contacts",
+        // "page-inner-2" => "inner2",
+        // "page-inner-3" => "inner3",
+        // "page-inner-plain" => "innerplain",
+        // "page-installation" => "installation",
+        // "page-order" => "order",
+        // "page-payments" => "payments",
+        // "page-team" => "team",
+        // "page-works" => "works",
+        // "page-price" => "price",
+        // "page-single-works" => "singleworks",
     );
     $currentPageTemplate = get_page_template_slug();
     $currentPageTemplateName = str_replace(['pages/', '.php'], '', $currentPageTemplate);
@@ -282,6 +282,7 @@ remove_action('wp_head', 'wp_oembed_add_discovery_links', 10);
 //--------------------------------------------------
 register_nav_menus(array(
     'header_menu' => 'Header Menu',
+    'header_phones' => 'Header Phones',
     'header_menu_ru' => 'Header Menu RU',
     'footer_menu_terms' => 'Footer Terms Menu',
     'footer_menu_terms_ru' => 'Footer Terms Menu RU',

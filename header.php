@@ -35,6 +35,13 @@
             +38 063 654 63 85
           </a>
           <div class="header__show-phones">
+          <?php $nav_args = array(
+                'theme_location' => 'header_phones',
+                'container' => '',
+                'items_wrap' => '%3$s',
+                'walker' => new My_Walker_Nav_Menu(),
+              );
+            ?>
             <ul class="header__phones">
               <li>+38 067 654 63 85</li>
               <li>+38 093 654 63 85</li>

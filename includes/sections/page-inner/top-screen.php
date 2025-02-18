@@ -53,9 +53,9 @@
       </div>
 
       <div class="top-screen__bottom">
-        <h2>
+        <h1>
           <?= get_field( 'page_title' ) ? the_field( 'page_title' ) : get_the_title() ?>
-        </h2>
+        </h1>
         <div class="top-screen__bottom--left">
           <div class="top-screen__description">
             <?= get_field('top_screen_description_1') ? the_field('top_screen_description_1') : 'Теневое примыкание натяжного потолка создаёт визуальный эффект — между потолочной конструкцией и стеной пролегает глубокая тень. ' ?>

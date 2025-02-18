@@ -4,7 +4,21 @@
 get_header();
 ?>
 
-<?php get_template_part('includes/sections/page-inner-2/top-screen')?>
+<section class="top-screen">
+  <div class="container">
+    <div class="breadcrumbs">
+      <span><a href="<?= home_url(); ?>"><?= get_bloginfo("language") == 'ru' ? 'Натяжные потолки в Киеве' : 'Натяжні стелі у Києві' ?></a></span>
+      <span class="breadcrumbs__slash"> / </span>
+      <span><?= get_field('breadcrumb') ? the_field('breadcrumb') : 'Матовый потолок' ?></span>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="top-screen__wrap">
+      <h2>
+        <?= get_field( 'page_title' ) ? the_field( 'page_title' ) : get_the_title() ?>
+      </h2>
+</section>
 
 <section class="category-content">
   <div class="container">
