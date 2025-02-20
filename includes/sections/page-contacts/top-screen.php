@@ -23,8 +23,8 @@
           </div>
           <a 
             class="top-screen__mail" 
-            href="mailto:<?= get_field('topscreen_email') ? the_field('offices_title') : 'hi@stelio.com.ua' ?>">
-            <?= get_field('topscreen_email') ? the_field('offices_title') : 'hi@stelio.com.ua' ?>
+            href="mailto:<?= get_field('topscreen_email') ? the_field('topscreen_email') : 'hi@stelio.com.ua' ?>">
+            <?= get_field('topscreen_email') ? the_field('topscreen_email') : 'hi@stelio.com.ua' ?>
           </a>
         </div>
 

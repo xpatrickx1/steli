@@ -22,6 +22,20 @@
   &__bottom {
     width: fit-content;
     max-width: 325px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+
+    @media (max-width: @sizes[maxSM]) {
+      max-width: 355px;
+
+      img{
+        width: 49.1%;
+        &:first-child {
+          width: 100%;
+        }
+      }
+    }
   }
 
   h2 {

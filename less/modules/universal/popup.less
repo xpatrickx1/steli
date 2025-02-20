@@ -1,7 +1,7 @@
 .popup {
   display: flex;
   height: 80vh;
-  width: 80vw;
+  width: 92vw;
   position: fixed;
   align-items: center;
   top: 0; 
@@ -78,16 +78,11 @@
   .popup__wrap {
     position: relative;
     max-width: 378px;
-    width: 100%;
+    width: fit-content;
     max-height: 320px;
     height: auto;
     margin: 0 auto;
     z-index: 3;
-
-    @media ( max-width: @sizes[ maxSM ] ) {
-      width: calc( 100% - 10px );
-    }
-
   }
 
   form {
