@@ -1,4 +1,4 @@
-<?php include 'price-data.php' ?>
+<?php include get_template_directory() . '/includes/modules/price-data.php' ?>
 
 <section id="prices" class="price">
   <div class="container price__wrap">
