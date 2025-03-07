@@ -109,6 +109,28 @@
                 }; ?>
           </a>
 
+          <div class="header__phones-wrp">
+            <a 
+              class="header__phone header__phone--mobile" 
+              href="tel:+38 063 654 63 85" 
+              rel="nofollow">
+              +38 063 654 63 85
+            </a>
+            <div class="header__show-phones">
+            <?php $nav_args = array(
+                  'theme_location' => 'header_phones',
+                  'container' => '',
+                  'items_wrap' => '%3$s',
+                  'walker' => new My_Walker_Nav_Menu(),
+                );
+              ?>
+              <ul class="header__phones">
+                <li>+38 067 654 63 85</li>
+                <li>+38 093 654 63 85</li>
+              </ul>
+            </div>
+          </div>
+
           <div class="header__hamburger js-hamburger">
             <div class="hamburger-line1"></div>
             <div class="hamburger-line2"></div>
