@@ -98,16 +98,7 @@
             <li class="desctop__hidden"><?php if (function_exists ('wpm_language_switcher')) wpm_language_switcher (); ?></li>
           </ul>
 
-          <a 
-            href="#"
-            rel="nofollow" id="headerCallbackPopup"
-            class="button--second">
-            <?php if (get_bloginfo("language") == 'ru') {
-                  echo 'Заказать звонок' ;
-                } else {
-                  echo 'Замовити дзвінок';
-                }; ?>
-          </a>
+          
 
           <div class="header__phones-wrp">
             <a 
@@ -130,6 +121,17 @@
               </ul>
             </div>
           </div>
+
+          <a 
+            href="#"
+            rel="nofollow" id="headerCallbackPopup"
+            class="button--second">
+            <?php if (get_bloginfo("language") == 'ru') {
+                  echo 'калькулятор стоимости' ;
+                } else {
+                  echo 'калькулятор вартостi';
+                }; ?>
+          </a>
 
           <div class="header__hamburger js-hamburger">
             <div class="hamburger-line1"></div>

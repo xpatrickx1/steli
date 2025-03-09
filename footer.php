@@ -3,6 +3,7 @@
 <?php include(locate_template('main-vars.php', true)); ?>
 
 <?php get_template_part('includes/modules/popup')?>
+<?php get_template_part('includes/modules/popup-calc')?>
 
 <footer class="footer">
   <div class="footer__top">
