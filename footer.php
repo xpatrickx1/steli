@@ -4,6 +4,15 @@
 
 <?php get_template_part('includes/modules/popup')?>
 <?php get_template_part('includes/modules/popup-calc')?>
+<a class="viber" href="viber://chat?number=%2B380671287636">
+  <img 
+    src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
+    data-src="<?= bloginfo('template_url') . '/images/icons/socialIcons/viber.png' ?>"
+    class="lazy"
+    width="1px"
+    height="1px"
+  />
+</a>
 
 <footer class="footer">
   <div class="footer__top">

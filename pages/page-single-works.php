@@ -16,9 +16,9 @@ $works = [
     <span><?= get_field('breadcrumb') ? the_field('breadcrumb') : 'Матовый потолок' ?></span>
   </div>
 
-    <h2>
+    <h1>
       <?= get_field( 'page_title' ) ? the_field( 'page_title' ) : get_the_title() ?>
-    </h2>
+    </h1>
 
     <div class="works__list">
 
