@@ -152,7 +152,7 @@
     </div>
     <div class="catalog__top">
       <h1>
-        <?= get_field('catalog_title') ? the_field('catalog_title') : 'Каталог натяжных потолков' ?>
+        <?= get_field( 'page_title' ) ? the_field( 'page_title' ) : get_the_title() ?>
       </h1>
 
     <ul class="catalog__list">
