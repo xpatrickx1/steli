@@ -123,7 +123,7 @@
           </div>
 
           <a 
-            href="#"
+            href="/prices/"
             rel="nofollow" id="headerCallbackPopup"
             class="button--second">
             <?php if (get_bloginfo("language") == 'ru') {

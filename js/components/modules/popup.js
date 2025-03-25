@@ -28,4 +28,4 @@ popupTriggers.forEach(trigger => {
     popup(trigger, '#popup');
 });
 
-popup('#headerCallbackPopup', '#popupCalc');
+// popup('#headerCallbackPopup', '#popupCalc');

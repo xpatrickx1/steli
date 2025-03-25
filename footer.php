@@ -3,7 +3,7 @@
 <?php include(locate_template('main-vars.php', true)); ?>
 
 <?php get_template_part('includes/modules/popup')?>
-<?php get_template_part('includes/modules/popup-calc')?>
+
 <a class="viber" href="viber://chat?number=%2B380671287636">
   <img 
     src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 

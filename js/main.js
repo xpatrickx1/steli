@@ -12,5 +12,4 @@ $(document).ready(() => {
 
 //= include components/helpers.js
 //= include components/modules/popup.js
-//= include components/modules/calculator-popup.js
 
