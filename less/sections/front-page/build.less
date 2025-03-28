@@ -1,0 +1,242 @@
+.build {
+  position: relative;
+  padding: 166px 0;
+
+  &__wrap.container {
+    margin: 0 auto;
+    padding: 50px 0;
+    position: relative;
+    z-index: 1;
+    max-width: 1860px;
+    overflow: hidden;
+  }
+
+  h3 {
+    margin: 24px auto;
+    text-align: center;
+    max-width: 800px;
+  }
+
+  &__description {
+    text-align: center;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  
+  &__list {
+    margin-top: 64px;
+    padding: 0;
+  
+    @media ( max-width: @sizes[ maxSM ] ) {
+      padding: 60px 0 70px;
+    }
+  }
+  
+  .item {
+    padding: 40px;
+    border-radius: @border[ itemRadius ];
+    background: @background[ white ];
+    transition: @transition;
+
+    @media ( max-width: @sizes[ maxSM ] ) {
+      padding: 30px 20px;
+    }
+
+    &__top {
+      display: flex;
+      align-items: flex-end;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    &__icon {
+      display: flex;
+      justify-self: flex-end;
+      justify-content: center;
+      align-items: center;
+      height: 80px;
+      width: 80px;
+      background: @border[menuBorder];
+      border-radius: 50%;
+      overflow: hidden;
+
+      img {
+          object-fit: cover;
+          height: 32px;
+      }
+
+    }
+
+    h5 {
+      .font(600);
+      .fontSize(56px, 110%);
+      margin: 0;
+    }
+
+    .section-subtitle {
+      max-width: 460px;
+    }
+
+    &__subtitle {
+      .font(600);
+      .fontSize(20px, 130%);
+      margin: 0 0 4px;
+    }
+
+    &__text {
+      .font(500);
+      .fontSize(16px, 140%);
+      cursor: default;
+      height: 100%;
+    }
+  }
+
+  .slick-dots {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &__slider {
+    position: relative;
+
+    .slick-list,
+    .slick-track {
+      display: flex;
+      max-height: 500px;
+
+      @media ( min-width: @sizes[ minSM ] ) {
+        max-height: 100%;
+      }
+    }
+  
+    .slick-slide {
+      position: relative;
+      width: 720px;
+      height: fit-content;
+      background: @background[slideDisabled];
+
+      &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: transparent;
+      }
+    }
+    
+    .slick-active {
+      background: @background[second];
+    }
+  
+    .slick-track {
+      padding-bottom: 84px;
+
+      @media ( max-width: @sizes[ maxSM ] ) {
+        padding-bottom: 20px;
+      }
+
+      @media ( min-width: @sizes[ minSM ] ) {
+        padding-bottom: 0;
+      }
+    }
+
+    .slick-list {
+      max-width: 800px;
+      margin: 0 auto 40px;
+      overflow: visible;
+  
+      @media ( max-width: @sizes[ maxSM ] ) {
+        padding: 0 15px!important;
+      }
+    }
+  
+    .slick-current {
+      position: relative;
+      z-index: 3;
+    }
+  
+    @media ( max-width: @sizes[ maxSM ] ) {
+      .slick-slide:nth-child(2).prev-slide {
+        opacity: 0;
+      }
+    }
+  
+    .prev-slide {
+      transform: scale( .8 ) translate( 9% );
+      opacity: .5;
+  
+      @media ( max-width: @sizes[ maxSM ] ) {
+        transform: scale( 1 ) translate( calc( 100% + 30px ), 40px );
+      }
+  
+    }
+  
+    .next-slide {
+      transform: scale( .8 ) translate( -9% );
+      opacity: .5;
+  
+      @media ( max-width: @sizes[ maxSM ] ) {
+        transform: scale( 1 ) translate( calc( -100% + 15px ), 20px );
+      }
+    }
+
+    @media ( min-width: @sizes[ minSM ] ) {
+      .next-slide, .prev-slide  {
+        &:hover {
+          &:after {
+            background: @arrow[arrowBg];
+          }
+        }
+      }
+    }
+
+    .arrow-wrap {
+      position: absolute;
+      background: transparent;
+      width: calc((100vw - 720px) / 2 );
+      max-width: 560px;
+      height: 100%;
+      top: 0;
+      cursor: pointer;
+      transition: @transition;
+      z-index: 1;
+
+      @media ( min-width: @sizes[ minSM ] ) {
+        &:hover {
+          background: @arrow[arrowBg];
+        }
+      }
+
+      &--next {
+        right: 0;
+        
+      }
+
+      &--prev {
+        left: 0;
+      }
+    }
+
+    .slick-next.slick-arrow, .slick-prev.slick-arrow {
+      aspect-ratio: 1;
+      top: 50%;
+      position: fixed;
+      opacity: 0;
+      transform: translate(0);
+    }
+
+    .slick-next.slick-arrow {
+      right: 50px;
+    }
+
+    .slick-prev.slick-arrow {
+      left: 50px;
+    }
+  }
+}
+
+

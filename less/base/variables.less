@@ -2,21 +2,17 @@
 
 @color : {
   accent : #008CE8;
-  accentSecond : #00BFFB;
+  subTitle : rgba(0, 0, 0, 0.7); 
+  preTitle: #5100C0;
+  gray : #8396A8;
+  
+  black: #000;
   title : #292E33;  
-  link: #00AEF3;                 
   titleSecond : #FFFFFF;            
-  subTitle : #404040;             
   text : #2D2D2D;                
   textSecond : #909090;
   textMenu: #777777;
-  textThird : #4E4E4E;
-  textForth : #5F5F5F;
-  textFifth : rgba(0, 0, 0, 1);
   white : #FFFFFF;
-  error : #DF4444;
-  black: #000;
-  dark : #263238;
 }
 
 @backgroundButton : {
@@ -33,7 +29,6 @@
   mainButton : @color[ white ];
   mainButtonHover : @color[ white ];
   mainButtonActive : @color[ white ];
-
   secondButton : @color[ black ];
   secondButtonHover : @color[ accent ];
   secondButtonActive : @color[ accent ];
@@ -41,29 +36,30 @@
 
 @background : {
   main : #F9F9F9;
-  second : #F1F1F1;
+  second : #E8EDF1;
+  gray: #8396A8;
+  green: #00D180;
+  slideDisabled : rgba(232, 237, 241, .4);
   third : #F0F0F0;
   dark : #000000;
   white: #ffffff;
-  
-  accent : #0091E2;
-  green: #0CF200;
-  tab : #F3F3F3;
-  tabActive : #5ECCF0;
-  tabMain : #F8F8F8;
-  clients: #E7E7E7;
-  footer: linear-gradient(133.46deg, #034B69 29.1%, #287AA7 128.55%);
-}
-
-@shadow : {
-  mainButtonHover : 0px 10px 15px rgba(0, 87, 245, 0.4);
-  secondButtonHover : 0px 10px 20px rgba(0, 0, 0, 0.2);
+  footer: #000000;
 }
 
 @border : {
   mainRadius : 24px;
-  buttonRadius : 6px;
-  menuBorder : #28BBEB;
+  itemRadius : 8px;
+  buttonRadius : 80px;
+  menuBorder : #B4C3D3;
+  pretitleBorder : rgba(81, 0, 192, 0.3);
+}
+
+@arrow : {
+  main : #000;
+  mainCenter: #45ED94;
+  mainDisabled : #BBB2AF;
+
+  arrowBg: rgba(255, 120, 120, .2);
 }
 
 @sizes : {

@@ -1,5 +1,5 @@
-const localDomain = 'http://localhost/ste/';
-const pathToTheme = '/wp-content/themes/ste/';
+const localDomain = 'http://localhost/goodface/';
+const pathToTheme = '/wp-content/themes/goodface/';
 
 //NPM-MODULES
 const gulp = require('gulp');

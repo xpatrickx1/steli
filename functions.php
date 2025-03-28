@@ -36,9 +36,9 @@ function ox_adding_scripts()
         add_action('wp_head', function () {
             if (is_front_page()) {
                 if (wp_is_mobile()) {
-                    echo '<link rel="preload" as="image" href="/wp-content/themes/steli/images/first-screen/natyzhnoy-potolok-s-podsvetkoy.jpg"/>';
+                    echo '<link rel="preload" as="image" href="/wp-content/themes/goodface/images/first-screen/top-screen-img.png"/>';
                 } else {
-                    echo '<link rel="preload" as="image" href="/wp-content/themes/steli/images/first-screen/natyzhnoy-potolok-s-podsvetkoy.jpg"/>';
+                    echo '<link rel="preload" as="image" href="/wp-content/themes/goodface/images/first-screen/top-screen-img.png"/>';
                 }
             }
         }, 1000);
@@ -71,22 +71,6 @@ function ox_adding_scripts()
             wp_enqueue_script('post', get_template_directory_uri() . '/js/min/page-post.min.js', null, time(), true);
         }
 
-        if (  get_post_meta( get_the_ID(), '_wp_page_template', true ) === 'single2.php' ) {
-            wp_deregister_style('post');
-            wp_dequeue_style('post');
-            wp_dequeue_script('post');
-            wp_enqueue_style('inner2', get_template_directory_uri() . '/css/page-inner-2.min.css', array(), time(), 'all');
-            wp_enqueue_script('inner2js', get_template_directory_uri() . '/js/min/page-inner-2.min.js', null, time(), true);
-        }
-
-        if (  get_post_meta( get_the_ID(), '_wp_page_template', true ) === 'single3.php' ) {
-            wp_deregister_style('post');
-            wp_dequeue_style('post');
-            wp_dequeue_script('post');
-            wp_enqueue_style('inner3', get_template_directory_uri() . '/css/page-inner-3.min.css', array(), time(), 'all');
-            wp_enqueue_script('inner3-js', get_template_directory_uri() . '/js/min/page-inner-3.min.js', null, time(), true);
-        }
-
         if (  get_post_meta( get_the_ID(), '_wp_page_template', true ) === 'single-plain-content.php' ) {
             wp_deregister_style('post');
             wp_dequeue_style('post');
@@ -107,23 +91,16 @@ function ox_adding_scripts()
 
         // для категорий
         if (is_category('catalog')) {
-            wp_dequeue_style('inner2');
             wp_enqueue_style('blog', get_template_directory_uri() . '/css/page-catalog.min.css', array(), time());
             wp_enqueue_script('blog', get_template_directory_uri() . '/js/min/page-catalog.min.js', null, time(), true);
         }
 
-        if ( is_category('works') ) {
-            wp_enqueue_style('works', get_template_directory_uri() . '/css/page-works.min.css', array(), time(), 'all');
-            wp_enqueue_script('works-js', get_template_directory_uri() . '/js/min/page-works.min.js', null, time(), true);
-             wp_deregister_script('blog-js');
-        }
 
         if (get_post_meta( get_the_ID(), '_wp_page_template', true ) === 'single-works.php') {
             wp_dequeue_style('blog');
             wp_dequeue_style('post');
             wp_dequeue_script('post');
             wp_enqueue_style('single-works', get_template_directory_uri() . '/css/page-single-works.min.css', array(), time());
-            // wp_enqueue_script('single-works-js', get_template_directory_uri() . '/js/min/page-single-works.js', null, time(), true);
         }
 
         //для 404 страницы
@@ -141,17 +118,6 @@ add_action('wp_enqueue_scripts', 'ox_adding_scripts');
 $css_files = array(
     'front',
     'main',
-    'inner',
-    'inner2',
-    'inner3',
-    'innerplain',
-    'calculator',
-    'catalog',
-    'contacts',
-    'installation',
-    'order',
-    'payments',
-    'team',
 );
 
 add_action('wp_enqueue_scripts', 'ox_adding_critical_css');
@@ -181,20 +147,6 @@ function ox_adding_critical_css()
 
     $pageTemplates = array(
         "front-page" => "front",
-        "page-inner" => "inner",
-        "page-calculator" => "calculator",
-        "page-catalog" => "catalog",
-        "page-contacts" => "contacts",
-        "page-inner-2" => "inner2",
-        "page-inner-3" => "inner3",
-        "page-inner-plain" => "innerplain",
-        "page-installation" => "installation",
-        "page-order" => "order",
-        "page-payments" => "payments",
-        "page-team" => "team",
-        "page-works" => "works",
-        "page-price" => "price",
-        "page-single-works" => "singleworks",
     );
     $currentPageTemplate = get_page_template_slug();
     $currentPageTemplateName = str_replace(['pages/', '.php'], '', $currentPageTemplate);
@@ -206,26 +158,6 @@ function ox_adding_critical_css()
             echo '<style>' . $currentCritical . '</style>';
         }
         $counter = $counter + 1;
-    }
-
-    if (  get_post_meta( get_the_ID(), '_wp_page_template', true ) === 'single-works.php' ) {
-        $currentCritical = load_template_part("css/critical-singleworks.css");
-        echo '<style>' . $currentCritical . '</style>';
-    }
-
-    if (  get_post_meta( get_the_ID(), '_wp_page_template', true ) === 'single2.php' ) {
-        $currentCritical = load_template_part("css/critical-inner2.css");
-        echo '<style>' . $currentCritical . '</style>';
-    }
-
-    if (  get_post_meta( get_the_ID(), '_wp_page_template', true ) === 'single3.php' ) {
-        $currentCritical = load_template_part("css/critical-inner3.css");
-        echo '<style>' . $currentCritical . '</style>';
-    }
-    
-    if (  get_post_meta( get_the_ID(), '_wp_page_template', true ) === 'single.php' ) {
-        $currentCritical = load_template_part("css/critical-inner.css");
-        echo '<style>' . $currentCritical . '</style>';
     }
 
     global $css_files;
@@ -282,75 +214,21 @@ remove_action('wp_head', 'wp_oembed_add_discovery_links', 10);
 //--------------------------------------------------
 register_nav_menus(array(
     'header_menu' => 'Header Menu',
-    'header_phones' => 'Header Phones',
     'header_menu_ru' => 'Header Menu RU',
-    'footer_menu_terms' => 'Footer Terms Menu',
-    'footer_menu_terms_ru' => 'Footer Terms Menu RU',
-    'footer_menu_post' => 'Footer Post Menu',
-    'footer_menu_post_ru' => 'Footer Post Menu RU',
-    'footer_menu_catalog' => 'Footer Menu Catalog',
-    'footer_menu_catalog_ru' => 'Footer Menu Catalog RU',
-    'footer_menu_lighting' => 'Footer Menu Lighting',
-    'footer_menu_lighting_ru' => 'Footer Menu Lighting RU',
-    'footer_menu_price' => 'Footer Menu Price',
-    'footer_menu_price_ru' => 'Footer Menu Price RU',
-    'footer_menu_works' => 'Footer Menu Works',
-    'footer_menu_works_ru' => 'Footer Menu Works RU',
-    'footer_menu_customers' => 'Footer Menu Customers',
-    'footer_menu_customers_ru' => 'Footer Menu Customers RU',
-    'footer_menu_contacts' => 'Footer Menu Contacts',
-    'inner_sidebar' => 'Inner Sidebar Menu',
-    'inner3_sidebar' => 'Inner 3 Sidebar Menu',
-    'installation_sidebar' => 'Installation Sidebar Menu',
-    'categoty_works' => 'Categoty Works Menu',
-    'categoty_works_ru' => 'Categoty Works Menu RU',
 ));
 
-//custom classes for menu items
-// function nav_class_filter($classes, $item, $args, $depth)
-// {
-//     //добавлять классы только для меню в хедере
-//     if ($args->theme_location === 'header_menu' || $args->theme_location === 'header_ppc' || $args->theme_location === 'header_menu-tiktok' || $args->theme_location === 'header_menu-remarketmob' || $args->theme_location === 'header_menu-admission' || $args->theme_location === 'header_menu-mob' || $args->theme_location === 'header_menu-arabic' ) {
-//         $classes = ['navigation__link']; //такая запись переписывает все классы для элемента меню
-//     }
-
-//     if ($args->theme_location === 'header_submenu') {
-//         $classes = ['submenu__link']; //такая запись переписывает все классы для элемента меню
-//     }
-
-//     //добавлять классы только для меню в футере
-//     if ($args->theme_location === 'footer_menu_terms') {
-//         $classes[] = ['footer-menu__link text--uppercase'];  //такая запись добавляет класс в общий массив классов, формирующийся вордпрессом
-//     }
-//     if ($args->theme_location === 'footer_menu_post') {
-//         $classes[] = ['footer-menu__link text--capitalize'];  //такая запись добавляет класс в общий массив классов, формирующийся вордпрессом
-//     }
-
-//     return $classes;
-// }
-
-// add_filter('nav_menu_css_class', 'nav_class_filter', 10, 4);
-
-class My_Walker_Nav_Menu extends Walker_Nav_Menu {
-  function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
-      // Змінюємо клас для елементів першого рівня
-      if ( $depth == 0 ) {
-          $item->classes[] = 'navigation__link';
-      }
-      if ( $depth == 1 ) {
-        $item->classes[] = 'tab-item';
+function nav_class_filter($classes, $item, $args, $depth)
+{
+    //добавлять классы только для меню в хедере
+    if ($args->theme_location === 'header_menu' || $args->theme_location === 'header_ppc' || $args->theme_location === 'header_menu-tiktok' || $args->theme_location === 'header_menu-remarketmob' || $args->theme_location === 'header_menu-admission' || $args->theme_location === 'header_menu-mob' || $args->theme_location === 'header_menu-arabic' ) {
+        $classes = ['navigation__link']; //такая запись переписывает все классы для элемента меню
     }
 
-      // Решта коду з батьківського класу
-      parent::start_el( $output, $item, $depth, $args, $id );
-  }
+    return $classes;
 }
 
-function my_custom_nav_menu( $args ) {
-  $args['walker'] = new My_Walker_Nav_Menu();
-  return $args;
-}
-add_filter( 'wp_nav_menu_args', 'my_custom_nav_menu' );
+add_filter('nav_menu_css_class', 'nav_class_filter', 10, 4);
+
 
 function prefix_nav_description( $item_output, $item, $depth, $args ) {
   if ( !empty( $item->description ) ) {

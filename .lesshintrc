@@ -2,7 +2,7 @@
   "fileExtensions": [".less"],
 
   "emptyRule": {"enabled": true, "severity": "error"},
-  "importantRule": {"enabled": true, "severity": "error"},
+  "importantRule": {"enabled": false, "severity": "error"},
   "duplicateProperty": {"enabled": true, "severity": "error"},
   "singleLinePerProperty": {"allowSingleLineRules": true, "severity": "error"},
   "spaceBeforeBrace": false,

@@ -1,10 +1,10 @@
 h1 {
   position: relative;
   z-index: 1;
-  .font( 700 );
-  .fontSize( clamp(25px, 3vw, 36px), clamp(27px, 3vw, 39px) );
+  .font( 600 );
+  .fontSize( clamp(50px, 10vw, 112px), 100% );
   color: @color[ black ];
-  margin: 0 0 30px;
+  margin: 0 0 24px;
 
   span {
     display: inline-block;
@@ -31,8 +31,8 @@ h1 {
 }
 
 h2 {
-  .font( 700 );
-  .fontSize( clamp(25px, 3vw, 32px), clamp(27px, 3vw, 34px) );
+  .font( 600 );
+  .fontSize( clamp(40px, 10vw, 96px), 100% );
   margin: 0 0 12px;
 
   @media (max-width: @sizes[maxSM]) {
@@ -40,31 +40,31 @@ h2 {
   }
 }
 
+h3 {
+  .font( 600 );
+  .fontSize( clamp(30px, 10vw, 80px), 100% );
+}
 
-
-h3, h4, h5, h6 {
-  .font( 700 );
-  //color: @//color[ title ];
+h4, h5, h6 {
+  .font( 600 );
+  .fontSize( clamp(20px, 8vw, 64px), 110% );
 }
 
 div {
 
   &.main__title{
-    .font( 700 );
+    .font( 600 );
     .fontSize( 50px, 58px );
-    //color: @//color[ title ];
     margin: 0 0 20px;
 
     @media ( max-width: @sizes[ maxSM ] ) {
       .fontSize( 38px, 45px );
     }
-
   }
 
   &.second__title{
-    .font( 700 );
+    .font( 600 );
     .fontSize( 50px, 58px );
-    //color: @//color[ titleSecond ];
     margin: 0 0 20px;
 
     @media ( max-width: @sizes[ maxSM ] ) {
@@ -76,9 +76,8 @@ div {
 }
 
 .section-title {
-  .font(700);
+  .font(600);
   .fontSize(50px, 65px);
-  //color: @//color[ title ];
   margin: 0 0 20px;
 
   @media ( max-width: @sizes[ maxLG ] ) {
@@ -92,9 +91,9 @@ div {
 
 
 .section-subtitle {
-  .font( 400 );
-  .fontSize( 30px, 38px );
-  //color: @//color[ subTitle ];
+  .font( 600 );
+  .fontSize( 20px, 130% );
+  color: @color[ subTitle ];
 
   @media ( max-width: @sizes[ maxSM ] ) {
     .fontSize( 18px, 25px );
@@ -105,24 +104,28 @@ div {
 .section-description {
   .font( 400 );
   .fontSize( 18px, 25px );
-  //color: @//color[ text ];
-}
-
-.item-title18 {
-  .font( 700 );
-  .fontSize( 18px, 22px );
 }
 
 .section__description {
   .font( 400 );
   .fontSize( 18px, 25px );
-  //color: @//color[ text ];
   text-align: center;
 
   @media ( max-width: @sizes[ maxSM ] ) {
     .fontSize( 16px, 22px );
   }
+}
 
+.pre-title {
+  .font( 600 );
+  .fontSize( 16px, 100% );
+  text-align: center;
+  color: @color[ preTitle ];
+  border: 1px solid @border[ pretitleBorder ];
+  padding: 6px 10px;
+  width: fit-content;
+  margin: 0 auto;
+  border-radius: 40px;
 }
 
 p, ul, ol {
@@ -137,12 +140,5 @@ a:active {
 }
 
 a {
-  color: #000000;
-
-  @media ( min-width: @sizes[ minLG ] ) {
-    &:hover {
-      color: #000000;
-    }
-  }
-  
+  color: @color[black];
 }

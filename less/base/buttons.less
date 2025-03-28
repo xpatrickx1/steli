@@ -1,23 +1,23 @@
-.buttonMain( @width: 188px ) {
+.buttonMain( @width: 227px ) {
   position: relative;
   outline: none;
-  .font(700);
-  .fontSize(16px, 44px);
+  .font(600);
+  .fontSize(18px, 44px);
   display: flex;
   justify-content: center;
   align-items: center;
   white-space: nowrap;
   max-width: @width;
-  max-height: 45px;
+  max-height: 72px;
   width: 100%;
-  padding: 20px 33px;
+  padding: 20px 32px 20px;
   border-radius: @border[ buttonRadius ];
-  background: linear-gradient(95.62deg, #000000 40.55%, #000000 102.32%);
+  background: @backgroundButton[mainButton];
   color: @colorButton[ mainButton ];
   box-shadow: none;
   cursor: pointer;
   overflow: hidden;
-  transition: background .9s ease-in-out;
+  transition: @transition;
 
   span {
     transition: all .3s ease-in-out;
@@ -32,41 +32,70 @@
     left: 0;
     text-align: center;
     width: 100%;
-    .font(700);
-    .fontSize(16px, 44px);
     opacity: 0;
     transform: translate(0,-100%);
     transition: all .3s ease-in-out;
   }
 
-  &:hover {
-    @media ( min-width: @sizes[ minLG ] ) {
-      background: linear-gradient(95.62deg, #000000 40.55%, #454545 102.32%);
+  // &:after {
+  //   content: '';
+  //   position: absolute;
+  //   width: 6px;
+  //   height: 6px;
+  //   top: 50%;
+  //   transform: translateY(-50%);
+  //   right: 38px;
+  //   opacity: 1;
+  //   background: @background[ green ];
+  //   border-radius: 50%;
+  //   animation-name: blinkAnimation;
+  //   animation-duration: 2s;
+  //   animation-fill-mode: forwards;
+  //   animation-iteration-count: infinite;
+  //   transition: .6s;
+  // }
 
-      span {
-        transform: translate(0,100%);
-      }
-
-      &:before {
-        color: #fff;
-        opacity: 1;
-        transform: translate(0,0);
-      }
-    }
+  .button-icon {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    margin-left: 11px;
+    transition: @transition;
+  }
+  
+  .button-icon::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 209, 128, .3);
+    border-radius: 50%;
+    animation: blink 1.5s infinite ease-in-out;
+  }
+  
+  .button-icon::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #00D180;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: @transition;
   }
 
-  &:active {
-    background: linear-gradient(95.62deg, #000000 40.55%, #454545 102.32%);
-
-      span {
-        transform: translate(0,100%);
+  &:hover, &:active  {
+    @media ( min-width: @sizes[ minLG ] ) {
+      .button-icon::after {
+        content: "";
+        width: 18px;
+        height: 18px;
+        background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_2_1538)'%3E%3Cpath opacity='0.3' d='M9 18C13.9708 18 18 13.9708 18 9C18 4.02918 13.9695 0 9 0C4.0305 0 0 4.02918 0 9C0 13.9708 4.02918 18 9 18Z' fill='%2300D180'/%3E%3Cpath d='M9 18C13.9708 18 18 13.9708 18 9C18 4.02918 13.9695 0 9 0C4.0305 0 0 4.02918 0 9C0 13.9708 4.02918 18 9 18Z' fill='%2300D180'/%3E%3Cpath d='M8 6L11 9L8 12' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_2_1538'%3E%3Crect width='18' height='18' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+        background-position: center;
+        background-repeat: no-repeat;
       }
-
-      &:before {
-        color: #fff;
-        opacity: 1;
-        transform: translate(0,0);
-      }
+    }
   }
 }
 
@@ -74,17 +103,18 @@
   position: relative;
   outline: none;
   .font(600);
-  .fontSize(16px, 21px);
+  .fontSize(18px, 100%);
   display: flex;
   justify-content: center;
   align-items: center;
   max-width: @width;
   width: 100%;
   padding: 13px 20px;
-  transition: color 0.3s 0.1s ease-out;
+  min-height: 72px;
+  transition: all 0.3s 0.1s ease-out;
   border-radius: @border[ buttonRadius ];
-  background: @backgroundButton[secondButton];
-  border: 1px solid @backgroundButton[ mainButton ];
+  background: transparent;
+  border: 1px solid @border[ menuBorder ];
   color: @colorButton[ secondButton ];
   box-shadow: none;
   cursor: pointer;
@@ -96,9 +126,9 @@
     border-radius: 50%;
     display: block;
     position: absolute;
-    width: @width*2;
-    height: @width*2;
-    line-height: @width*2;
+    width: @width;
+    height: @width;
+    line-height: @width;
     top: 0;
     left: -@width/2;
     right: 0;
@@ -108,22 +138,10 @@
     z-index: -1;
   }
 
-  &:hover {
+  &:hover, &:active {
     @media ( min-width: @sizes[ minLG ] ) {
-      color: #fff;
-
-      &::before {
-        box-shadow:inset 0 0 0 @width #000;
-      }
+      border: 1px solid @color[ black ];
     }
-  }
-
-  &:active {
-    color: #fff;
-
-      &::before {
-        box-shadow:inset 0 0 0 @width #000;
-      }
   }
 }
 
